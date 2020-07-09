@@ -1,0 +1,137 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v0.9.2",
+        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "version" : "2.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "geometry",
+                "id": "21dc700657d84d378bef807815670b76",
+                "title": "cylinder",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "cylinder with aluminium as material",
+                "creation_date": "2019.08.26. 10:04:00"
+            }
+        }
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder"
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }        
+    ],
+    "materials" : [
+        {
+            "name" : "aluminium",
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "a3a62d4531e64ae5a620030b1deaff7c",
+                    "title": "aluminium",
+                    "uri": "../materials/aluminium.gltf"
+                }
+            }
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 1956000,
+            "max" : [
+                861334
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 861335,
+            "max" : [
+                0.5,
+                0.5000001192092896,
+                0.5
+            ],
+            "min" : [
+                -0.5,
+                -0.5000001192092896,
+                -0.5
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 861335,
+            "max" : [
+                0.9999951124191284,
+                1.0,
+                0.9999951124191284
+            ],
+            "min" : [
+                -0.999995231628418,
+                -1.0,
+                -0.999995231628418
+            ],
+            "type" : "VEC3"
+        }       
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 7824000,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10336020,
+            "byteOffset" : 7824000,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10336020,
+            "byteOffset" : 18160020,
+            "target" : 34962
+        }      
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 28496040,
+            "uri" : "data/cylinderEnriched.bin"
+        }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_reference_link"
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "version" : "2.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "geometry",
+                "id": "b4a2540f639c444abfc742eb49d08a10",
+                "title": "aluminium torus",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "torus with aluminium as material",
+                "creation_date": "2019.04.13. 10:04:00"
+            }
+        }
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "torus"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "aluminum",
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "fe7d707050e545f19f2658ecacb6ac5e",
+                    "title": "aluminium",
+                    "uri": "../materials/aluminium.gltf"
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "torus",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "material" : 0,
+                    "indices" : 3
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 637,
+            "max" : [
+                1.25,
+                0.25,
+                1.25
+            ],
+            "min" : [
+                -1.25,
+                -0.25,
+                -1.25
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 637,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 637,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 3456,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 7644,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7644,
+            "byteOffset" : 7644
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5096,
+            "byteOffset" : 15288
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6912,
+            "byteOffset" : 20384
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 27296,
+            "uri" : "data/torus.bin"
+        }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_reference_link"
+    ]
+}

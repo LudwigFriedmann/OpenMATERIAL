@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Proposed OpenMaterial_reference_link glTF extension",
+    "description": "Reference to data from external gltf file",
+    "type": "object",
+    "properties": {
+        "title": {
+            "description": "Meaningful title of referenced asset",
+            "type": "string"
+        },
+        "uri": {
+            "description": "URI to external glTF file",
+            "type": "string"
+        },
+        "extensions": {},
+        "extras": {}
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Proposed OpenMaterial_ior_data glTF extension",
+    "description": "Measured complex index of refraction (IOR) at given temperature in [K].",
+    "type": "object",
+    "patternProperties": {
+        "^(0|[1-9][0-9]*)([\\,\\.][0-9]*[1-9])?$": {
+            "type": "object",
+            "description": "Arrays of real(n)/imaginary(k) IOR parts at given wavelength in [m].",
+            "properties": {
+                "n": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "description": "Pairs of wavelength and IOR real part.",
+                        "items": [
+                            {
+                                "type": "number",
+                                "description": "Wavelength [m]."
+                            },
+                            {
+                                "type": "number",
+                                "description": "Real part of IOR."
+                            }
+                        ]
+                    }
+                },
+                "k": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "description": "Pairs of wavelength and IOR imaginary part.",
+                        "items": [
+                            {
+                                "type": "number",
+                                "description": "Wavelength [m]."
+                            },
+                            {
+                                "type": "number",
+                                "description": "Imaginary part of IOR."
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "k",
+                "n"
+            ]
+        }
+    },
+    "additionalProperties": false
+}

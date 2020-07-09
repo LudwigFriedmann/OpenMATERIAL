@@ -1,0 +1,124 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Proposed OpenMaterial_asset_info glTF extension",
+    "description": "General asset properties",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique asset identifier",
+            "$ref": "#UUID"
+        },
+        "asset_type": {
+            "description": "Type of asset: geometry, material, scene, sensor, texture",
+            "type": "string",
+            "enum": [
+                "geometry",
+                "material",
+                "scene",
+                "sensor",
+                "texture"
+            ]
+        },
+        "title": {
+            "description": "Asset title, human readable, should be unique, but not enforced",
+            "type": "string",
+            "minLength": 1
+        },
+        "asset_parent": {
+            "description": "Unique identifier of the parent asset in the same format as specified for the property id. If asset_parent is set, either asset_variation or asset_version must be set (but not both)",
+            "type": "string"
+        },
+        "asset_version": {
+            "description": "Asset version",
+            "type": "string"
+        },
+        "asset_variation": {
+            "description": "Asset variation. Differences between parent asset and this asset",
+            "type": "string"
+        },
+        "category": {
+            "description": "Asset category from cityscapes labels",
+            "type": "string",
+            "enum": [
+                "bicycle",
+                "bridge",
+                "building",
+                "bus",
+                "car",
+                "caravan",
+                "dynamic",
+                "ego_vehicle",
+                "fence",
+                "ground",
+                "guard_rail",
+                "license_plate",
+                "motorcycle",
+                "out_of_roi",
+                "parking",
+                "person",
+                "pole",
+                "polegroup",
+                "rail_track",
+                "rectification_border",
+                "rider",
+                "road",
+                "sidewalk",
+                "sky",
+                "static",
+                "terrain",
+                "traffic_light",
+                "traffic_sign",
+                "trailer",
+                "train",
+                "truck",
+                "tunnel",
+                "unlabeled",
+                "vegetation",
+                "wall"
+            ]
+        },
+        "creator": {
+            "description": "Name of artist who created asset",
+            "type": "string"
+        },
+        "description": {
+            "description": "Asset description",
+            "type": "string"
+        },
+        "sources": {
+            "description": "List of sources that have been used to create this asset",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tags": {
+            "description": "Asset tags",
+            "type": "string"
+        },
+        "creation_date": {
+            "description": "Timestamp when the asset was initially created",
+            "$ref": "#datetime"
+        },
+        "extensions": {},
+        "extras": {}
+    },
+    "required": [
+        "id",
+        "title",
+        "asset_type",
+        "creator"
+    ],
+    "definitions": {
+        "UUID": {
+            "type": "string",
+            "$id": "#UUID",
+            "pattern": "^[0-9a-f]{32}$"
+        },
+        "datetime": {
+            "type": "string",
+            "$id": "#datetime",
+            "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}\\.\\s[0-9]{2}\\:[0-9]{2}\\:[0-9]{2}$"
+        }
+    }
+}
