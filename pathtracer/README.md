@@ -166,13 +166,13 @@ Documentation will be written to the `docs/` directory.
 Further details
 ---------------
 
-- Camera model: Pinhole camera
-- Available materials: Metals
-- Illumination: Given by a background HDR image
-- Rendering:
--- Each ray consists of three wavelengths (red 650nm, green 510nm, blue 440nm)
--- Light is assumed to be unpolarized.
--- The reflection coefficients (the Fresnel coefficients) are computed as the mean of s- and p-polarization.
+* Camera model: Pinhole camera
+* Available materials: Metals
+* Illumination: Given by a background HDR image
+* Rendering:
+  - Each ray consists of three wavelengths (red 650nm, green 510nm, blue 440nm)
+  - Light is assumed to be unpolarized.
+  - The reflection coefficients (the Fresnel coefficients) are computed as the mean of s- and p-polarization.
 
 Third party software
 --------------------
