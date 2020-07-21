@@ -176,13 +176,10 @@ static void recalculateNormals(vector<unsigned int>& vIndexBuffer, vector<Float>
 /// @param [in] Vertex coordinates, UV map extension, UV map and type of UV
 /// @param [out] corresponding (gray) value of the pixel in UV map
 static int UVmapping(float x,float y,float z, float width, float height, string maptype, CImg<unsigned char> dispMap){
-    float u,v=0;
+    float u=0;
+    float v=0;
     if (maptype=="sphere" || maptype=="cylinder" || maptype=="cube"){
         if (maptype=="sphere"){
-            float phi=atan2(z,x);
-            float theta=asin(y)+0.5;
-            //u=1-(phi+M_PI)/(2*M_PI);
-            //v=(theta+M_PI/2)/M_PI;
 	    u = 0.5 + atan2(z, x) / (2*M_PI);
 	    v = 0.5 - asin(y) / M_PI;
             if(isnan(v)) {v=1;}
