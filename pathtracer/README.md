@@ -24,8 +24,8 @@ Compilation
 The project source code can be compiled using [CMake](https://cmake.org/). On Linux systems, this requires the following commands:
 
 ```
-$ mkdir bin/
-$ cd bin/
+$ mkdir bin
+$ cd bin
 $ cmake ..
 $ make
 ```
