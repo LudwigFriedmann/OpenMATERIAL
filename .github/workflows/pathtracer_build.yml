@@ -12,7 +12,7 @@ jobs:
     - name: configure
       run: cd pathtracer && mkdir bin && cd bin && cmake ..
     - name: build
-      run: cmake --build pathtracer/bin --config Release
+      run: cd pathtracer/bin && make
 
   Windows:
 
