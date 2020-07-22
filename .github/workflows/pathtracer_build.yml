@@ -1,12 +1,23 @@
 name: Pathtracer Build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'pathtracer/**'
+    - 'external/**'
+    
+  pull_request:
+    branches:
+    - master
+    paths:
+    - 'pathtracer/**'
+    - 'external/**'
 
 jobs:
-  Ubuntu:
-
+  ubuntu:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v2
     - name: configure
@@ -14,10 +25,8 @@ jobs:
     - name: build
       run: cd pathtracer/bin && make
 
-  Windows:
-
+  windows:
     runs-on: windows-latest
-    
     steps:
     - uses: actions/checkout@v2
     - name: add msbuild to path
