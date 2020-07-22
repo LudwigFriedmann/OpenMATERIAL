@@ -40,7 +40,7 @@ be compiled using:
 $ mkdir bin
 $ cd bin
 $ cmake.exe .. -G "Visual Studio 14 2015 Win64"
-$ devenv.com PathTracer.sln /Build Release
+$ MSBuild.exe PathTracer.sln /p:Configuration=Release
 ```
  
 As the code is pure C++11, the code should also compile and run on other platforms with compilers that support OpenMP.
