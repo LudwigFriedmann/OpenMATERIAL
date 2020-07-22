@@ -1,3 +1,5 @@
+![Pathtracer Build](https://github.com/LudwigFriedmann/OpenMaterial/workflows/Pathtracer%20Build/badge.svg)
+
 OpenMaterial
 ============
 
