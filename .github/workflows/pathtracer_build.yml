@@ -1,0 +1,28 @@
+name: Pathtracer Build
+
+on: [push, pull_request]
+
+jobs:
+  Ubuntu:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: configure
+      run: cd pathtracer && mkdir bin && cd bin && cmake ..
+    - name: build
+      run: cmake --build pathtracer/bin --config Release
+
+  Windows:
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: add msbuild to path
+      uses: microsoft/setup-msbuild@v1.0.0
+    - name: configure
+      run: cd pathtracer && mkdir bin && cd bin && cmake .. -G "Visual Studio 14 2015 Win64"
+    - name: build
+      run: cmake --build pathtracer\bin --config Release
