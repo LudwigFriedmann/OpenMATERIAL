@@ -315,7 +315,7 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
     ],
 ````
 In the given example, wavelength and temperature specific material properties (i.e. `aluminium_ior.gltf`) are specified in a 
-look-up table using the [`OpenMaterial_ior_data`](OpenMaterial_ior_data/) extension.
+separate file using the [`OpenMaterial_ior_data`](../OpenMaterial_ior_data/) extension.
 
 glTF Schema Updates
 -------------------
