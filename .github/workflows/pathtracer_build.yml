@@ -4,16 +4,10 @@ on:
   push:
     branches:
     - master
-    paths:
-    - 'pathtracer/**'
-    - 'external/**'
-    
+
   pull_request:
     branches:
     - master
-    paths:
-    - 'pathtracer/**'
-    - 'external/**'
 
 jobs:
   ubuntu:
@@ -24,6 +18,8 @@ jobs:
       run: cd pathtracer && mkdir bin && cd bin && cmake ..
     - name: build
       run: cd pathtracer/bin && make
+    - name: test
+      run: cd pathtracer && bin/pathtracer -t
 
   windows:
     runs-on: windows-latest
@@ -35,3 +31,5 @@ jobs:
       run: cd pathtracer && mkdir bin && cd bin && cmake .. -G "Visual Studio 14 2015 Win64"
     - name: build
       run: MSBuild.exe pathtracer\bin\PathTracer.sln /p:Configuration=Release
+    - name: test
+      run: cd pathtracer && bin\Release\pathtracer -t
