@@ -4,10 +4,16 @@ on:
   push:
     branches:
     - master
-
+    paths:
+    - 'pathtracer/**'
+    - 'external/**'
+    
   pull_request:
     branches:
     - master
+    paths:
+    - 'pathtracer/**'
+    - 'external/**'
 
 jobs:
   ubuntu:
