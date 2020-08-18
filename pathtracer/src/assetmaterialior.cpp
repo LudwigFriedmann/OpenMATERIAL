@@ -28,7 +28,7 @@ TEST_CASE("Testing AssetMaterialIor::AssetMaterialIor")
 	#endif	
 
 	// Check if correct IOR table is loaded
-	AssetMaterialIor *pMaterialIor = new AssetMaterialIor(fileName);
+	auto *pMaterialIor = new AssetMaterialIor(fileName);
 	std::string title = "IOR aluminium";
 	CHECK(title.compare(pMaterialIor->getTitle()) == 0);
 }
@@ -37,7 +37,7 @@ TEST_CASE("Testing AssetMaterialIor::AssetMaterialIor")
 ///
 /// @param [in] j json object
 /// @param [in] rcsDirectory path to the directory containing the glTF file
-AssetMaterialIor::AssetMaterialIor(const nlohmann::json& j, const std::string rcsDirectory) : AssetInfo(j,rcsDirectory)
+AssetMaterialIor::AssetMaterialIor(const nlohmann::json& j, const std::string &rcsDirectory) : AssetInfo(j,rcsDirectory)
 {
     // check if asset is of type material
     if(!typeIsMaterialIor())
@@ -54,7 +54,7 @@ AssetMaterialIor::AssetMaterialIor(const nlohmann::json& j, const std::string rc
 }
 
 /// Create new AssetMaterialIor object from filename (std::string)
-AssetMaterialIor::AssetMaterialIor(const std::string rcsFilename)
+AssetMaterialIor::AssetMaterialIor(const std::string &rcsFilename)
     : AssetMaterialIor(readJsonFile(rcsFilename),utils::path::dirname(rcsFilename))
 {}
 
@@ -144,7 +144,7 @@ void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
                 data.vLoData.push_back(gamma);
             }
 
-            if(data.vLoData.size() == 0)
+            if(data.vLoData.empty())
                 throw GltfError(getUuid() + ": Lorenz oscillator parameters missing");
         }
     }
@@ -230,4 +230,3 @@ Float AssetMaterialIor::getIor(Float fTemp, Float wl, Float& n, Float& k) const
 
     return data.fTemperature;
 }
-

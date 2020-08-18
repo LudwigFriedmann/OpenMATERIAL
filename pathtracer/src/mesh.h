@@ -11,6 +11,7 @@
 #ifndef MESH_H
 #define MESH_H
 
+#include <utility>
 #include <vector>
 
 #include "assetmaterial.h"
@@ -53,7 +54,7 @@ private:
 
 public:
     /// Create a new mesh with name given by crsName
-    Mesh(const std::string& crsName="") : m_sName(crsName) {}
+    explicit Mesh(std::string  crsName="") : m_sName(std::move(crsName)) {}
 
     void buildBVH();
 
@@ -90,7 +91,7 @@ public:
     /// Return the number of triangles stored in the mesh
     std::size_t getNumberOfTriangles() const { return m_IndexBuffer.size()/3; }
 
-    Matrix2x2 getCurvatureTensor(std::size_t uTriangleIndex, Float u, Float v, Vector3 &xu, Vector3 &xv, Transformation trafo = Transformation::Identity()) const;
+    Matrix2x2 getCurvatureTensor(std::size_t uTriangleIndex, Float u, Float v, Vector3 &xu, Vector3 &xv, const Transformation& trafo = Transformation::Identity()) const;
 
     void getVerticesOfTriangle(std::size_t uTriangleIndex, Vector3& V0, Vector3& V1, Vector3& V2) const;
 

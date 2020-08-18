@@ -26,4 +26,3 @@ void fresnelReflection(Complex fN, Float fCosTheta, Float& fTermP, Float& fTermS
 Vector3 reflect(const Vector3& vIncident, const Vector3& vNormal);
 
 #endif // MATERIAL_MODELS_COMMON_H
-

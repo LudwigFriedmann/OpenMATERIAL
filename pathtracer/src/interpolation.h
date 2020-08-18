@@ -42,7 +42,7 @@ private:
     e_interpolationType m_interpolationType = INTERPOLATION_LINEAR;
 
     /// Internal function for interpolation
-    const T2 _get(const T1 x) const
+    T2 _get(const T1 x) const
     {
         int indexLeft = 0, indexRight = size()-1;
 
@@ -80,7 +80,7 @@ private:
 
 public:
     /// Create a new interpolation object
-    Interpolation() {}
+    Interpolation() = default;
 
     /// Set type of interpolation to interpolationType
     ///
@@ -168,7 +168,7 @@ public:
     ///
     /// @param [in] x value of x
     /// @retval y interpolated value y=f(x)
-    const T2 get(const T1 x) const
+    T2 get(const T1 x) const
     {
         if(m_data.size() == 0)
             throw ValueError("No points have been added");
@@ -189,9 +189,7 @@ public:
     /// @retval false if x is not in the interpolation domain
     bool contains(const T1 x) const
     {
-        if(m_data.size() == 0 || x < m_data.front().first || x > m_data.back().first)
-            return false;
-        return true;
+        return !(m_data.size() == 0 || x < m_data.front().first || x > m_data.back().first);
     }
 
     /// @brief Get interpolated value at x
@@ -202,7 +200,7 @@ public:
     /// @param [in] x value of x
     /// @param [in] notFoundItem item that should be returned if x is not in the interpolation domain
     /// @retval y interplated value of f(x) or notFoundItem
-    const T2 get(const T1 x, const T2 notFoundItem) const
+    T2 get(const T1 x, const T2 notFoundItem) const
     {
         if(m_data.size() == 0 || x < m_data.front().first || x > m_data.back().first)
             return notFoundItem;
@@ -212,4 +210,3 @@ public:
 };
 
 #endif // INTERPOLATION_H
-

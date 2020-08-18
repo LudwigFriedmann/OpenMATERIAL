@@ -32,22 +32,23 @@ enum e_AssetType {
     ASSET_TYPE_SENSOR
 };
 
-/// Asset types as string (must be in the same order as in \ref e_AssetType)
-static const std::vector<std::string> AssetTypeString{
-    "unknown",
-    "reference",
-    "geometry",
-    "material",
-    "material_ior",
-    "scene",
-    "sensor" };
-
 /// @brief Main asset class
 ///
 /// This class should not be directly instanciated, but derived classes
 /// should be used. Other asset implementations should inherit from this class.
 /// Each asset has a unique id.
 class AssetBase {
+private:
+/// Asset types as string (must be in the same order as in \ref e_AssetType)
+    std::vector<std::string> m_assetTypeString{
+            "unknown",
+            "reference",
+            "geometry",
+            "material",
+            "material_ior",
+            "scene",
+            "sensor" };
+
 protected:
     /// Unique id of asset
     Uuid m_uId;
@@ -60,7 +61,7 @@ protected:
 
 public:
     /// Read crsFilename and return json object
-    static const nlohmann::json readJsonFile(const std::string& crsFilename)
+    static nlohmann::json readJsonFile(const std::string& crsFilename)
     {
         nlohmann::json j;
         std::ifstream gltfFile(crsFilename);
@@ -80,9 +81,9 @@ public:
     }
 
     /// Get category as string
-    static std::string assetTypeToString(e_AssetType eType)
+    std::string assetTypeToString(e_AssetType eType)
     {
-        return AssetTypeString.at(eType);
+        return m_assetTypeString.at(eType);
     }
 
     /// Get number of asset type (case insensitive)
@@ -90,32 +91,32 @@ public:
     {
         // To lower cases
         std::string sTypeLower = crsType;
-        for(std::size_t i = 0; i < sTypeLower.size(); i++)
-            sTypeLower[i] = std::tolower(sTypeLower[i]);
+        for(auto elem : sTypeLower)
+            elem = std::tolower(elem);
 
         // Find in vector
-        for(std::size_t i = 0; i < AssetTypeString.size(); i++)
-            if(sTypeLower.compare(AssetTypeString[i]) == 0)
+        for(std::size_t i = 0; i < m_assetTypeString.size(); i++)
+            if(sTypeLower == m_assetTypeString[i])
                 return static_cast<e_AssetType>(i);
 
         throw GltfError(getUuid().toString() + ": unknown asset type " + crsType);
     }
 
     /// Create uninitialized object of AssetBase
-    AssetBase() { }
+    AssetBase() = default;
 
     /// Create new object of AssetBase
     ///
     /// @param [in] uuid unique id of asset
     /// @param [in] eType type of asset
-    AssetBase(Uuid uuid, e_AssetType eType = ASSET_TYPE_UNKNOWN)
+    explicit AssetBase(const Uuid &uuid, e_AssetType eType = ASSET_TYPE_UNKNOWN)
     {
         m_uId = uuid;
         m_eType = eType;
     }
 
     /// Create new asset from json object
-    AssetBase(const nlohmann::json &j, const std::string& rcsDirectory="")
+    explicit AssetBase(const nlohmann::json &j, const std::string& rcsDirectory="")
     {
         m_sDirectory = rcsDirectory + utils::path::getFileSeparator();
 
@@ -138,22 +139,22 @@ public:
     }
 
     /// Create new asset from glTF file
-    AssetBase(const std::string& crsFilename)
+    explicit AssetBase(const std::string& crsFilename)
         : AssetBase(readJsonFile(crsFilename), utils::path::dirname(crsFilename))
     {}
 
     /// Create new asset from glTF file
-    AssetBase(const char *prsFilename) : AssetBase(std::string(prsFilename))
+    explicit AssetBase(const char *prsFilename) : AssetBase(std::string(prsFilename))
     {}
 
     /// Destructor
-    virtual ~AssetBase() {}
+    virtual ~AssetBase() = default;
 
     /// Get unique id of asset
-    const Uuid getUuid() const { return m_uId; }
+    Uuid getUuid() const { return m_uId; }
 
     /// Get unique id of asset as string
-    const std::string getUuidAsString() const { return m_uId.toString(); }
+    std::string getUuidAsString() const { return m_uId.toString(); }
 
     /// Get directory
     std::string getDirectory() const { return m_sDirectory; }
@@ -162,7 +163,7 @@ public:
     e_AssetType getType() const { return m_eType; }
 
     /// Get type of asset as string
-    const std::string getTypeString() const { return AssetTypeString.at(m_eType); }
+    std::string getTypeString() const { return m_assetTypeString.at(m_eType); }
 
     /// Returns true if type of asset is unknown, otherwise returns false
     bool typeIsUnknown() const { return m_eType == ASSET_TYPE_UNKNOWN; }
@@ -186,6 +187,4 @@ public:
     bool typeIsSensor() const { return m_eType == ASSET_TYPE_SENSOR; }
 };
 
-
 #endif // ASSETBASE_H
-

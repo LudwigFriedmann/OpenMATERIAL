@@ -92,13 +92,11 @@ public:
     void setWres(unsigned int iWres);
     unsigned int getWres() const;
 
-    virtual std::vector<Ray> getPrimaryRays() override;
-    virtual void reportPrimaryRay(Ray& rvBouncedRay) override;
+    std::vector<Ray> getPrimaryRays() override;
+    void reportPrimaryRay(Ray& rvBouncedRay) override;
     virtual void save(const std::string &rsFilename, const ToneMapping &toneMapping);
     virtual void saveRaycaster(const std::string &rsFilename);
-    virtual bool isCompatible(const MaterialModel& crMaterialModel) override;
+    bool isCompatible(const MaterialModel& crMaterialModel) override;
 };
 
-
 #endif // CAMERA_H
-

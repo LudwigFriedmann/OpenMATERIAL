@@ -43,6 +43,9 @@ struct st_ApplicableSensors
 
     /// Material is applicable for RADAR sensor
     bool bRadar = false;
+
+    /// Material is applicable for ultrasound sensor
+    bool bUltrasound = false;
 };
 
 /// @brief Type of material
@@ -118,10 +121,10 @@ class AssetMaterial : public AssetInfo
 {
 public:
     AssetMaterial();
-    AssetMaterial(const nlohmann::json &j, const std::string& rcsDirectory="");
-    AssetMaterial(const std::string& rcsFilename);
-    AssetMaterial(const char *cpFilename);
-    virtual ~AssetMaterial();
+    explicit AssetMaterial(const nlohmann::json &j, const std::string& rcsDirectory="");
+    explicit AssetMaterial(const std::string& rcsFilename);
+    explicit AssetMaterial(const char *cpFilename);
+    ~AssetMaterial() override;
 
     std::string getName() const;
     bool getGeometricalOptics() const;
@@ -254,4 +257,3 @@ private:
 };
 
 #endif // ASSETMATERIAL_H
-

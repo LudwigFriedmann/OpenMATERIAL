@@ -24,7 +24,7 @@ private:
 
 public:
     /// Create empty tone mapping object
-    ToneMapping() {}
+    ToneMapping() = default;
 
     /// @brief Simple tone mapping operator
     ///
@@ -35,7 +35,7 @@ public:
     /// This operator allows to map a HDR image to a LDR image.
     ///
     /// @param [in] fAlpha parameter alpha
-    ToneMapping(Float fAlpha=1)
+    explicit ToneMapping(Float fAlpha=1)
     {
         m_fAlpha = fAlpha;
     }
@@ -48,4 +48,3 @@ public:
 };
 
 #endif // TONEMAPPING_H
-

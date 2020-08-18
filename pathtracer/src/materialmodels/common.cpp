@@ -81,4 +81,3 @@ Vector3 reflect(const Vector3& vIncident, const Vector3& vNormal)
 {
     return (vIncident-2*vNormal.dot(vIncident)*vNormal).normalize();
 }
-

@@ -27,7 +27,7 @@ namespace utils
 
     namespace string
     {
-        std::vector<std::string> split(const std::string &s, const std::string delimiter, int maxsplit=-1);
+        std::vector<std::string> split(const std::string &s, const std::string& delimiter, int maxsplit=-1);
 
         bool strcaseequal(const std::string& a, const std::string& b);
         std::string rstrip(const std::string &s);
@@ -37,4 +37,3 @@ namespace utils
 }
 
 #endif // UTILS_H
-

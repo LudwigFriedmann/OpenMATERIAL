@@ -60,13 +60,11 @@ private:
     std::size_t find_closest(Float fTemp) const;
 
 public:
-    AssetMaterialIor(const nlohmann::json &j, const std::string rcsDirectory="");
-    AssetMaterialIor(const std::string rcsFilename);
-    AssetMaterialIor(const char * psFilename);
+    explicit AssetMaterialIor(const nlohmann::json &j, const std::string& rcsDirectory="");
+    explicit AssetMaterialIor(const std::string& rcsFilename);
+    explicit AssetMaterialIor(const char * psFilename);
 
     Float getIor(Float fTemp, Float wl, Float &n, Float &k) const;
-    Float getDomain(Float fTemp, Float &wlMin, Float &wlMax) const;
 };
 
 #endif // ASSETMATERIALIOR_H
-

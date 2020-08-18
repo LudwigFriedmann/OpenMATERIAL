@@ -29,7 +29,7 @@ private:
 
 public:
     /// Create an uninitialized quaternion
-    Quaternion() {}
+    Quaternion() = default;
 
     /// Create a quaternion with the imaginary vector v and the scalar part w
     Quaternion(const Vector3 &v, Float w) : m_v(v), m_w(w) {}
@@ -39,13 +39,12 @@ public:
         : m_v(Vector3(x,y,z)), m_w(w) {}
 
     /// Create a copy of the quaternion q
-    Quaternion(const Quaternion& q)
-        : m_v(q.m_v), m_w(q.m_w)
+    Quaternion(const Quaternion& q) : m_v(q.m_v), m_w(q.m_w)
     {
     }
 
     /// Create quaternion from rotation matrix
-    Quaternion(const Matrix3x3& m)
+    explicit Quaternion(const Matrix3x3& m)
     {
         m_w = std::sqrt(1+m.trace())*0.5;
 
@@ -184,12 +183,8 @@ public:
     /// Overload == operation to support comparisons
     bool operator==(const Quaternion& q) const
     {
-        if(m_w == q.m_w && m_v == q.m_v)
-            return true;
-
-        return false;
+        return m_w == q.m_w && m_v == q.m_v;
     }
 };
 
 #endif // QUATERNION_H
-

@@ -14,7 +14,7 @@
 #include <cstdint>
 #include <random>
 #include <string>
-#include <time.h>
+#include <ctime>
 #include <thread>
 
 #include "doctest.h"
@@ -41,14 +41,14 @@ TEST_CASE("Testing Random::getRandomU64")
 #endif
 
 #ifdef __linux__
-#include <stdio.h>
+#include <cstdio>
 
 static uint64_t _getrandom()
 {
     uint64_t data = 0;
 
     FILE *f = fopen("/dev/urandom", "rb");
-    if(f == NULL)
+    if(f == nullptr)
         throw OSError("Cannot open /dev/urandom for reading");
 
     // Read data from /dev/urandom
@@ -153,4 +153,3 @@ namespace Random
         return (*getMersenne64Generator())();
     }
 }
-

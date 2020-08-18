@@ -153,7 +153,7 @@ public:
     ///
     /// If the string is too short or a non-hexadecimal character is found
     /// (except minus sign) is found, a ValueError is thrown.
-    Uuid(const std::string& rcsUuid)
+    explicit Uuid(const std::string& rcsUuid)
     {
         uint64_t u64UuidLo = 0, u64UuidHi = 0;
 
@@ -207,10 +207,10 @@ public:
         for(int i = 0; i < 32; i++)
         {
             if (i < 16)
-                c = (m_u64UuidHi >> (60 - 4 * i)) & 0xf;
+                c = static_cast<int>((m_u64UuidHi >> (60 - 4 * i)) & 0xf);
             else
-                c = (m_u64UuidLo >> (124 - 4 * i)) & 0xf;
-            s[j++] = int2hex(c);
+                c = static_cast<int>((m_u64UuidLo >> (124 - 4 * i)) & 0xf);
+            s[j++] = static_cast<char>(int2hex(c));
 
             // Add dashes '-' for readability
             if (j == 8 || j == 13 || j == 18 || j == 23)
@@ -264,6 +264,6 @@ namespace std
     }
   };
 }
-/// @endcond 
-#endif // UUID_H
+/// @endcond
 
+#endif // UUID_H

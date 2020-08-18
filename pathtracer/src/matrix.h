@@ -40,7 +40,7 @@ public:
     // Constructors
 
     /// Create zero matrix
-    Matrix() {}
+    Matrix() = default;
 
     /// Copy matrix
     Matrix(const Matrix& M)
@@ -50,7 +50,7 @@ public:
     }
 
     /// Create matrix where all matrix elements are given by fValue
-    Matrix(T fValue) { setAll(fValue); }
+    explicit Matrix(T fValue) { setAll(fValue); }
 
     ///  @brief Create matrix (a,b,c) from column vectors a,b,c
     template <int D = DIM, typename std::enable_if<D == 3, void>::type* = nullptr>

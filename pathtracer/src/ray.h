@@ -70,7 +70,7 @@ protected:
     Float m_fOpticalPathLength = 0;
 
     /// 1 if corresponding component of m_v3fDirection is negative, otherwise 0 (used in class BBox)
-    int m_posneg[3];
+    int m_posneg[3]{};
 
     /// Type of ray
     e_rayType m_eType = RAY_PLAIN;
@@ -79,11 +79,11 @@ protected:
     void *m_pType = nullptr;
 
     ///Ray intensity
-    float m_fIntensity;
+    float m_fIntensity{};
 
 public:
     /// Create uninitalized Ray object
-    Ray() {}
+    Ray() = default;
 
     /// @brief Create a new ray
     ///
@@ -187,13 +187,13 @@ public:
     }
 
     /// Get direction of ray
-    const Vector3 &getDirection(void) const { return m_vDirection; }
+    const Vector3 &getDirection() const { return m_vDirection; }
 
     /// Get inverse direction (1/direction_x, 1/direction_y, 1/direction_z)
     const Vector3 &getInvDirection() const { return m_vInvDirection; }
 
     /// Get origin of ray
-    const Vector3 &getOrigin(void) const { return m_vOrigin; }
+    const Vector3 &getOrigin() const { return m_vOrigin; }
 
     /// Return point P(t)=origin+t*direction at position t
     Vector3 at(Float t) const

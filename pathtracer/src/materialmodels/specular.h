@@ -31,10 +31,9 @@ private:
  public:
     MaterialModelSpecular();
 
-    std::vector<Ray> bounce(const Ray& incidentRay, const Intersection& crIntersection, Sensor& rSensor, Renderer &rRenderer);
+    std::vector<Ray> bounce(const Ray& incidentRay, const Intersection& crIntersection, Sensor& rSensor, Renderer &rRenderer) override;
     /// Function to set verbosity
     void disableVerboseMat(){m_verbose_mat=false;}
 };
 
 #endif // MATERIAL_MODEL_SPECULAR_H
-

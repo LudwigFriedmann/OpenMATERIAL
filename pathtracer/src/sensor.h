@@ -78,7 +78,7 @@ public:
     /// to free memory allocated in getPrimaryRays().
     ///
     /// @param [in] vRays vector of primary rays originially returned from getPrimaryRays()
-    virtual void deletePrimaryRays(std::vector<Ray>) {}
+    virtual void deletePrimaryRays(const std::vector<Ray> &) {}
 
     /// @brief Report the results for the primary rays
     ///
@@ -143,9 +143,6 @@ public:
 
         return true;
     }
-
-    /// Get the name of the sensor
-    const std::string &getName() const;
 
     /// Get the UUID of the sensor
     const Uuid &getUuid() const;

@@ -49,7 +49,7 @@ private:
 
 public:
     /// Create an empty (uninitialized) object
-    Transformation() {}
+    Transformation() = default;
 
     /// @brief Create transformation from 3x3 matrix and translation vector
     ///
@@ -80,55 +80,55 @@ public:
     /// Create identity transformation
     static Transformation Identity()
     {
-        return Transformation(Matrix3x3::Identity(), Matrix3x3::Identity(), Vector3(0,0,0));
+        return {Matrix3x3::Identity(), Matrix3x3::Identity(), Vector3(0,0,0)};
     }
 
     /// Create translation
     static Transformation Translation(const Vector3& translation)
     {
-        return Transformation(Matrix3x3::Identity(), Matrix3x3::Identity(), translation);
+        return {Matrix3x3::Identity(), Matrix3x3::Identity(), translation};
     }
 
     /// Create rotation transformation around x-axis with angle fPhi
     static Transformation RotationX(Float fPhi)
     {
         Matrix3x3 m = Matrix3x3::RotationX(fPhi);
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create rotation transformation around y-axis with angle fPhi
     static Transformation RotationY(Float fPhi)
     {
         Matrix3x3 m = Matrix3x3::RotationY(fPhi);
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create rotation transformation around z-axis with angle fPhi
     static Transformation RotationZ(Float fPhi)
     {
         Matrix3x3 m = Matrix3x3::RotationZ(fPhi);
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create rotation matrix around vector n with angle fPhi
     static Transformation Rotation(const Vector3 &n, Float fPhi)
     {
         Matrix3x3 m = Matrix3x3::Rotation(n, fPhi);
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create transformation from scaling; transformation matrix=diag(x,y,z)
     static Transformation Scale(Float x, Float y, Float z)
     {
         Matrix3x3 m = Matrix3x3::Scale(x,y,z);
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create transformation (a rotation) from quaternion q
     static Transformation Rotation(const Quaternion& q)
     {
         Matrix3x3 m = q.normalize().toMatrix();
-        return Transformation(m, m.transpose(), Vector3(0,0,0));
+        return {m, m.transpose(), Vector3(0,0,0)};
     }
 
     /// Create transformation from translation, rotation, and scaling
@@ -144,7 +144,7 @@ public:
         Matrix3x3 Rinv = R.transpose(); // inverse of R is the transpose of R
         Matrix3x3 minv = Sinv.matmult(Rinv);
 
-        return Transformation(m, minv, translation);
+        return {m, minv, translation};
     }
 
     /// Write affine transformation as a 3x4 matrix (3x3 linear transformation)
@@ -179,12 +179,12 @@ public:
     ///
     /// @param T transformation
     /// @retval Tcombined new transformation
-    Transformation apply(Transformation T) const
+    Transformation apply(const Transformation &T) const
     {
         Matrix3x3 m = m_m.matmult(T.m_m);
         Matrix3x3 mInv = T.m_mInv.matmult(m_mInv);
         Vector3 d = m_d + m_m.apply(T.m_d);
-        return Transformation(m,mInv,d);
+        return {m,mInv,d};
     }
 
     /// Transform point from local to world coordinates

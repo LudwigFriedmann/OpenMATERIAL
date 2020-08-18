@@ -8,7 +8,7 @@
 /// @date      2019-09-30
 /// @brief     AssetGeometry class
 
-#include <string.h> // for memcpy
+#include <cstring> // for memcpy
 
 #include <cstddef> // std:size_t
 #include <iostream>
@@ -137,8 +137,8 @@ static bool checkNodeIsRoot(const tinygltf::Model& gltfModel, size_t uNodeNumber
 /// @param [in] IndexBuffer(triangles), Vertexes and Normals lists
 static void recalculateNormals(vector<unsigned int>& vIndexBuffer, vector<Float>& vNormalBuffer, vector<Float>& vVertexBuffer)
 {
-    int FN=vIndexBuffer.size()/3;
-    int VN=vVertexBuffer.size()/3;
+    int FN=static_cast<int>(vIndexBuffer.size()/3);
+    int VN=static_cast<int>(vVertexBuffer.size()/3);
     // For (auto v:vNormalBuffer) v=0.0;
         for (int i=0; i<VN; ++i){
             vNormalBuffer[3*i]=0.0;
@@ -153,7 +153,7 @@ static void recalculateNormals(vector<unsigned int>& vIndexBuffer, vector<Float>
         Vector3 S0=V1-V0;
         Vector3 S1=V2-V0;
         Vector3 N=S0.cross(S1).normalize();
-        if(isnan(N[0]) or isnan(N[0]) or (isnan(N[2]))){N[0]=1;N[1]=0;N[2]=0;} //FIXME Why sometime the N vector is a nan?
+        if(isnan(N[0]) or (isnan(N[2]))){N[0]=1;N[1]=0;N[2]=0;} //FIXME Why sometime the N vector is a nan?
 
         for (int j=0; j<3; ++j)
         {
@@ -175,9 +175,9 @@ static void recalculateNormals(vector<unsigned int>& vIndexBuffer, vector<Float>
 ///
 /// @param [in] Vertex coordinates, UV map extension, UV map and type of UV
 /// @param [out] corresponding (gray) value of the pixel in UV map
-static int UVmapping(float x,float y,float z, float width, float height, string maptype, CImg<unsigned char> dispMap){
-    float u=0;
-    float v=0;
+static float UVmapping(float x,float y,float z, int width, int height, const string &maptype, CImg<unsigned char> dispMap){
+    double u=0.0;
+    double v=0.0;
     if (maptype=="sphere" || maptype=="cylinder" || maptype=="cube"){
         if (maptype=="sphere"){
 	    u = 0.5 + atan2(z, x) / (2*M_PI);
@@ -189,7 +189,8 @@ static int UVmapping(float x,float y,float z, float width, float height, string 
             v = y/2+0.5;
         }
         if (maptype=="cube"){ //https://en.wikipedia.org/wiki/Cube_mapping
-            float offu,offv;
+            float offu=0.0;
+            float offv=0.0;
             float absX = fabs(x); float absY = fabs(y); float absZ = fabs(z);
             int isXPositive = x > 0 ? 1 : 0; int isYPositive = y > 0 ? 1 : 0; int isZPositive = z > 0 ? 1 : 0;
             if (isXPositive && absX >= absY && absX >= absZ) {offu = 0.5; offv = 0.333;} //whichFace=0 maxAxis = absX; uc = -z; vc = y;
@@ -203,24 +204,27 @@ static int UVmapping(float x,float y,float z, float width, float height, string 
          }
     }
     else{
-        u=rand()%100/100.0;
-        v=rand()%100/100.0;
+        std::random_device rd;
+        std::map<int, int> hist;
+        std::uniform_int_distribution<int> dist(0, 99);
+        u=dist(rd)%100/100.0;
+        v=dist(rd)%100/100.0;
     }
 
     if (v<0 or isnan(v)){v=0;} // Protection agaist not-normalized objects
     if (v>1){v=1;}
     if (u<0 or isnan(u)){u=0;}
     if (u>1){u=1;}
-    int u_map=u*width;
-    int v_map=v*height;
-    return (int)dispMap(u_map,v_map,0,0);
+    int u_map=static_cast<int>(u*width);
+    int v_map=static_cast<int>(v*height);
+    return dispMap(u_map,v_map,0,0);
 }
 
 /// @brief Read and produce the gray scale of an arbitrary displacement map
 /// @param [in] Average of the grey scale pixels, name of the coloured map
 /// @param [out] gray scale version of the coloured map
 
-CImg<unsigned char> readDisplacementMap(float &graymean, string mapName){
+CImg<unsigned char> readDisplacementMap(float &graymean, const string &mapName){
     CImg<unsigned char> src(mapName.c_str());
     CImg<unsigned char> gray(src.width(),src.height(),1,1,0);
     int width = src.width();
@@ -229,9 +233,9 @@ CImg<unsigned char> readDisplacementMap(float &graymean, string mapName){
             for (int c = 0; c < width; c++){
                    int grayValue = (int)(0.33*(int)src(r,c,0,0) + 0.33*(int)src(r,c,0,1) + 0.33*(int)src(r,c,0,2));
                    gray(r,c,0,0) = grayValue;
-                   graymean+=grayValue;
+                   graymean+=static_cast<float>(grayValue);
             }
-   graymean=graymean/(width*height);
+   graymean=graymean/static_cast<float>(width*height);
    return gray;
 }
 
@@ -239,7 +243,7 @@ CImg<unsigned char> readDisplacementMap(float &graymean, string mapName){
 ///
 /// @param [in] Vertex coordinates, UV map extension, UV map and type of UV
 ///
-static void generateDisplacement(vector<Float>& vNormalBuffer, vector<Float>& vVertexBuffer, string mapName, float magnify, string UVmaptype){
+static void generateDisplacement(vector<Float>& vNormalBuffer, vector<Float>& vVertexBuffer, const string &mapName, float magnify, const string &UVmaptype){
     float graymean=0;
     CImg<unsigned char> dispMap=readDisplacementMap(graymean, mapName);
     int width = dispMap.width();
@@ -291,7 +295,7 @@ void AssetGeometry::loadMaterials(const tinygltf::Model& gltfModel)
     {
         const ReferenceLink referenceLink = ReferenceLink(jMaterial);
         string sFilename = m_sDirectory + referenceLink.getUri();
-        AssetMaterial *pMaterial = new AssetMaterial(sFilename);
+        auto *pMaterial = new AssetMaterial(sFilename);
         m_vpMaterials.push_back(pMaterial);
     }
 }
@@ -335,7 +339,7 @@ void AssetGeometry::loadNodes(const tinygltf::Model& gltfModel)
         }
 
         // Read the transformation for the node
-        if(gltfNode.matrix.size())
+        if(!gltfNode.matrix.empty())
         {
             Matrix3x3 M;
             Vector3 t(gltfNode.matrix[3], gltfNode.matrix[7], gltfNode.matrix[11]);
@@ -362,11 +366,11 @@ void AssetGeometry::loadNodes(const tinygltf::Model& gltfModel)
             Vector3 scale(1,1,1);
             Quaternion rotation(0,0,0,1);
 
-            if(gltfNode.scale.size())
+            if(!gltfNode.scale.empty())
                 scale = Vector3(gltfNode.scale[0], gltfNode.scale[1], gltfNode.scale[2]);
-            if(gltfNode.rotation.size())
+            if(!gltfNode.rotation.empty())
                 rotation = Quaternion(gltfNode.rotation[0], gltfNode.rotation[1], gltfNode.rotation[2], gltfNode.rotation[3]);
-            if(gltfNode.translation.size())
+            if(!gltfNode.translation.empty())
                 translation = Vector3(gltfNode.translation[0], gltfNode.translation[1], gltfNode.translation[2]);
 
             Transformation transformation = Transformation::TRS(translation, rotation, scale);
@@ -448,7 +452,7 @@ void AssetGeometry::loadMeshes(const tinygltf::Model& gltfModel)
 
             // Only triangles are supported as primitives
             if(meshPrimitive.mode != TINYGLTF_MODE_TRIANGLES)
-                NotImplementedError(getUuid() + ": primitives other than triangles not supported");
+                throw NotImplementedError(getUuid() + ": primitives other than triangles not supported");
 
             if(meshPrimitive.material >= 0){
                 pMesh->setMaterial(m_vpMaterials.at(meshPrimitive.material));
@@ -470,9 +474,9 @@ void AssetGeometry::loadMeshes(const tinygltf::Model& gltfModel)
             for(const auto& attribute : meshPrimitive.attributes)
             {
                 const auto attribAccessor = gltfModel.accessors[attribute.second];
-                const auto& bufferView = gltfModel.bufferViews[attribAccessor.bufferView];
-                const auto& buffer = gltfModel.buffers[bufferView.buffer];
-                const auto dataPtr = buffer.data.data() + bufferView.byteOffset + attribAccessor.byteOffset;
+                const auto& meshBufferView = gltfModel.bufferViews[attribAccessor.bufferView];
+                const auto& meshBuffer = gltfModel.buffers[meshBufferView.buffer];
+                const auto dataPtr = meshBuffer.data.data() + meshBufferView.byteOffset + attribAccessor.byteOffset;
 
                 if(attribute.first == "POSITION")
                 {
@@ -486,14 +490,7 @@ void AssetGeometry::loadMeshes(const tinygltf::Model& gltfModel)
                     //
                     // there are 3*indicesAccessor.count of floats
                     vVertexBuffer.resize(3*attribAccessor.count);
-                    if(sizeof(Float) == sizeof(float))
-                        memcpy(vVertexBuffer.data(), dataPtr, 3*sizeof(Float)*attribAccessor.count);
-                    else
-                    {
-                        const float *ptr = reinterpret_cast<const float *>(dataPtr);
-                        for(size_t i = 0; i < 3*attribAccessor.count; i++)
-                            vVertexBuffer[i] = ptr[i];
-                    }
+                    memcpy(vVertexBuffer.data(), dataPtr, 3 * sizeof(Float) * attribAccessor.count);
                 }
                 else if(attribute.first == "NORMAL")
                 {
@@ -505,14 +502,7 @@ void AssetGeometry::loadMeshes(const tinygltf::Model& gltfModel)
 
                     // 3D vector of float
                     vNormalBuffer.resize(3*attribAccessor.count);
-                    if(sizeof(Float) == sizeof(float))
-                        memcpy(vNormalBuffer.data(), dataPtr, 3*sizeof(Float)*attribAccessor.count);
-                    else
-                    {
-                        const float *ptr = reinterpret_cast<const float *>(dataPtr);
-                        for(size_t i = 0; i < 3*attribAccessor.count; i++)
-                            vNormalBuffer[i] = ptr[i];
-                    }
+                    memcpy(vNormalBuffer.data(), dataPtr, 3 * sizeof(Float) * attribAccessor.count);
                 }
             }
         }
@@ -646,7 +636,7 @@ bool AssetGeometry::intersectRay(const Ray& ray, Intersection& rIntersection, Fl
 /// @param [in] Select which UV mapping should be applied (spherical, cylindrical, cube or random)
 void AssetGeometry::loadDisplacementMap(const std::string& mName, float m_displacementmap, const std::string& m_UVmaptype)
 {
-    if (mName != ""){
+    if (!mName.empty()){
       std::string mapName=mName;
       std::replace(mapName.begin(), mapName.end(), '/', utils::path::getFileSeparator());
         std::cout<<"Displacement Mapping on->"<<mapName<<", displacement value->"<<m_displacementmap<<", UV mapping ->"<<m_UVmaptype<<std::endl;
@@ -658,7 +648,6 @@ void AssetGeometry::loadDisplacementMap(const std::string& mName, float m_displa
             recalculateNormals(vIndexBuffer, vNormalBuffer, vVertexBuffer);
             }
     }
-    return;
 }
 
 /// @brief Apply the Bonding Volume Hierarchy (BVH) algo to generate the bounding boxes
@@ -669,5 +658,4 @@ void AssetGeometry::BVH()
     for(Mesh *pMesh : m_vpMeshes){
         pMesh->buildBVH();
     }
-    return;
 }

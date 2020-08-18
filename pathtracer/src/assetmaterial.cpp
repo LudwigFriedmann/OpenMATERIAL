@@ -23,7 +23,7 @@ TEST_CASE("Testing AssetMaterial::AssetMaterial")
 	#endif
 
 	// Check if correct material is loaded
-	AssetMaterial *pMaterial = new AssetMaterial(fileName);
+	auto *pMaterial = new AssetMaterial(fileName);
 	std::string title = "material_aluminium";
 	CHECK(title.compare(pMaterial->getTitle()) == 0);
 }
@@ -31,12 +31,11 @@ TEST_CASE("Testing AssetMaterial::AssetMaterial")
 /// Destructor
 AssetMaterial::~AssetMaterial()
 {
-    if(m_pMaterialIor != nullptr)
-        delete m_pMaterialIor;
+	delete m_pMaterialIor;
 }
 
 /// Create uninitialized object
-AssetMaterial::AssetMaterial() {}
+AssetMaterial::AssetMaterial() = default;
 
 /// @brief Load material parameters from glTF file
 ///
@@ -268,11 +267,11 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     m_bIncludeNumericalSimulation = jUserPreferences.at("include_numerical_simulation").get<bool>();
 
     string sMaterialScheme = jUserPreferences.at("material_scheme").get<string>();
-    if(sMaterialScheme.compare("surface") == 0)
+    if(sMaterialScheme == "surface")
         m_eMaterialScheme = MATERIAL_SCHEME_SURFACE;
-    else if(sMaterialScheme.compare("subsurface") == 0)
+    else if(sMaterialScheme == "subsurface")
         m_eMaterialScheme = MATERIAL_SCHEME_SUB_SURFACE;
-    else if(sMaterialScheme.compare("volume") == 0)
+    else if(sMaterialScheme == "volume")
         m_eMaterialScheme = MATERIAL_SCHEME_VOLUME;
     else
         throw GltfError(getUuid() + ": unknown material scheme");
@@ -358,14 +357,14 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     for(const json& jSensor : jApplicableSensors)
     {
         const string sSensor = jSensor.get<string>();
-        if(sSensor.compare("camera") == 0)
+        if(sSensor == "camera")
             m_stApplicableSensors.bCamera = true;
-        else if(sSensor.compare("lidar") == 0)
+        else if(sSensor == "lidar")
             m_stApplicableSensors.bLidar = true;
-        else if(sSensor.compare("radar") == 0)
+        else if(sSensor == "radar")
             m_stApplicableSensors.bRadar = true;
-	else if(sSensor.compare("ultrasound") == 0)
-            m_stApplicableSensors.bRadar = true;
+        else if(sSensor == "ultrasound")
+            m_stApplicableSensors.bUltrasound = true;
         else
             throw GltfError(getUuid() + ": unknown sensor type " + sSensor);
     }
@@ -433,4 +432,3 @@ std::ostream &operator<<(std::ostream &os, const AssetMaterial &rcmAssetMaterial
 
     return os;
 }
-

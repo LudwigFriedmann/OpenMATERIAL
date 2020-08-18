@@ -27,7 +27,7 @@ class MaterialModel
 {
 public:
     /// Create uninitialized material object
-    MaterialModel() {}
+    MaterialModel() = default;
 
     /// @brief Return vector of bounced rays
     ///
@@ -40,4 +40,3 @@ public:
 };
 
 #endif // MATERIALMODEL_H
-

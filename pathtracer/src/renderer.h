@@ -35,7 +35,7 @@ private:
     Background *m_pBackground = nullptr;
 
     /// Lock for omp
-    omp_lock_t m_ompWritelock;
+    omp_lock_t m_ompWritelock{};
 
     /// Flag indicating whether to output debugging information while rendering
     bool m_bVerbose = false;

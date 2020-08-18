@@ -13,7 +13,7 @@
 #include "transformation.h"
 
 /// Create not initialized sensor object
-Sensor::Sensor() {}
+Sensor::Sensor() = default;
 
 /// @brief Create new sensor object
 ///
@@ -28,7 +28,7 @@ Sensor::Sensor(const Vector3 &pos, const Vector3 &dir, const Vector3 &up)
     : m_pos(pos), m_dir(dir), m_up(up)
 {
     Matrix3x3 M = Matrix3x3((-m_dir.cross(m_up)),m_up,-m_dir);
-    Vector3 o = pos;
+    const Vector3& o = pos;
 
     m_transformCameraToWorld = Transformation(M,o);
 }

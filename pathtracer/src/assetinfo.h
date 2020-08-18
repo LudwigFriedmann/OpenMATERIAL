@@ -14,6 +14,7 @@
 
 #include <cstdint>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "assetbase.h"
@@ -59,51 +60,52 @@ enum e_AssetCategory {
     ASSET_CATEGORY_LICENSE_PLATE
 };
 
-/// Human readable strings of asset categories (must be in the same order as in
-/// \ref e_AssetCategory
-static const std::vector<std::string> AssetCategoryString{
-    "unknown",
-    "unlabeled",
-    "ego-vehicle",
-    "rectification-border",
-    "out-of-roi",
-    "static",
-    "dynamic",
-    "ground",
-    "road",
-    "sidewalk",
-    "parking",
-    "rail-track",
-    "building",
-    "wall",
-    "fence",
-    "guard-rail",
-    "bridge",
-    "tunnel",
-    "pole",
-    "polegroup",
-    "traffic-light",
-    "traffic-sign",
-    "vegetation",
-    "terrain",
-    "sky",
-    "person",
-    "rider",
-    "car",
-    "truck",
-    "bus",
-    "caravan",
-    "trailer",
-    "train",
-    "motorcycle",
-    "bicycle",
-    "license-plate" };
-
 /// @brief Additional information of assets
 ///
 /// This class inherits directly from the AssetBase class and extends it
 /// with additional asset properties like title, creator or description.
 class AssetInfo : public AssetBase {
+private:
+/// Human readable strings of asset categories (must be in the same order as in
+/// \ref e_AssetCategory
+    std::vector<std::string> m_assetCategoryString{
+            "unknown",
+            "unlabeled",
+            "ego-vehicle",
+            "rectification-border",
+            "out-of-roi",
+            "static",
+            "dynamic",
+            "ground",
+            "road",
+            "sidewalk",
+            "parking",
+            "rail-track",
+            "building",
+            "wall",
+            "fence",
+            "guard-rail",
+            "bridge",
+            "tunnel",
+            "pole",
+            "polegroup",
+            "traffic-light",
+            "traffic-sign",
+            "vegetation",
+            "terrain",
+            "sky",
+            "person",
+            "rider",
+            "car",
+            "truck",
+            "bus",
+            "caravan",
+            "trailer",
+            "train",
+            "motorcycle",
+            "bicycle",
+            "license-plate" };
+
 protected:
     // required properties in OpenMaterial_asset_info (id, asset_type are in
     // AssetBase)
@@ -133,25 +135,25 @@ public:
     /// Get category as string
     std::string assetCategoryToString(e_AssetCategory eCategory)
     {
-        return AssetCategoryString.at(eCategory);
+        return m_assetCategoryString.at(eCategory);
     }
 
     /// Get number of string category (case insensitive)
     e_AssetCategory stringToAssetCategory(const std::string& crsCategory)
     {
         std::string sCategoryLower = crsCategory;
-        for(std::size_t i = 0; i < sCategoryLower.size(); i++)
-            sCategoryLower[i] = std::tolower(sCategoryLower[i]);
+        for(auto elem : sCategoryLower)
+            elem = std::tolower(elem);
 
-        for(std::size_t i = 0; i < AssetCategoryString.size(); i++)
-            if(sCategoryLower.compare(AssetCategoryString[i]) == 0)
+        for(std::size_t i = 0; i < m_assetCategoryString.size(); i++)
+            if(sCategoryLower == m_assetCategoryString[i])
                 return static_cast<e_AssetCategory>(i);
 
         throw GltfError(getUuid() + ": unknown asset category " + crsCategory);
     }
 
     /// Create uninitialized object of AssetInfo
-    AssetInfo() {}
+    AssetInfo() = default;
 
     /// Create new object of AssetInfo
     ///
@@ -159,17 +161,17 @@ public:
     /// @param [in] assetType type of asset
     /// @param [in] sTitle title of asset
     /// @param [in] sCreator creator of asset
-    AssetInfo(Uuid uuid, e_AssetType assetType, std::string sTitle="", std::string sCreator="") :
+    AssetInfo(const Uuid &uuid, e_AssetType assetType, std::string sTitle="", std::string sCreator="") :
       AssetBase(uuid, assetType),
-      m_sTitle(sTitle),
-      m_sCreator(sCreator)
+      m_sTitle(std::move(sTitle)),
+      m_sCreator(std::move(sCreator))
     { }
 
     /// Create new object from json object
     ///
     /// @param [in] j json object
     /// @param [in] rcsDirectory directory of json file or "" otherwise
-    AssetInfo(const nlohmann::json& j, const std::string rcsDirectory="")
+    explicit AssetInfo(const nlohmann::json& j, const std::string &rcsDirectory="")
         : AssetBase(j, rcsDirectory)
     {
         // Parse OpenMaterial_asset_info
@@ -203,19 +205,19 @@ public:
     }
 
     /// Create new asset from filename
-    AssetInfo(const std::string& rcsFilename) : AssetInfo(readJsonFile(rcsFilename), utils::path::dirname(rcsFilename)) {}
+    explicit AssetInfo(const std::string& rcsFilename) : AssetInfo(readJsonFile(rcsFilename), utils::path::dirname(rcsFilename)) {}
 
     /// Create new asset from filename
-    AssetInfo(const char *cpFilename) : AssetInfo(std::string(cpFilename)) {}
+    explicit AssetInfo(const char *cpFilename) : AssetInfo(std::string(cpFilename)) {}
 
     /// Destructor
-    virtual ~AssetInfo() {}
+    ~AssetInfo() override = default;
 
     /// Get title of asset
-    const std::string getTitle() const { return m_sTitle; }
+    std::string getTitle() const { return m_sTitle; }
 
     /// Get creator of asset
-    const std::string getCreator() const { return m_sCreator; }
+    std::string getCreator() const { return m_sCreator; }
 
 
     // --- Setters and getters for optional parameters ---
@@ -227,26 +229,25 @@ public:
     e_AssetCategory getCategory() const { return m_eCategory; }
 
     /// Get category of asset as string
-    std::string getCategoryString() const { return AssetCategoryString.at(m_eCategory); }
+    std::string getCategoryString() const { return m_assetCategoryString.at(m_eCategory); }
 
     /// Set creation date
-    void setCreationDate(std::string sCreationDate) { m_sCreationDate = sCreationDate; }
+    void setCreationDate(std::string sCreationDate) { m_sCreationDate = std::move(sCreationDate); }
 
     /// Get creation date
     std::string getCreationDate() const { return m_sCreationDate; }
 
     /// Set description
-    void setDescription(std::string sDescription) { m_sDescription = sDescription; }
+    void setDescription(std::string sDescription) { m_sDescription = std::move(sDescription); }
 
     /// Get description
     std::string getDescription() const { return m_sDescription; }
 
     /// Set tags
-    void setTags(std::string sTags) { m_sTags = sTags; }
+    void setTags(std::string sTags) { m_sTags = std::move(sTags); }
 
     /// Get tags
     std::string getTags() const { return m_sTags; }
 };
 
 #endif // ASSETINFO_H
-

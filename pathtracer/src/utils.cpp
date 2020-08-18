@@ -89,8 +89,8 @@ namespace utils
 			// Get basename
 			std::string bname = basename(pathname);
 
-			std::size_t start = bname.find_first_not_of(".");
-			std::size_t pos = bname.find_last_of(".");
+			std::size_t start = bname.find_first_not_of('.');
+			std::size_t pos = bname.find_last_of('.');
 
 			if(start >= pos)
 				return "";
@@ -119,9 +119,9 @@ namespace utils
 		/// @brief Unit test for utils::string::strcaseequal
 		TEST_CASE("Testing utils::string::strcaseequal")
 		{
-			CHECK(strcaseequal("", "") == true);
-			CHECK(strcaseequal("abc", "aBc") == true);
-			CHECK(strcaseequal("abc", "adc") == false);
+			CHECK(strcaseequal("", ""));
+			CHECK(strcaseequal("abc", "aBc"));
+			CHECK(!strcaseequal("abc", "adc"));
 		}
 
 		/// @brief Unit test for utils::string::lstrip
@@ -244,16 +244,16 @@ namespace utils
 		/// @param [in] delimiter delimiter according which to split the string
 		/// @param [in] maxsplit Maximum number of splits (-1 means no limit)
 		/// @retval substrings vector of substrings
-		std::vector<std::string> split(const std::string &s, const std::string delimiter, int maxsplit)
+		std::vector<std::string> split(const std::string &s, const std::string& delimiter, int maxsplit)
 		{
 			std::vector<std::string> output;
 
-			if(delimiter == "")
+			if(delimiter.empty())
 				return output;
 
 			size_t pos_start = 0;
 
-			for(int i = 0; 1; i++)
+			for(int i = 0; true; i++)
 			{
 				size_t pos_stop;
 
@@ -275,4 +275,3 @@ namespace utils
 		}
 	}
 }
-

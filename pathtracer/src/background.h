@@ -38,11 +38,10 @@ class Background
 {
 public:
     /// Create new background object
-    Background() {}
+    Background() = default;
 
     /// Modify the incidentRay.
     virtual void hit(Ray& incidentRay) = 0;
 };
 
 #endif // BACKGROUND_H
-

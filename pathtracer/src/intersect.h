@@ -65,7 +65,7 @@ public:
     /// @brief Create new intersection object
     ///
     /// @param [in] crIncidentRay incident ray in world coordinates
-    Intersection(const Ray& crIncidentRay)
+    explicit Intersection(const Ray& crIncidentRay)
     {
         m_vRayOrigin = crIncidentRay.getOrigin(); // world coordinates
         m_vRayDirection = crIncidentRay.getDirection(); // world coordinates
@@ -116,7 +116,7 @@ public:
     /// or otherwise flat normal ("flat shading").
     ///
     /// @retval v surface normal of intersection point
-    const Vector3 getNormal() const
+    Vector3 getNormal() const
     {
         const Vector3 vNormal = m_pMesh->getNormal(m_uTriangleIndex, m_u, m_v);
         return m_transformation.transformNormalToWorld(vNormal);
@@ -159,7 +159,7 @@ public:
     }
 
     /// Get intersection point
-    const Vector3 getIntersectionPoint() const
+    Vector3 getIntersectionPoint() const
     {
         return m_vRayOrigin + m_t*m_vRayDirection;
     }
@@ -182,7 +182,7 @@ public:
     unsigned int getNodeNumber() const { return m_uNodeNumber; }
 
     /// Get direction of incident ray
-    const Vector3 getDirection() const
+    Vector3 getDirection() const
     {
         return m_vRayDirection;
     }

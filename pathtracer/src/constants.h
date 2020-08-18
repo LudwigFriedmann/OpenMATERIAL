@@ -45,4 +45,3 @@ namespace PhysicalConstants
 }
 
 #endif // CONSTANTS_H
-

@@ -60,12 +60,12 @@ private:
 public:
     static tinygltf::Model loadGltfModel(const std::string& crsFilename);
 
-    AssetGeometry(const tinygltf::Model& gltfModel, const std::string& crsDirectory="");
+    explicit AssetGeometry(const tinygltf::Model& gltfModel, const std::string& crsDirectory="");
 
     /// Create asset geometry specifying the tinygltf model
-    AssetGeometry(const std::string& crsFilename);
+    explicit AssetGeometry(const std::string& crsFilename);
 
-    ~AssetGeometry();
+    ~AssetGeometry() override;
 
     BBox getBBox() const;
     /// It returns the nodes which are loaded in the scene

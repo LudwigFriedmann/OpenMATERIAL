@@ -20,4 +20,3 @@ typedef float Float;
 typedef std::complex<Float> Complex;
 
 #endif // DEFINES_H
-

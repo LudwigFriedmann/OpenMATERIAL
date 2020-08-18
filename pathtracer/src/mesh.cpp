@@ -8,8 +8,6 @@
 /// @date      2019-09-25
 /// @brief     Support for meshes
 
-#include <stdlib.h> // qsort_r
-
 #include "defines.h"
 #include "doctest.h"
 #include "mesh.h"
@@ -40,7 +38,7 @@ TEST_CASE("Testing Mesh::Mesh")
 	{
 		Mesh *pMesh = new Mesh(gltfMesh.name);
 		std::string meshName = pMesh->getName();
-		if (meshName.compare(name) == 0)
+		if (meshName == name)
 			matchingName = true;
 	}
 	CHECK(matchingName);
@@ -58,12 +56,12 @@ typedef struct {
 
 static int compareFunction(const void *a_, const void *b_, void *args)
 {
-    sort_param_t *params = static_cast<sort_param_t *>(args);
+    auto *params = static_cast<sort_param_t *>(args);
     const Float *pVertexBuffer = params->pVertexBuffer;
     const int index = params->index;
 
-    const unsigned int *a = static_cast<const unsigned int*>(a_);
-    const unsigned int *b = static_cast<const unsigned int*>(b_);
+    const auto *a = static_cast<const unsigned int*>(a_);
+    const auto *b = static_cast<const unsigned int*>(b_);
 
     Float x = (pVertexBuffer[3*a[0]+index]+pVertexBuffer[3*a[1]+index]+pVertexBuffer[3*a[1]+index])/3;
     Float y = (pVertexBuffer[3*b[0]+index]+pVertexBuffer[3*b[1]+index]+pVertexBuffer[3*b[1]+index])/3;
@@ -138,7 +136,7 @@ void Mesh::buildBVH()
         const Vector3 vMin = Vector3(xmin,ymin,zmin);
         const Vector3 vMax = Vector3(xmax,ymax,zmax);
 
-        m_vBbox.push_back(BBox(vMin,vMax));
+        m_vBbox.emplace_back(vMin,vMax);
 
         sort_param_t args;
         args.pVertexBuffer = m_VertexBuffer.data();
@@ -241,7 +239,7 @@ void Mesh::getVerticesOfTriangle(std::size_t uTriangleIndex, Vector3& V0, Vector
 /// @retval false if vertex normals are not present
 bool Mesh::getNormalsOfTriangle(std::size_t uTriangleIndex, Vector3& N0, Vector3& N1, Vector3& N2) const
 {
-    if(!m_NormalBuffer.size())
+    if(m_NormalBuffer.empty())
         // We have no information on normals
         return false;
 
@@ -273,7 +271,7 @@ bool Mesh::getNormalsOfTriangle(std::size_t uTriangleIndex, Vector3& N0, Vector3
 /// @param [out] xv normalized tangent vector, xv = d/dv x(u,v) / |d/dv x(u,v)|
 /// @param [in] trafo transformation
 /// @retval Q curvature tensor
-Matrix2x2 Mesh::getCurvatureTensor(std::size_t uTriangleIndex, Float u, Float v, Vector3& xu, Vector3& xv, Transformation trafo) const
+Matrix2x2 Mesh::getCurvatureTensor(std::size_t uTriangleIndex, Float u, Float v, Vector3& xu, Vector3& xv, const Transformation &trafo) const
 {
     // Curvature matrix
     Matrix2x2 Q;
@@ -333,7 +331,7 @@ Matrix2x2 Mesh::getCurvatureTensor(std::size_t uTriangleIndex, Float u, Float v,
 bool Mesh::intersectRay(const Ray& ray, Intersection& rIntersection, Float tmin, Float& tmax, std::size_t uLeaf) const
 {
     int hit = false;
-    if (m_vBbox.size()==0) return false; //No Boxes, no intersection.
+    if (m_vBbox.empty()) return false; //No Boxes, no intersection.
     if(!m_vBbox[uLeaf].intersectRay(ray, tmin, tmax))
         return false;
 

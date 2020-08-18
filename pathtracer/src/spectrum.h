@@ -34,7 +34,7 @@ class SpectrumRGB
 {
 private:
     /// RGB light spectrum (red, green, blue)
-    Float m_pfRGB[3];
+    Float m_pfRGB[3]{};
 
 public:
     /// @brief Create a new SpectrumRGB object
@@ -83,9 +83,8 @@ public:
     /// Overload [] operator and return wavelength,value pair
     std::pair<Float,Float&> operator[](int i)
     {
-        return std::pair<Float,Float&>(pfRGBWavelengths[i], m_pfRGB[i]);
+        return {pfRGBWavelengths[i], m_pfRGB[i]};
     }
 };
 
 #endif // SPECTRUM_H
-

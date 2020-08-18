@@ -26,13 +26,13 @@ TEST_CASE("Testing BackgroundHDR::BackgroundHDR")
 	
 	// Check for errors thrown if hdr isn't loaded
 	BackgroundHDR background(fileName); 
-	CHECK(0 == 0); 
+	CHECK(true);
 }
 
 /// @brief Create background using HDR file
 ///
 /// @param [in] rsHdr path to HDR file
-BackgroundHDR::BackgroundHDR(const std::string &rsHdr)
+BackgroundHDR::BackgroundHDR(const std::string &rsHdr) : m_iXres(0), m_iYres(0)
 {
     int n;
     m_pfHdr = stbi_loadf(rsHdr.c_str(), &m_iXres, &m_iYres, &n, 0);
@@ -54,8 +54,8 @@ void BackgroundHDR::hit(Ray& incidentRay)
     m_M.apply(incidentRay.getDirection()).toSpherical(r,theta,phi);
 
     // Convert to pixel values
-    const int x = std::round((phi+M_PI)/(2*M_PI)*(m_iXres-1));
-    const int y = std::round((theta)/M_PI*(m_iYres-1));
+    const int x = static_cast<int>(std::round((phi+M_PI)/(2*M_PI)*(m_iXres-1)));
+    const int y = static_cast<int>(std::round((theta)/M_PI*(m_iYres-1)));
 
     assert(x >= 0 && x < m_iXres);
     assert(y >= 0 && y < m_iYres);
@@ -67,4 +67,3 @@ void BackgroundHDR::hit(Ray& incidentRay)
     SpectrumRGB *pSpectrum = incidentRay.getDataRGBUnpolarized();
     pSpectrum->multiply(fRed, fGreen, fBlue);
 }
-

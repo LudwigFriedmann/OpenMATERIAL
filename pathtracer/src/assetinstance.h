@@ -57,7 +57,7 @@ public:
     }
 
     /// Get unique id of instance
-    const Uuid getUuid() const { return m_uuid; }
+    Uuid getUuid() const { return m_uuid; }
 
     /// @brief Intersect ray with this instance
     ///
@@ -91,4 +91,3 @@ public:
 };
 
 #endif // ASSETINSTANCE_H
-

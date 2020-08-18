@@ -31,12 +31,12 @@ public:
     {}
 
     /// Create new vector (v[0],v[1],v[2])
-    Vector(const T v[3])
+    explicit Vector(const T v[3])
         : m_v{ v[0], v[1], v[2] }
     {}
 
     /// Create new vector from std::vector<T>
-    Vector(const std::vector<T>& v)
+    explicit Vector(const std::vector<T>& v)
         : m_v{ v.at(0), v.at(1), v.at(2) }
     {}
 
@@ -46,7 +46,7 @@ public:
     {}
 
     /// Create a zero vector
-    Vector(void) {}
+    Vector() = default;
 
     /// Get matrix element v[m]
     T get(int m) const { return m_v[m]; }
@@ -236,4 +236,3 @@ public:
 typedef Vector<Float> Vector3;
 
 #endif // VECTOR_H
-

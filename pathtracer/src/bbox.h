@@ -63,7 +63,7 @@ public:
     /// vertex.
     ///
     /// @param [in] rvVertexBuffer reference to vertex buffer
-    BBox(const std::vector<Float>& rvVertexBuffer)
+    explicit BBox(const std::vector<Float>& rvVertexBuffer)
     {
         Float xmin = fInfinity, xmax=-fInfinity;
         Float ymin = fInfinity, ymax=-fInfinity;
@@ -156,23 +156,14 @@ public:
         if(m_pp[1][0] < bbox2.m_pp[0][0])
         {
             // if we are here, then x^(1)_max < x^(2)_min
-
-            if(m_pp[1][1] < bbox2.m_pp[0][1] && m_pp[1][2] < bbox2.m_pp[0][2])
-                return true;
-            else
-                return false;
+            return m_pp[1][1] < bbox2.m_pp[0][1] && m_pp[1][2] < bbox2.m_pp[0][2];
         }
         else
         {
             // if we are here, then x^(1)_max > x^(2)_min
-
-            if(m_pp[1][1] > bbox2.m_pp[0][1] && m_pp[1][2] > bbox2.m_pp[0][2])
-                return true;
-            else
-                return false;
+            return m_pp[1][1] > bbox2.m_pp[0][1] && m_pp[1][2] > bbox2.m_pp[0][2];
         }
     }
 };
 
 #endif // BBOX_H
-

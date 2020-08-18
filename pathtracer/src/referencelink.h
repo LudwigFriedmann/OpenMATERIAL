@@ -24,7 +24,7 @@ public:
     static bool hasReferenceLink(const nlohmann::json& j);
 
     /// Constructor for the class
-    ReferenceLink(const nlohmann::json& j);
+    explicit ReferenceLink(const nlohmann::json& j);
 
     std::string getTitle() const;
     std::string getUri() const;
@@ -38,4 +38,3 @@ private:
 };
 
 #endif // REFERENCELINK_H
-

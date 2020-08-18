@@ -13,6 +13,7 @@
 
 #include <exception>
 #include <string>
+#include <utility>
 
 /// @brief Base class for all exceptions. This file defines common exceptions. The defined exceptions are inspired by
 ///  the Python exceptions. At the moment, following exceptions are defined:
@@ -36,59 +37,59 @@ struct BaseException : public std::exception
     std::string m_what;
 
     /// Create a new BaseException exception
-    BaseException(std::string what = "BaseException") { m_what = what; }
+    explicit BaseException(std::string what = "BaseException") { m_what = std::move(what); }
 
     /// Return string description of what went wrong
-	const char *what() const throw () { return m_what.c_str(); }
+	const char *what() const noexcept override { return m_what.c_str(); }
 };
 
 /// The NotImplementedError exception is raised when a method or function has not been implemented yet.
 struct NotImplementedError : public BaseException
 {
     /// Create NotImplementedError exception
-    NotImplementedError(std::string what="NotImplementedError") : BaseException(what) {}
+    explicit NotImplementedError(std::string what="NotImplementedError") : BaseException(std::move(what)) {}
 };
 
 /// The InvalidFormatError exception is raised when a file (for example a glTF file) was parsed correctly, but the content is in a wrong format.
 struct InvalidFormatError : public BaseException
 {
     /// Create InvalidFormatError exception
-    InvalidFormatError(std::string what="InvalidFormatError") : BaseException(what) {}
+    explicit InvalidFormatError(std::string what="InvalidFormatError") : BaseException(std::move(what)) {}
 };
 
 /// The ParsingError exception is raised when a file could not be parsed.
 struct ParsingError : public BaseException
 {
     /// Create ParsingError exception
-    ParsingError(std::string what="ParsingError") : BaseException(what) {}
+    explicit ParsingError(std::string what="ParsingError") : BaseException(std::move(what)) {}
 };
 
 /// The RuntimeError exception is raised when an error is detected that doesn't fall in any other category.
 struct RuntimeError : public BaseException
 {
     /// Create new ValueError exception
-    RuntimeError(std::string what="RuntimeError") : BaseException(what) {}
+    explicit RuntimeError(std::string what="RuntimeError") : BaseException(std::move(what)) {}
 };
 
 /// The GltfError exception is raised when parsing an invalid gltf file.
 struct GltfError : public BaseException
 {
     /// Create new ValueError exception
-    GltfError(std::string what="GltfError") : BaseException(what) {}
+    explicit GltfError(std::string what="GltfError") : BaseException(std::move(what)) {}
 };
 
 /// The ValueError exception is raised when a method or function receives an argument with an inappropriate value.
 struct ValueError : public BaseException
 {
     /// Create new ValueError exception
-    ValueError(std::string what="ValueError") : BaseException(what) {}
+    explicit ValueError(std::string what="ValueError") : BaseException(std::move(what)) {}
 };
 
 /// The LookupError exception is raised when a value could not be found.
 struct LookupError : public BaseException
 {
     /// Create new LookupError exception
-    LookupError(std::string what="LookupError") : BaseException(what) {}
+    explicit LookupError(std::string what="LookupError") : BaseException(std::move(what)) {}
 };
 
 
@@ -96,15 +97,14 @@ struct LookupError : public BaseException
 struct OSError : public BaseException
 {
     /// Create new OSError exception
-    OSError(std::string what="OSError") : BaseException(what) {}
+    explicit OSError(std::string what="OSError") : BaseException(std::move(what)) {}
 };
 
 /// The FileNotFoundError exception is raised when a file or directory is requested that doesn't exist.
 struct FileNotFoundError : public OSError
 {
     /// Create new FileNotFoundError exception
-    FileNotFoundError(std::string what="FileNotFoundError") : OSError(what) {}
+    explicit FileNotFoundError(std::string what="FileNotFoundError") : OSError(std::move(what)) {}
 };
 
 #endif // EXCEPTION_H
-

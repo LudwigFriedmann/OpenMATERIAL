@@ -13,7 +13,7 @@
 
 #include <string>
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "stb_image.h"
 
 #include "background.h"
@@ -39,11 +39,10 @@ private:
     int m_iYres;
 
 public:
-    BackgroundHDR(const std::string &rsHdr);
+    explicit BackgroundHDR(const std::string &rsHdr);
     ~BackgroundHDR();
 
-    virtual void hit(Ray& incidentRay) override;
+    void hit(Ray& incidentRay) override;
 };
 
 #endif // BACKGROUND_HDR_H
-

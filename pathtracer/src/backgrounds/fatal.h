@@ -21,10 +21,10 @@ class BackgroundFatal : public Background
 {
 public:
     /// Create new background object
-    BackgroundFatal() {}
+    BackgroundFatal() = default;
 
     /// Throw a RuntimeError
-    virtual void hit(Ray& incidentRay) override
+    void hit(Ray& incidentRay) override
     {
         (void)incidentRay;
         throw RuntimeError("Hit background for ray id " + std::to_string(incidentRay.getId()));

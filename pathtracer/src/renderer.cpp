@@ -36,7 +36,7 @@ TEST_CASE("Testing AssetInstance::AssetInstance")
 	AssetInstance assetInstance(&assetGeometry, transformation);
 	Ray ray(0, { 0, 1, -4 }, { 0, 0, 1 });
 	Intersection intersection(ray);
-	CHECK(assetInstance.intersectRay(ray, intersection) == true);
+	CHECK(assetInstance.intersectRay(ray, intersection));
 }
 
 /// @brief Create a new render object
@@ -108,7 +108,7 @@ void Renderer::trace(Sensor& rSensor, Ray& incidentRay)
     else
     {
         SpectrumRGB *pSpectrum = incidentRay.getDataRGBUnpolarized();
-        totalradiance=((*pSpectrum)[0].second+(*pSpectrum)[1].second+(*pSpectrum)[2].second)/3.0;
+        totalradiance=static_cast<float>((*pSpectrum)[0].second+(*pSpectrum)[1].second+(*pSpectrum)[2].second)/3.0f;
     }
     if(hit and incidentRay.getNumberOfBounces()<m_thbounces and totalradiance>m_minradiance)
     {
@@ -203,7 +203,7 @@ void Renderer::render(Sensor& rSensor)
         if(uElems == 0)
             break;
 
-        #pragma omp parallel for
+        #pragma omp parallel for default(none) shared (uElems,rSensor,primaryRays)
         for(int i = 0; i < (int)uElems; i++)trace(rSensor, primaryRays[i]);
 		
         // call deletePrimaryRays for cleanup

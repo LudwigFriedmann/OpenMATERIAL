@@ -45,37 +45,37 @@ int main(int argc, const char *argv[])
     static const char *const usage[] = {
         "pathtracer [options] [[--] args]",
         "pathtracer [options]",
-        NULL,
+        nullptr,
     };
 
     struct argparse_option options[] = {
         OPT_HELP(),
 
         OPT_GROUP("Required arguments"),
-        OPT_STRING('i', "input", &sGltfFile, "path to glTF file", NULL, 0, 0),
+        OPT_STRING('i', "input", &sGltfFile, "path to glTF file", nullptr, 0, 0),
 
         OPT_GROUP("Optional arguments"),
-        OPT_STRING('H', "hdr", &sHdrFile, "path to HDR file", NULL, 0, 0),
-        OPT_FLOAT('a', "alpha", &fAlpha, "alpha value for tone mapping (default: 0.1)", NULL, 0, 0),
-        OPT_INTEGER('r', "resolution", &iResolution, "resolution (default: 800)", NULL, 0, 0),
-        OPT_STRING('n', "axis", &sAxisRotation, "axis of rotation (default: 0,1,0)", NULL, 0, 0),
-        OPT_FLOAT('p', "phi", &fPhiDeg, "rotation around axis in degrees (default: 0)", NULL, 0, 0),
+        OPT_STRING('H', "hdr", &sHdrFile, "path to HDR file", nullptr, 0, 0),
+        OPT_FLOAT('a', "alpha", &fAlpha, "alpha value for tone mapping (default: 0.1)", nullptr, 0, 0),
+        OPT_INTEGER('r', "resolution", &iResolution, "resolution (default: 800)", nullptr, 0, 0),
+        OPT_STRING('n', "axis", &sAxisRotation, "axis of rotation (default: 0,1,0)", nullptr, 0, 0),
+        OPT_FLOAT('p', "phi", &fPhiDeg, "rotation around axis in degrees (default: 0)", nullptr, 0, 0),
         OPT_STRING('e', "Euler angles", &sEulerRotation, "Euler angles of rotation in a right-handed system (z axis pointing towards the user). Please type the three angles (in Degrees) separated by a comma (example: 45,0,45). First value is the rotation around the z-axis (Roll->bank angle), second around the y-axis (Yaw->bearing) and third around x-axis (Pitch->elevation)", NULL, 0, 0),
-        OPT_FLOAT('s', "scaling factor", &fScaling, "scaling factor, works only in combination with -e (default: 1)", NULL, 0, 0),
-        OPT_STRING('o', "output", &sOutputFile, "output file", NULL, 0, 0),
-        OPT_BOOLEAN('v', "verbose", &iVerbose, "print debugging output", NULL, 0, 0),
-        OPT_BOOLEAN('t', "test", &iTesting, "run unit tests and exit", NULL, 0, 0),
-        OPT_BOOLEAN('R', "raycaster", &iRaycaster, "calls raycaster (no bounces, no background)", NULL, 0, 0),
-        OPT_BOOLEAN('c', "automaticcentering", &iCentering, "automatic scene centering", NULL, 0, 0),
-        OPT_STRING('d', "displacementmap", &sDispMap, "input displacement map path", NULL, 0, 0),
-        OPT_FLOAT('m', "m_displacementmap", &fDisplacementmap, "input displacement map overall magnification (default is 0.1)", NULL, 0, 0),
-        OPT_STRING('U', "m_UVmaptype", &sUVmaptype, "input displacement UV mapping type (random,sphere,cube,cylinder). (Default is random)", NULL, 0, 0),
+        OPT_FLOAT('s', "scaling factor", &fScaling, "scaling factor, works only in combination with -e (default: 1)", nullptr, 0, 0),
+        OPT_STRING('o', "output", &sOutputFile, "output file", nullptr, 0, 0),
+        OPT_BOOLEAN('v', "verbose", &iVerbose, "print debugging output", nullptr, 0, 0),
+        OPT_BOOLEAN('t', "test", &iTesting, "run unit tests and exit", nullptr, 0, 0),
+        OPT_BOOLEAN('R', "raycaster", &iRaycaster, "calls raycaster (no bounces, no background)", nullptr, 0, 0),
+        OPT_BOOLEAN('c', "automaticcentering", &iCentering, "automatic scene centering", nullptr, 0, 0),
+        OPT_STRING('d', "displacementmap", &sDispMap, "input displacement map path", nullptr, 0, 0),
+        OPT_FLOAT('m', "m_displacementmap", &fDisplacementmap, "input displacement map overall magnification (default is 0.1)", nullptr, 0, 0),
+        OPT_STRING('U', "m_UVmaptype", &sUVmaptype, "input displacement UV mapping type (random,sphere,cube,cylinder). (Default is random)", nullptr, 0, 0),
         OPT_END(),
     };
 
-    struct argparse argparse;
+    struct argparse argparse{};
     argparse_init(&argparse, options, usage, 0);
-    argparse_describe(&argparse, "\nRender a glTF object with or without HDR background", NULL);
+    argparse_describe(&argparse, "\nRender a glTF object with or without HDR background", nullptr);
     argc = argparse_parse(&argparse, argc, argv);
 
     // Run unit tests
@@ -119,7 +119,7 @@ int main(int argc, const char *argv[])
 
         try
         {
-            float x = std::stod(junks.at(0));
+            float x = std::stof(junks.at(0));
             float y = std::stof(junks.at(1));
             float z = std::stof(junks.at(2));
             axisRotation = Vector3(x,y,z).normalize();
@@ -136,12 +136,10 @@ int main(int argc, const char *argv[])
         auto junks = utils::string::split(sEulerRotation, ",");
         try
         {
-        float A1_Rad = -std::stod(junks.at(0))*M_PI/180; //z
-	    float A2_Rad = std::stod(junks.at(1))*M_PI/180; //X
-        float A3_Rad = -std::stod(junks.at(2))*M_PI/180; //Y
-	    float yaw = A1_Rad;
-            float pitch = A2_Rad;
-            float roll = A3_Rad;
+            double yaw = -std::stod(junks.at(0))*M_PI/180; //z
+            double pitch = std::stod(junks.at(1))*M_PI/180; //X
+            double roll = -std::stod(junks.at(2))*M_PI/180; //Y
+
             // Abbreviations for the various angular functions
             double cy = cos(yaw * 0.5);
             double sy = sin(yaw * 0.5);
@@ -151,10 +149,10 @@ int main(int argc, const char *argv[])
             double sr = sin(roll * 0.5);
 
             /// Create a quaternion q = w + x*i + y*j + z*k
-            float w = cy * cp * cr + sy * sp * sr;
-            float x = cy * cp * sr - sy * sp * cr;
-            float y = sy * cp * sr + cy * sp * cr;
-            float z = sy * cp * cr - cy * sp * sr;
+            auto w = static_cast<float>(cy * cp * cr + sy * sp * sr);
+            auto x = static_cast<float>(cy * cp * sr - sy * sp * cr);
+            auto y = static_cast<float>(sy * cp * sr + cy * sp * cr);
+            auto z = static_cast<float>(sy * cp * cr - cy * sp * sr);
             Quaternion swap(x, y, z, w);
             q=swap;
         }
@@ -181,7 +179,7 @@ int main(int argc, const char *argv[])
     cout << "Loaded " << assetGeometry.getTitle() << endl;
 
     // Create instance with rotation of fPhi around axisRotation
-    float fPhi = fPhiDeg*M_PI/180;
+    double fPhi = fPhiDeg*M_PI/180.0;
 
 	// Create instance with Euler's rotation and traslation
     Vector3 S(fScaling,fScaling,fScaling);
@@ -246,8 +244,10 @@ int main(int argc, const char *argv[])
 	// Save output
     cout << "Saving image to " << sOutputFile << endl;
     ToneMapping toneMapping(fAlpha);
-    if (iRaycaster) camera.saveRaycaster(sOutputFile);
-        else camera.save(sOutputFile, toneMapping);
+    if (iRaycaster)
+        camera.saveRaycaster(sOutputFile);
+    else
+        camera.save(sOutputFile, toneMapping);
 
     return 0;
 }

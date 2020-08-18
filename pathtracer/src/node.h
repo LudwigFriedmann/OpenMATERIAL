@@ -67,10 +67,10 @@ private:
                 m_pMesh->getVerticesOfTriangle(uTriangleNumber, V[0], V[1], V[2]);
 
                 // For each vertex of the triangle...
-                for(int i = 0; i < 3; i++)
+                for(const auto &i : V)
                 {
                     // ...transform to world coordinates...
-                    Vector3 v = transformation.transformPointToWorld(V[i]);
+                    Vector3 v = transformation.transformPointToWorld(i);
 
                     // ...and update bounding box
                     for(int j = 0; j < 3; j++)
@@ -89,7 +89,7 @@ private:
 
 public:
     /// Create new node with node number uNodeNumber and name given by crsName
-    Node(std::size_t uNodeNumber, const std::string& crsName="")
+    explicit Node(std::size_t uNodeNumber, const std::string& crsName="")
     {
         m_uNodeNumber = uNodeNumber;
         m_sName = crsName;

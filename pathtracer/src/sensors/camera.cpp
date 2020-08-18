@@ -62,8 +62,7 @@ Camera::Camera(const Vector3& pos, const Vector3& dir, const Vector3& up, unsign
 Camera::~Camera()
 {
     // free image buffer
-    if(m_pfBuffer)
-        delete[] m_pfBuffer;
+    delete[] m_pfBuffer;
 }
 
 /// @brief Return if sensor is compatible with material model
@@ -72,10 +71,7 @@ Camera::~Camera()
 /// @retval false otherwise
 bool Camera::isCompatible(const MaterialModel& crMaterialModel)
 {
-    if(typeid(crMaterialModel) == typeid(MaterialModelSpecular))
-        return true;
-    else
-        return false;
+    return typeid(crMaterialModel) == typeid(MaterialModelSpecular);
 }
 
 /// @brief Set the focal length of the camera
@@ -260,10 +256,10 @@ std::vector<Ray> Camera::getPrimaryRays()
     const Vector3 origin(-width/2,-height/2,m_fFocalLength);
 
     // Step in x direction
-    const Vector3 dw = right_c*width*(1.f/(m_uWres-1));
+    const Vector3 dw = right_c*width*(1.f/ static_cast<float>(m_uWres-1));
 
     // Step in y direction
-    const Vector3 dh = up_c*height*(1.f/(m_uHres-1));
+    const Vector3 dh = up_c*height*(1.f/static_cast<float>(m_uHres-1));
 
     // Reserve space in the vector
     primaryRays.reserve(m_uWres*m_uHres*static_cast<size_t>(m_iSamples));
@@ -294,8 +290,8 @@ std::vector<Ray> Camera::getPrimaryRays()
                 else
                 {
                     // Random numbers between [0,1]
-                    Float rx = Random::uniformRealDistribution<Float>(0,1);
-                    Float ry = Random::uniformRealDistribution<Float>(0,1);
+                    auto rx = Random::uniformRealDistribution<Float>(0,1);
+                    auto ry = Random::uniformRealDistribution<Float>(0,1);
                     Vector3 r(rx,ry,0.0);
 
                     // Sample point on lens
@@ -373,7 +369,7 @@ void Camera::save(const std::string &rsFilename,  const ToneMapping &toneMapping
 
     for(unsigned int i = 0; i < 3*m_uWres*m_uHres; i++)
     {
-        const Float v = m_pfBuffer[i]/m_iSamples;
+        const Float v = m_pfBuffer[i]/static_cast<float>(m_iSamples);
         if(i && i % (3*m_uWres) == 0)
             file << endl;
 

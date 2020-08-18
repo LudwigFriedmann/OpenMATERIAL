@@ -41,7 +41,7 @@ TEST_CASE("Testing Referencelink::Referencelink")
 	{
 		const ReferenceLink referenceLink = ReferenceLink(jMaterial);
 		std::string referenceTitle = referenceLink.getTitle();
-		if (referenceTitle.compare(title) == 0)
+		if (referenceTitle == title)
 			matchingTitle = true;
 	}
 	CHECK(matchingTitle);
@@ -62,10 +62,7 @@ bool ReferenceLink::hasReferenceLink(const json& j)
         return false;
 
     const json jExtensions = j.at("extensions");
-    if(jExtensions.find("OpenMaterial_reference_link") == jExtensions.end())
-        return false;
-
-    return true;
+    return !(jExtensions.find("OpenMaterial_reference_link") == jExtensions.end());
 }
 
 /// Create ReferenceLink object from json object
@@ -106,4 +103,3 @@ std::string ReferenceLink::getUri() const
 {
     return m_sUri;
 }
-

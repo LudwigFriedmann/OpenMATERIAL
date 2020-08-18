@@ -21,9 +21,7 @@
 /// @brief Create new specular material model
 ///
 /// This material model only support specular reflection, ignoring polarization.
-MaterialModelSpecular::MaterialModelSpecular()
-{
-}
+MaterialModelSpecular::MaterialModelSpecular() = default;
 
 /// @brief Create bounced rays
 ///
@@ -72,21 +70,27 @@ std::vector<Ray> MaterialModelSpecular::bounce(const Ray& incidentRay, const Int
         fCosIncidenceAngle = -vIncident.dot(vNormalFlat);
         if(fCosIncidenceAngle < 0)
         {
-	   if (m_verbose_mat) {
+	        if (m_verbose_mat)
+	        {
                 std::cout<<std::endl;
                 std::cout<<"-----------------------------------"<<std::endl;
                 std::cerr << "fCosIncidenceAngle is negative. Correction for Phong-Shading effect or flipped Normal is enabled. Please debug. First value is:" << fCosIncidenceAngle << std::endl;
                 std::cout<<"-----------------------------------"<<std::endl;
                 this->disableVerboseMat();
             }
-            if (m_applyFlippedNormalCorrection){
+            if (m_applyFlippedNormalCorrection)
+            {
                 vNormal=-vNormal;
             }
-            else{
-            return {};
+            else
+            {
+                return {};
             }
         }
-      else{vNormal=-vNormal;}
+        else
+        {
+            vNormal=-vNormal;
+        }
     }
 
     // Reflected vector
@@ -127,4 +131,3 @@ std::vector<Ray> MaterialModelSpecular::bounce(const Ray& incidentRay, const Int
 
     return bouncedRays;
 }
-
