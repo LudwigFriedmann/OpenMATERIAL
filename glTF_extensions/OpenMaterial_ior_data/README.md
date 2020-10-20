@@ -34,7 +34,7 @@ Wildcard representing the temperature (numeric value) in [K] at which the IOR va
   - **`n`** [string][**required**]
   Real part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
   - **`k`** [string][**required**]
-  Real part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
+  Imaginary part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
 
 Example
 -------
