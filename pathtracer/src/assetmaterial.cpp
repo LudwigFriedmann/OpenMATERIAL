@@ -376,8 +376,8 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     m_fElectricalResistivity = jPhysicalProperties.at("electrical_resistivity").get<Float>();
 
     //Ultrasound
-    m_fAcousticImpedance = jPhysicalProperties.at("acoustic impedance").get<Float>();
-    m_fShearVelocity = jPhysicalProperties.at("Shear velocity").get<Float>();
+    m_fAcousticImpedance = jPhysicalProperties.at("acoustic_impedance").get<Float>();
+    m_fShearVelocity = jPhysicalProperties.at("shear_velocity").get<Float>();
 }
 
 /// Overload << operator

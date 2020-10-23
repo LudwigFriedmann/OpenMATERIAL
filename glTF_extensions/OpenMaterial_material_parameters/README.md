@@ -142,10 +142,10 @@ Intrinsic physical material properties that do not change when material is appli
    - **`electrical_resistivity`** [number][**required**]
    This value quantifies how the material resists or conducts electric current. The SI unit of electrical resistivity is 
    ohm-meter (Ω⋅m). This value is required for radar simulation.
-   - **`acoustic impedance`** [number][**required**]
+   - **`acoustic_impedance`** [number][**required**]
    Acoustic impedance describes how much resistance an ultrasound beam encounters as it passes through a tissue
    (in kg/(m^2s)). This value is required for ultrasound simulation.
-   - **`Shear velocity`** [number][**required**]
+   - **`shear_velocity`** [number][**required**]
    Shear velocity is used to describe shear-related motion in moving fluids. This value is required for ultrasound
    simulation.
    
@@ -305,8 +305,8 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
 						"relative_permittivity": 0.0,
 						"relative_permeability " : 0.0,
 						"electrical_resistivity": 0.0,
-                        "acoustic impedance": 0.0,
-                        "shear velocity": 0.0
+                        "acoustic_impedance": 0.0,
+                        "shear_velocity": 0.0
 						],
                     }
                 }

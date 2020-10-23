@@ -203,11 +203,11 @@
                     "description": "Ohm-meter (Ω⋅m)",
                     "type": "number"
                 },
-                "acoustic impedance": {
+                "acoustic_impedance": {
                     "description": "Resistance an ultrasound beam encounters as it passes through a tissue",
                     "type": "number"
                 },
-                "Shear velocity": {
+                "shear_velocity": {
                     "description": " Shear-related motion in moving fluids",
                     "type": "number"
                 }, 
