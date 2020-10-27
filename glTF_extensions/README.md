@@ -6,6 +6,7 @@ This directory contains the following proposals for extensions to the [Khronos G
 | Filepath                                                                | Description
 |:------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|
 | [`OpenMaterial_asset_info`](OpenMaterial_asset_info/)                   | Proposed extension defining properties for assets                                                    |
+| [`OpenMaterial_emissivity_data`](OpenMaterial_emissivity_data/)         | Proposed extension providing emissivity coefficient values for a given temperature                   |
 | [`OpenMaterial_ior_data`](OpenMaterial_ior_data/)                       | Proposed extension providing index of refraction values for a given temperature and wavelength range |
 | [`OpenMaterial_material_parameters`](OpenMaterial_material_parameters/) | Proposed extension providing a physically correct description of materials                           |
 | [`OpenMaterial_reference_link`](OpenMaterial_reference_link/)           | Proposed extension enabling referencing and linking of glTF files                                    |

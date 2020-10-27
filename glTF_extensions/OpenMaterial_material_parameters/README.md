@@ -317,6 +317,8 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
 In the given example, wavelength and temperature specific refractive index values (i.e. `aluminium_ior.gltf`) are specified
 in a  separate file using the [`OpenMaterial_ior_data`](../OpenMaterial_ior_data/) extension.
 
+To represent emissivity, the [`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
+
 glTF Schema Updates
 -------------------
 N/A
