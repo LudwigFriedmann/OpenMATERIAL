@@ -33,8 +33,8 @@ $ make
 The above will generate the executable `pathtracer` in the directory `bin/`. The code is written in C++11 and dependant on
 [OpenMP](https://www.openmp.org/) for parallelization.
 
-The project was tested on Ubuntu 18.04 and Windows 10 (CMake & Visual Studio 2015). In the latter case, the project can
-be compiled using:
+The project was tested on Ubuntu 18.04, Ubuntu 20.04 and Windows 10 (CMake & Visual Studio 2015). In the latter case,
+the project can be compiled using:
 
 ``` 
 $ mkdir bin
