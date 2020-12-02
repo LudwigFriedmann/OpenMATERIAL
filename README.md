@@ -43,7 +43,7 @@ objects and materials:
 |:--------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | [`external`](external/)               | Third-party dependencies                                                                                                                  |
 | [`glTF_extensions`](glTF_extensions/) | Proposed glTF extensions defining asset properties, providing physically correct material descriptions and enabling glTF file referencing |
-| [`hdr`](hdr/)                         | Examples of HDR (high density range) images                                                                                               |
+| [`hdr`](hdr/)                         | Examples of HDR (high dynamic range) images                                                                                               |
 | [`materials`](materials/)             | Examples of glTF materials using the proposed glTF extensions                                                                             |
 | [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions                                                                            |
 | [`pathtracer`](pathtracer/)           | Implementation of a raycaster / pathtracer using the proposed glTF extensions                                                           |
