@@ -19,7 +19,7 @@ The above-mentioned circumstances led to the establishment of the project **Open
 |:--------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | [`external`](external/)               | Third-party dependencies |
 | [`glTF_extensions`](glTF_extensions/) | Proposed glTF extensions defining asset properties, providing physically correct material descriptions and enabling glTF file referencing |
-| [`hdr`](hdr/)                         | Examples of HDR (high density range) images |
+| [`hdr`](hdr/)                         | Examples of HDR (high dynamic range) images |
 | [`materials`](materials/)             | Examples of glTF materials using the proposed glTF extensions |
 | [`model_structure`](model_structure/) | Proposal on 3D model structure (quality criteria, node hierarchy, transforms,...) |
 | [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions |
