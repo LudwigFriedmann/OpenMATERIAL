@@ -330,7 +330,7 @@ For steering wheel animation (assembly *Grp_Steering_Wheel*), a transform is pro
    <i>Table 13: Steering wheel coordinate frame</i>
    <table>
       <tr><th colspan="2">Steering wheel coordinate frame</th></tr>
-      <tr><td><b>Origin (<i>O<sub>Steering_Wheel</sub></i>)</b></td><td>Intersection of steering axle and steering wheel/steering column contact surface</td></tr>
+      <tr><td><b>Origin (<i>O<sub>Steering_Wheel</sub></i>)</b></td><td>Intersection of steering axle and the plane defined by the steering wheel rim</td></tr>
       <tr><td><b>x-axis (<i>x<sub>Steering_Wheel</sub></i>)</b></td><td>Concentric and coaxial to the steering axle, pointing away from the driver</td></tr>
       <tr><td><b>y-axis (<i>y<sub>Steering_Wheel</sub></i>)</b></td><td>Completes the right-handed coordinate system</td></tr>
       <tr><td><b>z-axis (<i>z<sub>Steering_Wheel</sub></i>)</b></td><td>Perpendicular to the x-axis, pointing upwards</td></tr>
