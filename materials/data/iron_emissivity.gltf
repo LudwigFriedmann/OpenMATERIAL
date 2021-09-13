@@ -1,27 +1,53 @@
 {
-    "asset" : {
-        "copyright" : "(C) 2020, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
-        "generator" : "hand-made",
-        "version" : "2.0",
+    "asset": {
+        "copyright": "2021 (c) BIT Technology Solutions GmbH, Munich",
         "extensions": {
             "OpenMaterial_asset_info": {
-                "asset_type": "material_emissivity",
+                "bounding-box": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "category": "",
+                "country": "Germany",
+                "creation-date": "2021.07.29.",
+                "creation-time": "17:06:56",
+                "creator": "matteo.marone",
+                "description": "Emissivity as a function of temperature and wavelength",
+                "group": "",
                 "id": "455b020b-5db8-4a67-adcb-4433db0a5f79",
-                "title": "Emissivity coefficient iron",
-                "asset_version": "1",
-                "asset_variation": "1",
-                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
-                "description": "Emissivity coefficient of polished iron (averaged)",
-                "creation_date": "2020.10.27. 16:00:00",
-                "sources": ["https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html"],
-                "comment": "Emissivity Coefficient of Iron as a function of temperature"
+                "license": "Mozilla Public Licence 2.0",
+                "owner": "BIT Technology Solutions GmbH, Munich",
+                "predecessor": "",
+                "predecessor-type": "new",
+                "subtype": "material-emissivity",
+                "tags": [
+                    "test",
+                    "emissivity"
+                ],
+                "title": "emissivity_iron",
+                "type": "resource"
             }
-        }
+        },
+        "generator": "BIT Datafactory",
+        "version": "2.0"
     },
     "extensions": {
         "OpenMaterial_emissivity_data": {
-            "300": 0.26			
-        }
+            "data": [
+            {
+                "comment": "iron emissivity as a function of temperature",
+                "emissivity": 0.26,
+                "sources": [
+                    ""
+                ],
+                "temperature": 300
+            }
+        ]
+    }
     },
     "extensionsUsed": [
         "OpenMaterial_asset_info",

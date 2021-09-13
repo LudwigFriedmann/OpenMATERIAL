@@ -1,0 +1,68 @@
+{
+    "asset": {
+        "copyright": "2021 (c) BIT Technology Solutions GmbH, Munich",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "bounding-box": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "category": "",
+                "country": "Germany",
+                "creation-date": "2021.02.24.",
+                "creation-time": "11:39:50",
+                "creator": "nikola.malisa",
+                "description": "iron permeability data",
+                "group": "",
+                "id": "3a5dd75c-f294-4984-b649-b254e628de04",
+                "license": "Mozilla Public Licence 2.0",
+                "meta-version": "3",
+                "owner": "BIT Technology Solutions",
+                "predecessor": "",
+                "predecessor-type": "new",
+                "subtype": "material-permeability",
+                "tags": [
+                    "test",
+                    "permeability"
+                ],
+                "title": "permeability_iron",
+                "type": "resource"
+            }
+        },
+        "generator": "BIT Datafactory",
+        "version": "2.0"
+    },
+    "extensions": {
+        "OpenMaterial_permeability_data": {
+            "data": [
+                {
+                    "comment": "Permeability index (n,k) of iron as a function of frequency and temperature",
+                    "k": [
+                        [
+                            3.5e-07,
+                            0.0
+                        ]
+                    ],
+                    "n": [
+                        [
+                            3.5e-07,
+                            0.0
+                        ]
+                    ],
+                    "sources": [
+                        "placeholder"
+                    ],
+                    "temperature": 300
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permeability_data"
+    ]
+}

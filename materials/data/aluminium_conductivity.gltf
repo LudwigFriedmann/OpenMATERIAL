@@ -16,19 +16,20 @@
                 "creation-date": "2021.07.29.",
                 "creation-time": "17:06:56",
                 "creator": "matteo.marone",
-                "description": "Emissivity as a function of temperature and wavelength",
+                "description": "Conductivity as a function of temperature and wavelength",
                 "group": "",
-                "id": "b54ae38c-7a7a-4ddd-9c7d-9b572b633ad0",
+                "id": "f1fc1a81-cb95-4d36-834f-203216b52496",
                 "license": "Mozilla Public Licence 2.0",
+                "meta-version": "3",
                 "owner": "BIT Technology Solutions GmbH, Munich",
                 "predecessor": "",
                 "predecessor-type": "new",
-                "subtype": "material-emissivity",
+                "subtype": "material-conductivity",
                 "tags": [
                     "test",
-                    "emissivity"
+                    "conductivity"
                 ],
-                "title": "emissivity_gold",
+                "title": "conductivity_aluminium",
                 "type": "resource"
             }
         },
@@ -36,21 +37,34 @@
         "version": "2.0"
     },
     "extensions": {
-        "OpenMaterial_emissivity_data": {
+        "OpenMaterial_conductivity_data": {
             "data": [
                 {
-                    "comment": "gold emissivity as a function of temperature",
-                    "emissivity": 0.025,
-                    "sources": [
-                        ""
+                    "comment": "aluminium conductivity as a function of wavelength and temperature",
+                    "conductivity": [
+                        {
+                            "conductivity": 3.5e-07,
+                            "wavelength": 4.3999999999999997e-07
+                        },
+                        {
+                            "conductivity": 3.5e-07,
+                            "wavelength": 5.1e-07
+                        },
+                        {
+                            "conductivity": 3.55e-07,
+                            "wavelength": 6.5e-07
+                        }
                     ],
-                    "temperature": 300
+                    "sources": [
+                        "https://www.thoughtco.com/table-of-electrical-resistivity-conductivity-608499"
+                    ],
+                    "temperature": 292.15
                 }
             ]
         }
     },
     "extensionsUsed": [
         "OpenMaterial_asset_info",
-        "OpenMaterial_emissivity_data"
+        "OpenMaterial_conductivity_data"
     ]
 }

@@ -1,0 +1,108 @@
+{
+    "asset": {
+        "copyright": "2021 (c) BIT Technology Solutions GmbH, Munich",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "bounding-box": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "category": "",
+                "country": "Germany",
+                "creation-date": "2021.02.24.",
+                "creation-time": "11:39:50",
+                "creator": "nikola.malisa",
+                "description": "gold permittivity data",
+                "group": "",
+                "id": "74c39490-39c4-4847-88e0-d53351a85032",
+                "license": "Mozilla Public Licence 2.0",
+                "meta-version": "3",
+                "owner": "BIT Technology Solutions",
+                "predecessor": "",
+                "predecessor-type": "new",
+                "subtype": "material-permittivity",
+                "tags": [
+                    "test",
+                    "permittivity"
+                ],
+                "title": "permittivity_gold",
+                "type": "resource"
+            }
+        },
+        "generator": "BIT Datafactory",
+        "version": "2.0"
+    },
+    "extensions": {
+        "OpenMaterial_permittivity_data": {
+            "data": [
+                {
+                    "comment": "Complex Permittivity index (n,k) of gold as a function of frequency and temperature",
+                    "k": [
+                        [
+                            5e-07,
+                            -1.0
+                        ],
+                        [
+                            6e-07,
+                            -8.0
+                        ],
+                        [
+                            7e-07,
+                            -15.0
+                        ],
+                        [
+                            8e-07,
+                            -22.0
+                        ],
+                        [
+                            9e-07,
+                            -32.0
+                        ],
+                        [
+                            1e-06,
+                            -40.0
+                        ]
+                    ],
+                    "n": [
+                        [
+                            5e-07,
+                            5.0
+                        ],
+                        [
+                            6e-07,
+                            1.0
+                        ],
+                        [
+                            7e-07,
+                            1.0
+                        ],
+                        [
+                            8e-07,
+                            1.0
+                        ],
+                        [
+                            9e-07,
+                            2.0
+                        ],
+                        [
+                            1e-06,
+                            2.0
+                        ]
+                    ],
+                    "sources": [
+                        "https://www.researchgate.net/figure/Gold-dielectric-permittivity-as-a-function-of-wavelength_fig2_265334084"
+                    ],
+                    "temperature": 300
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permittivity_data"
+    ]
+}
