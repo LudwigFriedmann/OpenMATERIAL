@@ -1,6 +1,6 @@
 {
     "asset": {
-        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG),(C) 2021, BIT Technology Solutions GmbH",
         "generator": "Khronos Blender glTF 2.0 I/O",
         "version": "2.0",
         "extensions": {
@@ -10,9 +10,9 @@
                 "title": "iron",
                 "asset_version": "1",
                 "asset_variation": "1",
-                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "creator": "BIT Technology Solutions GmbH",
                 "description": "iron material",
-                "creation_date": "2019.08.29. 10:46:00"
+                "creation_date": "2021.09.08. 10:13:00"
             }
         }
     },
@@ -58,10 +58,13 @@
                     },
                     "physical_properties": {
                         "refractive_index_uri": "data/iron_ior.gltf",
+                        "permittivity_coefficient_uri": "data/iron_permittivity.gltf",
+                        "permeability_coefficient_uri": "data/iron_permeability.gltf",
+                        "conductivity_coefficent_uri": "data/iron_conductivity.gltf",
+                        "emissive_coefficient_uri": "data/iron_emissivity.gltf",
                         "mean_free_path": 1E-06,
                         "particle_density": 7.874,
                         "particle_cross_section": 1.00E+0,
-                        "emissive_coefficient_uri": "data/iron_emissivity.gltf",
                         "detection_wavelength_ranges": [
                         {
                                 "min": 300E-09,

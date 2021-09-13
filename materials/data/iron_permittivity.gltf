@@ -1,0 +1,76 @@
+{
+    "asset": {
+        "copyright": "2021 (c) BIT Technology Solutions GmbH, Munich",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "bounding-box": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "category": "",
+                "country": "Germany",
+                "creation-date": "2021.02.24.",
+                "creation-time": "11:39:50",
+                "creator": "nikola.malisa",
+                "description": "iron permittivity data",
+                "group": "",
+                "id": "64b39490-39c4-4847-88e0-c53351a85052",
+                "license": "Mozilla Public Licence 2.0",
+                "meta-version": "3",
+                "owner": "BIT Technology Solutions",
+                "predecessor": "",
+                "predecessor-type": "new",
+                "subtype": "material-permittivity",
+                "tags": [
+                    "test",
+                    "permittivity"
+                ],
+                "title": "permittivity_iron",
+                "type": "resource"
+            }
+        },
+        "generator": "BIT Datafactory",
+        "version": "2.0"
+    },
+    "extensions": {
+        "OpenMaterial_permittivity_data": {
+            "data": [
+                {
+                    "comment": "Complex Permittivity index (n,k) of iron as a function of frequency and temperature",
+                    "k": [
+                        [
+                            0.3,
+                            2.5
+                        ],
+                        [
+                            1.2,
+                            2.5
+                        ]
+                    ],
+                    "n": [
+                        [
+                            0.3,
+                            0.1
+                        ],
+                        [
+                            1.2,
+                            0.1
+                        ]
+                    ],
+                    "sources": [
+                        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FComplex-relative-permittivity-of-the-iron-complex-litigated-polyarylonitrile-yarn-powder_fig2_315382283&psig=AOvVaw3RHbnnQdIo4bx8DCtwTWF-&ust=1629532998783000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCPD10s-Rv_ICFQAAAAAdAAAAABAI"
+                    ],
+                    "temperature": 300
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permittivity_data"
+    ]
+}

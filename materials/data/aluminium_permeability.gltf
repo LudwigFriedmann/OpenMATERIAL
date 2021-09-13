@@ -1,0 +1,100 @@
+{
+    "asset": {
+        "copyright": "2021 (c) BIT Technology Solutions GmbH, Munich",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "bounding-box": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "category": "",
+                "country": "Germany",
+                "creation-date": "2021.02.24.",
+                "creation-time": "11:35:52",
+                "creator": "nikola.malisa",
+                "description": "aluminium permeability data",
+                "group": "",
+                "id": "3a5dd75c-f294-4984-b649-b254e628de04",
+                "license": "Mozilla Public Licence 2.0",
+                "meta-version": "3",
+                "owner": "BIT Technology Solutions",
+                "predecessor": "",
+                "predecessor-type": "new",
+                "subtype": "material-permeability",
+                "tags": [
+                    "test",
+                    "permeability"
+                ],
+                "title": "permeability_aluminium",
+                "type": "resource"
+            }
+        },
+        "generator": "BIT Datafactory",
+        "version": "2.0"
+    },
+    "extensions": {
+        "OpenMaterial_permeability_data": {
+            "data": [
+                {
+                    "comment": "Permeability index (n,k) of Aluminum as a function of frequency and temperature",
+                    "k": [
+                        [
+                            3.5e-07,
+                            -10.0
+                        ],
+                        [
+                            4.5e-07,
+                            -18.0
+                        ],
+                        [
+                            5.5e-07,
+                            -26.0
+                        ],
+                        [
+                            6.5e-07,
+                            -42.0
+                        ],
+                        [
+                            7.5e-07,
+                            -53.0
+                        ]
+                    ],
+                    "n": [
+                        [
+                            3.5e-07,
+                            3.0
+                        ],
+                        [
+                            4.5e-07,
+                            4.0
+                        ],
+                        [
+                            5.5e-07,
+                            8.0
+                        ],
+                        [
+                            6.5e-07,
+                            16.0
+                        ],
+                        [
+                            7.5e-07,
+                            23.0
+                        ]
+                    ],
+                    "sources": [
+                        "https://www.researchgate.net/figure/Permeability-values-of-silver-and-aluminum-and-best-fits-used-in-the-simulations_fig4_253522515"
+                    ],
+                    "temperature": 300
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permeability_data"
+    ]
+}
