@@ -22,15 +22,15 @@ using std::size_t;
 /// @brief Unit test for AssetMaterialIor::AssetMaterialIor 
 TEST_CASE("Testing AssetMaterialIor::AssetMaterialIor")
 {
-	std::string fileName = "../materials/data/aluminium_ior.gltf";
-	#ifdef _WIN32
-		std::replace(fileName.begin(), fileName.end(), '/', '\\');
-	#endif	
+    std::string fileName = "../materials/data/aluminium_ior.gltf";
+    #ifdef _WIN32
+        std::replace(fileName.begin(), fileName.end(), '/', '\\');
+    #endif  
 
-	// Check if correct IOR table is loaded
-	auto *pMaterialIor = new AssetMaterialIor(fileName);
-	std::string title = "IOR aluminium";
-	CHECK(title.compare(pMaterialIor->getTitle()) == 0);
+    // Check if correct IOR table is loaded
+    auto *pMaterialIor = new AssetMaterialIor(fileName);
+    std::string title = "IOR aluminium";
+    CHECK(title.compare(pMaterialIor->getTitle()) == 0);
 }
 
 /// @brief Create new IOR (index of refraction) data object from JSON
@@ -69,14 +69,14 @@ AssetMaterialIor::AssetMaterialIor(const char *psFilename)
 void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
 {
     using nlohmann::json;
-	using std::string;
+    using std::string;
 
     const json& jData = j.at("extensions").at("OpenMaterial_ior_data");
 
-	// For all temperatures
-	for (const auto& it : jData.at("data"))
-	{
-		const Float fTemperature = it.at("temperature").get<double>();
+    // For all temperatures
+    for (const auto& it : jData.at("data"))
+    {
+        const Float fTemperature = it.at("temperature").get<double>();
 
         if(fTemperature < 0)
             throw GltfError(getUuid() + ": temperature must be non-negative");
