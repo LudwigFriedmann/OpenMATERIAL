@@ -1,13 +1,31 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Proposed OpenMaterial_emissivity_data glTF extension",
-    "description": "Measured emissivity coefficient at given temperature in [K].",
+    "description": "Measured emissivity coefficient at given temperature.",
     "type": "object",
     "patternProperties": {
-        "^(0|[1-9][0-9]*)([\\,\\.][0-9]*[1-9])?$": {
-            "type": "number",
-            "description": "Emissivity coefficient at given temperature [-]."
-        }
-    },
-    "additionalProperties": false
+        "data": {
+            "type": "array",
+            "description": "Measured emissivity coefficient at specific temperature.",
+            "items": {
+                "type": "object",
+                "description": "Emissivity coefficient at specific temperature.",
+                "properties": {
+                    "temperature": {
+                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "type": "number"
+                    },
+                    "emissivity": {
+                        "description": "Emissivity coefficient [-]",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "temperature",
+                    "emissivity"
+                ]
+            }
+        },
+        "additionalProperties": false
+    }
 }
