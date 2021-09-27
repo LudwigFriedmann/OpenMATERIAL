@@ -69,14 +69,14 @@ AssetMaterialIor::AssetMaterialIor(const char *psFilename)
 void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
 {
     using nlohmann::json;
+	using std::string;
 
     const json& jData = j.at("extensions").at("OpenMaterial_ior_data");
 
-    // For all temperatures
-    for(auto it = jData.begin(); it != jData.end(); it++)
-    {
-        const Float fTemperature = std::stod(it.key());
-        const json& jEntry = jData[it.key()];
+	// For all temperatures
+	for (const auto& it : jData.at("data"))
+	{
+		const Float fTemperature = it.at("temperature").get<double>();
 
         if(fTemperature < 0)
             throw GltfError(getUuid() + ": temperature must be non-negative");
@@ -87,13 +87,13 @@ void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
 
 
         // Read IOR data if present
-        if(jEntry.find("n") != jEntry.end() && jEntry.find("k") != jEntry.end())
+        if(it.find("n") != it.end() && it.find("k") != it.end())
         {
             data.interpolationN.setInterpolationType(INTERPOLATION_LINEAR);
             data.interpolationK.setInterpolationType(INTERPOLATION_LINEAR);
 
             // Read in real part n of IOR (index of refraction)
-            for(const auto& v : jEntry.at("n"))
+            for(const auto& v : it.at("n"))
             {
                 Float wl = v.at(0).get<double>();
                 Float n  = v.at(1).get<double>();
@@ -102,7 +102,7 @@ void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
             }
 
             // Read in imaginary part k of IOR (index of refraction)
-            for(const auto& v : jEntry.at("k"))
+            for(const auto& v : it.at("k"))
             {
                 Float wl = v.at(0).get<double>();
                 Float k  = v.at(1).get<double>();
@@ -117,35 +117,6 @@ void AssetMaterialIor::loadPropertiesFromJson(const nlohmann::json& j)
             // Set minimum and maximum wavelength
             data.fIorMin = std::max(data.interpolationN.xMin(), data.interpolationK.xMin());
             data.fIorMax = std::min(data.interpolationN.xMax(), data.interpolationK.xMax());
-        }
-        // Read lorenz oscillator parameters if present
-        if(jEntry.find("LorenzOscillator") != jEntry.end())
-        {
-            const json& jLO = jEntry["LorenzOscillator"];
-
-            if(jLO.find("min") != jLO.end())
-                data.fLOMin = jLO["min"].get<double>();
-            else
-                data.fLOMin = 0;
-
-            if(jLO.find("max") != jLO.end())
-                data.fLOMax = jLO["max"].get<double>();
-            else
-                data.fLOMax = fInfinity;
-
-            for(const auto& v : jLO.at("parameters"))
-            {
-                Float omegap = v.at(0).get<double>();
-                Float omega1 = v.at(1).get<double>();
-                Float gamma  = v.at(2).get<double>();
-
-                data.vLoData.push_back(omegap*omegap);
-                data.vLoData.push_back(omega1);
-                data.vLoData.push_back(gamma);
-            }
-
-            if(data.vLoData.empty())
-                throw GltfError(getUuid() + ": Lorenz oscillator parameters missing");
         }
     }
 
