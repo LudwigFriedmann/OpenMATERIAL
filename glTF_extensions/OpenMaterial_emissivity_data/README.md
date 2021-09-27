@@ -25,8 +25,10 @@ This extension provides emissivity coefficient data measured at a certain temper
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`^(0|[1-9][0-9]*)([\\,\\.][0-9]*[1-9])?$`** [string][**required**]
-Wildcard representing the temperature (numeric value) in [K] at which an emissivity coefficient value was measured.
+* **`temperature`** [string][**required**]
+Temperature (numeric value) in [K] at which an emissivity coefficient value was measured.
+* **`emissivity`** [string][**required**]
+Emissivity coefficient [-].
 
 Example
 -------
@@ -58,11 +60,14 @@ The emissivity coefficient data file (in this case `aluminium_emissivity.gltf`) 
 
 ````
 "extensions": {
-    "OpenMaterial_emissivity_data": {
-        "298.15": 0.022,
-        "373.15": 0.028,
-        "773.15": 0.060
-    }
+	"OpenMaterial_emissivity_data": {
+		"data": [
+			{
+				"temperature": 300.0,
+				"emissivity": 0.048
+			}
+		]
+	}
 },
 ````
 
