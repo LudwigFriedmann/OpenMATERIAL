@@ -29,12 +29,12 @@ tuples [wavelength, IOR data].
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`^(0|[1-9][0-9]*)([\\,\\.][0-9]*[1-9])?$`** [string][**required**]
-Wildcard representing the temperature (numeric value) in [K] at which the IOR values were measured.
-  - **`n`** [string][**required**]
-  Real part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
-  - **`k`** [string][**required**]
-  Imaginary part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
+* **`temperature`** [string][**required**]
+Temperature (numeric value) in [K] at which the IOR values were measured.
+* **`n`** [string][**required**]
+Real part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
+* **`k`** [string][**required**]
+Imaginary part of the IOR, key to an array of tuples of corresponding wavelengths and IOR values.
 
 Example
 -------
@@ -66,20 +66,23 @@ geometry:
 
 ````
 "extensions": {
-    "OpenMaterial_ior_data": {
-        "300": {
-            "n": [
-                [200e-9, 0.110803374],
-                ...
-                [1700e-9, 1.584018511]
-            ],
-            "k": [
-                [200e-9, 1.908606137],
-                ...
-                [1700e-9,15.55632073]
-            ]
-        }
-    }
+	"OpenMaterial_ior_data": {
+		"data": [
+			{
+				"temperature": 300.0,
+				"n": [
+					[200e-9, 0.110803374],
+					...
+					[1700e-9, 1.584018511]
+				],
+				"k": [
+					[200e-9, 1.908606137],
+					 ...
+					[1700e-9,15.55632073]
+				]
+			}
+		]
+	}
 },
 ````
 

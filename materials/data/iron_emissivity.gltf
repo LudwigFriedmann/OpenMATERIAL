@@ -1,8 +1,8 @@
 {
-    "asset" : {
-        "copyright" : "(C) 2020, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
-        "generator" : "hand-made",
-        "version" : "2.0",
+    "asset": {
+        "copyright": "(C) 2020, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "2.0",
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material_emissivity",
@@ -20,7 +20,12 @@
     },
     "extensions": {
         "OpenMaterial_emissivity_data": {
-            "300": 0.26			
+            "data": [
+                {
+                    "temperature": 300.0,
+                    "emissivity": 0.26
+                }
+            ]
         }
     },
     "extensionsUsed": [
