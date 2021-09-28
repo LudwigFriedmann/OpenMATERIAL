@@ -1,0 +1,44 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_ior",
+                "id": "27e10b2a-669a-463c-91bd-c200a0ed3849",
+                "title": "IOR polypropelene",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "IOR of polypropelene",
+                "creation_date": "2021.09.27. 16:37:00",
+                "sources": [
+                    "Stanislav Stefanov Zhekov, Ondrej Franek, and Gert Frølund Pedersen;
+					Dielectric Properties of Common Building Materials for Ultrawideband
+					Propagation Studies; Digital Object Identifier 10.1109/MAP.2019.2955680"
+                ],
+                "comment": "index of refraction of polypropelene"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_ior_data": {
+            "data": [
+                {
+                    "temperature": 300.0,
+                    "n": [
+                        [3.89341e-03, 1.48]
+                    ],
+                    "k": [
+                        [3.89341e-03, 0.0025]
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_ior_data"
+    ]
+}
