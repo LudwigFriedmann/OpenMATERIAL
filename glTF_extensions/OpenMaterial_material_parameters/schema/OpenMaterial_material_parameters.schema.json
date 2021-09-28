@@ -171,6 +171,10 @@
                     "description": "The refractive index is a complex function N (n + ik) that depends on the temperature and the wavelength. The data of the refractive index is provided as a table in the external glTF file given by the URI.",
                     "type": "string"
                 },
+                "conductivity_uri": {
+                    "description": "URI of an external file with tabular conductivity data [S/m].",
+                    "type": "string"
+                },
                 "mean_free_path": {
                     "description": "Mean free path in micrometer [um], for volumetric materials. It is the average distance travelled by light until it scatters at a scatterer. Value 0 means that the property is not used.",
                     "type": "number"
@@ -247,6 +251,7 @@
             },
             "required": [
                 "refractive_index_uri",
+                "conductivity_uri",
                 "mean_free_path",
                 "particle_density",
                 "particle_cross_section",
