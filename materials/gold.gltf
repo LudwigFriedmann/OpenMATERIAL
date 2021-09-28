@@ -58,6 +58,7 @@
                     },
                     "physical_properties": {
                         "refractive_index_uri": "data/gold_ior.gltf",
+                        "conductivity_uri": "",
                         "mean_free_path": 1E-06,
                         "particle_density": 19.3,
                         "particle_cross_section": 1.00E+0,
