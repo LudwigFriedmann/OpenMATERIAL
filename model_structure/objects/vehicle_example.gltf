@@ -1,7 +1,20 @@
 {
     "asset" : {
+        "copyright" : "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
         "generator" : "Khronos glTF Blender I/O v1.2.75",
-        "version" : "2.0"
+        "version" : "2.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "geometry",
+                "id": "f7ec284b-583d-4634-8050-5c5a6ada97f6",
+                "title": "vehicle example",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "vehicle example",
+                "creation_date": "2021.11.08. 16:08:00"
+            }
+        }
     },
     "scene" : 0,
     "scenes" : [
@@ -4463,5 +4476,8 @@
             "byteLength" : 1216252,
             "uri" : "vehicle_example.bin"
         }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info"
     ]
 }
