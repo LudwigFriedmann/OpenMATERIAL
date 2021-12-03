@@ -112,6 +112,8 @@ Intrinsic physical material properties that do not change when material is appli
   - **`refractive_index_uri`** [string][**required**]
   URI of an external file with tabular refractive index data. The refractive index is a complex function N (n + ik) that
   depends on the temperature and the wavelength.
+  - **`conductivity_uri`** [string][**required**]
+  URI of an external file with tabular conductivity data [S/m].
   - **`mean_free_path`** [number][**required**]
   Mean free path for volumetric materials in micrometers. The mean free path is the average distance travelled by
   light until it scatters at a scatterer. Value 0 indicates the property is not used.
@@ -291,6 +293,7 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
                     },
                     "physical_properties": {
                         "refractive_index_uri": "data/aluminium_ior.gltf",
+                        "conductivity_uri": "",
                         "mean_free_path": 0.0,
                         "particle_density": 0.0,
                         "particle_cross_section": 0.0,
@@ -317,7 +320,8 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
 In the given example, wavelength and temperature specific refractive index values (i.e. `aluminium_ior.gltf`) are specified
 in a  separate file using the [`OpenMaterial_ior_data`](../OpenMaterial_ior_data/) extension.
 
-To represent emissivity, the [`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
+To represent conductivity and emissivity, the [`OpenMaterial_conductivity_data`](../OpenMaterial_conductivity_data/) and
+[`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
 
 glTF Schema Updates
 -------------------
