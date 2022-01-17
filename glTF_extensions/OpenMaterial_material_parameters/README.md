@@ -112,8 +112,6 @@ Intrinsic physical material properties that do not change when material is appli
   - **`refractive_index_uri`** [string][**required**]
   URI of an external file with tabular refractive index data. The refractive index is a complex function N (n + ik) that
   depends on the temperature and the wavelength.
-  - **`conductivity_uri`** [string][**required**]
-  URI of an external file with tabular conductivity data [S/m].
   - **`mean_free_path`** [number][**required**]
   Mean free path for volumetric materials in micrometers. The mean free path is the average distance travelled by
   light until it scatters at a scatterer. Value 0 indicates the property is not used.
