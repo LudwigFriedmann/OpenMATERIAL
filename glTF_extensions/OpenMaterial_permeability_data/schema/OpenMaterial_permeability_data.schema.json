@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Proposed OpenMaterial_permeability_data glTF extension",
+    "description": "Measured relative permeability at given temperature and incident angle.",
+    "type": "object",
+    "patternProperties": {
+        "data": {
+            "type": "array",
+            "description": "Measured reltative permeability at specific temperature and incident angle.",
+            "items": {
+                "type": "object",
+                "description": "Array of permeability at given wavelength, specific temperature and incident angle.",
+                "properties": {
+                    "temperature": {
+                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "type": "number"
+                    },
+                    "incident_angle": {
+                        "description": "Incident angle (numeric value) of the measurement relative to the local normal vector at the material surface in [rad].",
+                        "type": "number"
+                    },
+                    "permeability": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "description": "Pairs of wavelength and permeability.",
+                            "items": [
+                                {
+                                    "type": "number",
+                                    "description": "Wavelength [m]."
+                                },
+                                {
+                                    "type": "number",
+                                    "description": "Relative permeability [H/m]."
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "temperature",
+                    "incident_angle",
+                    "permeability"
+                ]
+            }
+        },
+        "additionalProperties": false
+    }
+}

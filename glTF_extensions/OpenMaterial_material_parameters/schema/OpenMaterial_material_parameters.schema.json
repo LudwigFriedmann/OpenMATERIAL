@@ -191,13 +191,13 @@
                     "description": "Effective particle area of a material. Required by the Radar.",
                     "type": "number"
                 },
-                "relative_permittivity": {
-                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric",
-                    "type": "number"
+                "relative_permittivity_uri": {
+                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric. The data of the relative permittivity is provided as a table in the external glTF file given by the URI",
+                    "type": "string"
                 },
-                "relative_permeability": {
-                    "description": "It's the ratio of the permeability of a specific medium to the permeability of free space mu0",
-                    "type": "number"
+                "relative_permeability_uri": {
+                    "description": "It's the ratio of the permeability of a specific medium to the permeability of free space mu0. The data of the relative permeability is provided as a table in the external glTF file given by the URI",
+                    "type": "string"
                 },
                 "electrical_resistivity": {
                     "description": "Ohm-meter (Ω⋅m)",
