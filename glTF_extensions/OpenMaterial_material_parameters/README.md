@@ -291,7 +291,6 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
                     },
                     "physical_properties": {
                         "refractive_index_uri": "data/aluminium_ior.gltf",
-                        "conductivity_uri": "",
                         "mean_free_path": 0.0,
                         "particle_density": 0.0,
                         "particle_cross_section": 0.0,
@@ -318,8 +317,7 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
 In the given example, wavelength and temperature specific refractive index values (i.e. `aluminium_ior.gltf`) are specified
 in a  separate file using the [`OpenMaterial_ior_data`](../OpenMaterial_ior_data/) extension.
 
-To represent conductivity and emissivity, the [`OpenMaterial_conductivity_data`](../OpenMaterial_conductivity_data/) and
-[`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
+To represent emissivity, the [`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
 
 glTF Schema Updates
 -------------------
