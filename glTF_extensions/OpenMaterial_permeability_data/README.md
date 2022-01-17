@@ -37,12 +37,12 @@ Example
 -------
 
 Within the section `physical_properties` of its **OpenMaterial_material_parameters** section, a material file
-(e.g. `iron.gltf`) provides an URI to a conductivity data file:
+(e.g. `tarmac.gltf`) provides an URI to a conductivity data file:
 
 ```
 "materials": [
     {
-        "name": "iron",
+        "name": "tarmac",
         "extensions": {
             "OpenMaterial_material_parameters": {
                 "user_preferences": {
