@@ -1,0 +1,107 @@
+  {
+    "asset": {
+        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "Khronos Blender glTF 2.0 I/O",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material",
+                "id": "",
+                "title": "material_Concrete_Plate",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
+                "description": "  material",
+                "creation_date": "2022.01.26. 14:48:00"
+            }
+        }
+    },
+    "materials": [
+        {
+            "name": "Concrete_Plate",
+            "extensions": {
+                "OpenMaterial_material_parameters": {
+                    "user_preferences": {
+                        "geometrical_optics": true,
+                        "include_diffraction": false,
+                        "include_numerical_simulation": false,
+                        "material_scheme": "surface",
+                        "material_classification": "road_surface",
+                        "material_type": {
+                            "isotropic": true,
+                            "homogeneous": true,
+                            "magnetic": false
+                        },
+                        "temperature": 280.0,
+                        "surface_displacement_uri": "surface_uri",
+                        "surface_roughness": {
+                            "surface_height": 870,
+                            "surface_correlation_length": 1.0
+                        },
+                        "lambert_emission": 0.0,
+                        "subsurface": {
+                            "subsurface": false,
+                            "subsurface_thickness": xxx
+                        },
+                        "ingredients": [
+                            {
+                            "material_ref": "ingredients.gltf",
+                            "order": "order.glft"
+                            }
+                        ],
+						"coating_materials": [
+                            {
+                            "layer_thickness": 0.0,
+                            "material_ref": "coating.gltf"
+                            }
+                        ] 
+                    },
+                    "physical_properties": {
+                        "refractive_index_uri": "",
+                        "mean_free_path": xxx,
+                        "particle_density": xxx,
+                        "particle_cross_section": xxx,
+                        "emissive_coefficient_uri": "",
+                        "detection_wavelength_ranges": [
+                        {
+                                "min": 300E-09,
+                                "max": 800E-09,
+                                "typical_sensor": "camera"
+                            },
+                            {
+                                "min": 0.001,
+                                "max": 100,
+                                "typical_sensor": "radar"
+                            },
+                            {
+                                "min": 200E-09,
+                                "max": 1700E-09,
+                                "typical_sensor": "lidar"
+                            },
+                            {
+                                "min": 100,
+                                "max": 15000,
+                                "typical_sensor": "ultrasound"
+                            }
+                        ],
+                        "applicable_sensors": [
+                            "camera",
+                            "radar",
+                            "lidar"
+                        ],
+                        "effective_particle_area": xxx,
+                        "relative_permittivity_uri": "data/Concrete_Plate_permittivity.gltf",
+                        "relative_permeability_uri" : "",
+                        "electrical_resistivity": xxx,
+                        "acoustic_impedance":xxx,
+                        "shear_velocity": xxx 
+                    }
+                }
+            }
+        }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_material_parameters"
+    ]
+}
