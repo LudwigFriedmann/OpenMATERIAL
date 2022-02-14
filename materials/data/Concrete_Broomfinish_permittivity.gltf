@@ -6,7 +6,7 @@
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material_permittivity",
-                "id": "...",
+                "id": "91294076-27f8-47bb-bd34-413a2ef2d258",
                 "title": "relative permittivity Concrete_BF",
                 "asset_version": "1",
                 "asset_variation": "1",
@@ -16,7 +16,7 @@
                 "sources": [
                     "https://ars.copernicus.org/articles/19/165/2021/"
                 ],
-                "comment": "relative permittivity of conrete roads built in using broomfinish technique (Concrete_BF)"
+                "comment": "relative permittivity of conrete roads built in using broomfinish technique (Concrete_BF);data obtained in a radar measurement using a frequency range of 76-81GHz"
             }
         }
     },
@@ -25,15 +25,11 @@
             "data": [
                 {
                     "temperature": 280.0,
-                    "incident_angle": 0.78,
-					"frequency_range": [
-                        [76e9, 81e9],					
-                    ],					
+                    "incident_angle": 0.78,				
                     "permittivity": [
-                        [4.34, xxx],					
+                        [4.34, -1.0]					
                     ]
-                },
-
+                }
             ]
         }
     },
