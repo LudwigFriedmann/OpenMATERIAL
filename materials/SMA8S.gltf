@@ -6,12 +6,12 @@
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material",
-                "id": "",
+                "id": "e416b969-5c8d-41ee-a6cf-b4630c8c76a4",
                 "title": "material_SMA8S",
                 "asset_version": "1",
                 "asset_variation": "1",
                 "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
-                "description": "  material",
+                "description": "material SMA8S: abbreviation for split mastix asphalt with a maximum grain size of 8mm",
                 "creation_date": "2022.01.26. 14:48:00"
             }
         }
@@ -41,7 +41,7 @@
                         "lambert_emission": 0.0,
                         "subsurface": {
                             "subsurface": false,
-                            "subsurface_thickness": xxx
+                            "subsurface_thickness": -1.0
                         },
                         "ingredients": [
                             {
@@ -57,11 +57,11 @@
                         ] 
                     },
                     "physical_properties": {
-                        "refractive_index_uri": "",
+                        "refractive_index_uri": -1.0,
                         "mean_free_path": 1E-06,
                         "particle_density": 2.7,
                         "particle_cross_section": 1.00E+0,
-                        "emissive_coefficient_uri": "",
+                        "emissive_coefficient_uri": -1.0,
                         "detection_wavelength_ranges": [
                         {
                                 "min": 300E-09,
@@ -89,12 +89,12 @@
                             "radar",
                             "lidar"
                         ],
-                        "effective_particle_area": xxx,
+                        "effective_particle_area": -1.0,
                         "relative_permittivity_uri": "data/SMA8S_permittivity.gltf",
-                        "relative_permeability_uri" : "",
-                        "electrical_resistivity": xxx,
-                        "acoustic_impedance":xxx,
-                        "shear_velocity": xxx 
+                        "relative_permeability_uri" : -1.0,
+                        "electrical_resistivity": -1.0,
+                        "acoustic_impedance":-1.0,
+                        "shear_velocity": -1.0 
                     }
                 }
             }
