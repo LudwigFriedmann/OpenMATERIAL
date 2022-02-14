@@ -6,7 +6,7 @@
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material_permittivity",
-                "id": "...",
+                "id": "ddf1707a-f944-43f8-a49d-032bee751c8e",
                 "title": "relative permittivity SMA11S",
                 "asset_version": "1",
                 "asset_variation": "1",
@@ -16,7 +16,7 @@
                 "sources": [
                     "https://ars.copernicus.org/articles/19/165/2021/"
                 ],
-                "comment": "relative permittivity of split mastix asphalt with a maximum grain size of 11mm (SMA11S)"
+                "comment": "relative permittivity of split mastix asphalt with a maximum grain size of 11mm (SMA11S); data obtained in a radar measurement using a frequency range of 76-81GHz"
             }
         }
     },
@@ -25,15 +25,11 @@
             "data": [
                 {
                     "temperature": 280.0,
-                    "incident_angle": 0.78,
-					"frequency_range": [
-                        [76e9, 81e9],					
-                    ],					
+                    "incident_angle": 0.78,					
                     "permittivity": [
-                        [8.3, xxx],					
+                        [8.3, -1.0]					
                     ]
-                },
-
+                }
             ]
         }
     },
