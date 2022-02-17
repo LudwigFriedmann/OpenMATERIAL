@@ -11,7 +11,7 @@
                 "asset_version": "1",
                 "asset_variation": "1",
                 "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
-                "description": "  material",
+                "description": "road surface material: concrete built in with broom finish technique; common method to build in concrete in road surfaces directly on site",
                 "creation_date": "2022.01.26. 14:48:00"
             }
         }
@@ -57,11 +57,11 @@
                         ] 
                     },
                     "physical_properties": {
-                        "refractive_index_uri": -1.0,
+                        "refractive_index_uri": "",
                         "mean_free_path": -1.0,
                         "particle_density": -1.0,
                         "particle_cross_section": -1.0,
-                        "emissive_coefficient_uri": -1.0,
+                        "emissive_coefficient_uri": "",
                         "detection_wavelength_ranges": [
                         {
                                 "min": 300E-09,
@@ -91,7 +91,7 @@
                         ],
                         "effective_particle_area": -1.0,
                         "relative_permittivity_uri": "data/Concrete_BF_permittivity.gltf",
-                        "relative_permeability_uri" : -1.0,
+                        "relative_permeability_uri" : "",
                         "electrical_resistivity": -1.0,
                         "acoustic_impedance":-1.0,
                         "shear_velocity": -1.0 
