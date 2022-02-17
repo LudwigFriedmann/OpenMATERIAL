@@ -1,0 +1,40 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_permittivity",
+                "id": "ddf1707a-f944-43f8-a49d-032bee751c8e",
+                "title": "relative permittivity SMA11S",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
+                "description": "relative permittivity of split mastix asphalt with a maximum grain size of 11mm (SMA11S)",
+                "creation_date": "2022.01.10. 12:00:00",
+                "sources": [
+                    "https://ars.copernicus.org/articles/19/165/2021/"
+                ],
+                "comment": "relative permittivity of split mastix asphalt with a maximum grain size of 11mm (SMA11S); data obtained in a radar measurement using a frequency range of 76-81GHz"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_permittivity_data": {
+            "data": [
+                {
+                    "temperature": 280.0,
+                    "incident_angle": 0.78,					
+                    "permittivity": [
+                        [8.3, -1.0]					
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permittivity_data"
+    ]
+}
