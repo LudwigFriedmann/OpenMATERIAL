@@ -90,8 +90,8 @@
                             "lidar"
                         ],
                         "effective_particle_area": 1.0,
-                        "relative_permittivity": 3.2,
-                        "relative_permeability" : 1.000022,
+                        "relative_permittivity_uri": "",
+                        "relative_permeability_uri" : "",
                         "electrical_resistivity": 2.44E-08,
                         "acoustic_impedance":62.6E+05,
                         "shear_velocity": 0.120 

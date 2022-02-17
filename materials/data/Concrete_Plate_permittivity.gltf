@@ -1,0 +1,40 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_permittivity",
+                "id": "5e099027-a4b6-4141-9286-6da883814a21",
+                "title": "relative permittivity Concrete_Plate",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
+                "description": "relative permittivity of road surface concrete plates (Concrete_Plate)",
+                "creation_date": "2022.01.10. 12:00:00",
+                "sources": [
+                    "https://ars.copernicus.org/articles/19/165/2021/"
+                ],
+                "comment": "relative permittivity of road surface concrete plates (Concrete_Plate); data obtained in a radar measurement using a frequency range of 76-81GHz"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_permittivity_data": {
+            "data": [
+                {
+                    "temperature": 280.0,
+                    "incident_angle": 0.78,					
+                    "permittivity": [
+                        [4.64, -1.0]					
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permittivity_data"
+    ]
+}

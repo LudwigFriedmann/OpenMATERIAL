@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Proposed OpenMaterial_permittivity_data glTF extension",
+    "description": "Measured relative permittivity at given temperature and incident angle.",
+    "type": "object",
+    "patternProperties": {
+        "data": {
+            "type": "array",
+            "description": "Measured reltative permittivity at specific temperature and incident angle.",
+            "items": {
+                "type": "object",
+                "description": "Array of permittivity at given wavelength, specific temperature and incident angle.",
+                "properties": {
+                    "temperature": {
+                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "type": "number"
+                    },
+                    "incident_angle": {
+                        "description": "Incident angle (numeric value) of the measurement relative to the local normal vector at the material surface in [rad].",
+                        "type": "number"
+                    },
+                    "permittivity": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "description": "Pairs of wavelength and permittivity.",
+                            "items": [
+                                {
+                                    "type": "number",
+                                    "description": "Wavelength [m]."
+                                },
+                                {
+                                    "type": "number",
+                                    "description": "Relative permittivity [F/m]."
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "temperature",
+                    "incident_angle",
+                    "permittivity"
+                ]
+            }
+        },
+        "additionalProperties": false
+    }
+}

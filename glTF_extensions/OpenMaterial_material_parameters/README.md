@@ -131,14 +131,17 @@ Intrinsic physical material properties that do not change when material is appli
 	Sensor type corresponding to the wavelength range. Valid options are: `camera`, `lidar`, `radar` and `ultrasound`.
    - **`effective_particle_area`** [number][**required**]
    Effective particle area of a material. This value is required for radar simulation.
-   - **`relative_permittivity`** [number][**required**]
+   - **`relative_permittivity_uri`** [string][**required**]
    Ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has
    vacuum as its dielectric. Relative permittivity is also commonly known as the dielectric constant and is required for
-   radar simulation.
-   - **`relative_permeability`** [number][**required**]
+   radar simulation. This strings represents the URI of an external file with tabular relative permeability data. The
+   data is structured by incident angle, temperature and wavelength.
+   - **`relative_permeability_uri`** [string][**required**]
    Denoted by the symbol μ_r, relative permeability is the ratio of the permeability of a specific medium to the
    permeability of free space μ0. In SI units, μ_r is measured in henries per meter (H/m), or equivalently in newtons
-   per ampere squared (N⋅A−2). This value is required for radar simulation.
+   per ampere squared (N⋅A−2). This value is required for radar simulation. This strings represents the URI of an
+   external file with tabular relative permeability data. The data is structured by incident angle, temperature and
+   wavelength.   
    - **`electrical_resistivity`** [number][**required**]
    This value quantifies how the material resists or conducts electric current. The SI unit of electrical resistivity is 
    ohm-meter (Ω⋅m). This value is required for radar simulation.
@@ -302,8 +305,8 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
 								"typical_sensor": "camera"
 							}
                         "effective_particle_area": 0.0,
-						"relative_permittivity": 0.0,
-						"relative_permeability " : 0.0,
+						"relative_permittivity_uri": "",
+						"relative_permeability_uri" : "",
 						"electrical_resistivity": 0.0,
                         "acoustic_impedance": 0.0,
                         "shear_velocity": 0.0
@@ -318,6 +321,9 @@ In the given example, wavelength and temperature specific refractive index value
 in a  separate file using the [`OpenMaterial_ior_data`](../OpenMaterial_ior_data/) extension.
 
 To represent emissivity, the [`OpenMaterial_emissivity_data`](../OpenMaterial_emissivity_data/) extension can be used.
+
+Relative permeability and relative permittivity are defined by extensions [`OpenMaterial_permeability_data`](../OpenMaterial_permeability_data/) and
+[`OpenMaterial_permittivity_data`](../OpenMaterial_permittivity_data/).
 
 glTF Schema Updates
 -------------------

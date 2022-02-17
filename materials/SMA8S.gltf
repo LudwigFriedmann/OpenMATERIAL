@@ -1,24 +1,24 @@
-{
+  {
     "asset": {
         "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
         "generator": "Khronos Blender glTF 2.0 I/O",
-        "version": "2.0",
+        "version": "1.0",
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material",
-                "id": "fe7d707050e545f19f2658ecacb6ac5e",
-                "title": "material_aluminium",
+                "id": "e416b969-5c8d-41ee-a6cf-b4630c8c76a4",
+                "title": "material_SMA8S",
                 "asset_version": "1",
                 "asset_variation": "1",
-                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
-                "description": "aluminium material",
-                "creation_date": "2019.05.08. 14:48:00"
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
+                "description": "common road surface material SMA8S: abbreviation for split mastix asphalt with a maximum grain size of 8mm",
+                "creation_date": "2022.01.26. 14:48:00"
             }
         }
     },
     "materials": [
         {
-            "name": "aluminium",
+            "name": "SMA8S",
             "extensions": {
                 "OpenMaterial_material_parameters": {
                     "user_preferences": {
@@ -26,22 +26,22 @@
                         "include_diffraction": false,
                         "include_numerical_simulation": false,
                         "material_scheme": "surface",
-                        "material_classification": "solid-metal",
+                        "material_classification": "road_surface",
                         "material_type": {
                             "isotropic": true,
-                            "homogeneous": true,
+                            "homogeneous": false,
                             "magnetic": false
                         },
-                        "temperature": 300.0,
+                        "temperature": 280.0,
                         "surface_displacement_uri": "surface_uri",
                         "surface_roughness": {
-                            "surface_height": 0.8,
+                            "surface_height": 800,
                             "surface_correlation_length": 1.0
                         },
                         "lambert_emission": 0.0,
                         "subsurface": {
                             "subsurface": false,
-                            "subsurface_thickness": 1E-03
+                            "subsurface_thickness": -1.0
                         },
                         "ingredients": [
                             {
@@ -57,11 +57,11 @@
                         ] 
                     },
                     "physical_properties": {
-                        "refractive_index_uri": "data/aluminium_ior.gltf",
+                        "refractive_index_uri": "",
                         "mean_free_path": 1E-06,
                         "particle_density": 2.7,
                         "particle_cross_section": 1.00E+0,
-                        "emissive_coefficient_uri": "data/aluminium_emissivity.gltf",
+                        "emissive_coefficient_uri": "",
                         "detection_wavelength_ranges": [
                         {
                                 "min": 300E-09,
@@ -89,12 +89,12 @@
                             "radar",
                             "lidar"
                         ],
-                        "effective_particle_area": 1.0,
-                        "relative_permittivity_uri": "",
+                        "effective_particle_area": -1.0,
+                        "relative_permittivity_uri": "data/SMA8S_permittivity.gltf",
                         "relative_permeability_uri" : "",
-                        "electrical_resistivity": 2.65E-08,
-                        "acoustic_impedance":17E+05,
-                        "shear_velocity": 0.313 
+                        "electrical_resistivity": -1.0,
+                        "acoustic_impedance":-1.0,
+                        "shear_velocity": -1.0 
                     }
                 }
             }
