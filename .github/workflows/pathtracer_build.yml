@@ -28,14 +28,16 @@ jobs:
       run: cd pathtracer && bin/pathtracer -t
 
   windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     - name: add msbuild to path
-      uses: microsoft/setup-msbuild@v1.0.3
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+         msbuild-architecture: x64
     - name: configure
       run: cd pathtracer && mkdir bin && cd bin && cmake .. -G "Visual Studio 14 2015 Win64"
     - name: build
-      run: MSBuild.exe pathtracer\bin\PathTracer.sln /p:Configuration=Release
+      run: msbuild pathtracer\bin\PathTracer.sln -property:Configuration=Release
     - name: test
       run: cd pathtracer && bin\Release\pathtracer -t
