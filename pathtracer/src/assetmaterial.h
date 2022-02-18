@@ -78,7 +78,7 @@ struct st_Subsurface
 struct st_CoatingMaterial
 {
     /// Reference to external material (uri)
-    std::string sMaterilaRef;
+    std::string sMaterialRef;
 
     /// Pointer to external material with coating
     AssetMaterial *pCoatingMaterial = nullptr;
@@ -91,7 +91,7 @@ struct st_CoatingMaterial
 struct st_Ingredient
 {
     /// Reference to external material (uri)
-    std::string sMaterilaRef;
+    std::string sMaterialRef;
 
     /// Pointer to external material with coating
     AssetMaterial *pMaterialIngredient = nullptr;
@@ -151,8 +151,8 @@ public:
 
     //Radar
     Float getEffectiveParticleArea() const;
-    Float getRelativePermittivity() const;
-    Float getRelativePermeability() const;
+    std::string getRelativePermittivityUri() const;
+    std::string getRelativePermeabilityUri() const;
     Float getElectricalResistivity() const;
 
     //Ultrasound
@@ -228,23 +228,23 @@ private:
     /// Name of material
     std::string m_sName;
 
-        /// Material properties defined by user
+    /// Coating material
     std::vector<st_CoatingMaterial> m_stCoatingMaterial;
 
-    /// Physical properties of material
+    /// Material ingredients
     std::vector<st_Ingredient> m_stIngredient;
 
     //Radar Part
     /// Effective particle area of a material.
     Float m_fEffectiveParticleArea = 0;
-    /// It is the ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has vacuum as its dielectric. Relative permittivity is also commonly known as the dielectric constant.
-    Float m_fRelativePermittivity = 0;
-    /// is the ratio of the permeability of a specific medium to the permeability of free space
-    Float m_fRelativePermeability = 0;
+    /// Ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has vacuum as its dielectric. URI to an external file with permittivity data.
+    std::string m_sRelativePermittivityUri;
+    /// Ratio of the permeability of a specific medium to the permeability of free space. URI to an external file with permeability data.
+    std::string m_sRelativePermeabilityUri;
     /// It quantifies how strongly the material resists or conducts electric current.
     Float m_fElectricalResistivity = 0;
 
-    //Ultrasonic Part
+    //Ultrasound Part
     /// It is a physical property of tissue. It describes how much resistance an ultrasound beam encounters as it passes through a tissue (in kg/(m2s))
     Float m_fAcousticImpedance = 0;
     /// Shear velocity is used to describe shear-related motion in moving fluids.

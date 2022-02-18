@@ -35,7 +35,7 @@
                         "temperature": 300.0,
                         "surface_displacement_uri": "surface_uri",
                         "surface_roughness": {
-                            "surface_height": 0.8,
+                            "surface_height_rms": 0.8,
                             "surface_correlation_length": 1.0
                         },
                         "lambert_emission": 0.0,

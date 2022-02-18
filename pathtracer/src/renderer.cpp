@@ -135,8 +135,8 @@ void Renderer::trace(Sensor& rSensor, Ray& incidentRay)
 	    std::cout<< "            emissivity coefficient uri =  "<<  intersection.getMaterial()->getEmissivityCoefficientUri()<<std::endl;                        
 	    std::cout<< "       *Radar Related Properties----"<<std::endl;
 	    std::cout<< "            effective particle area =  "<<  intersection.getMaterial()->getEffectiveParticleArea()<<std::endl;
-	    std::cout<< "            relative permittivity =  "<<  intersection.getMaterial()->getRelativePermittivity()<<std::endl;
-	    std::cout<< "            relative permeability =  "<<  intersection.getMaterial()->getRelativePermeability()<<std::endl;
+	    std::cout<< "            relative permittivity uri =  "<<  intersection.getMaterial()->getRelativePermittivityUri()<<std::endl;
+	    std::cout<< "            relative permeability uri =  "<<  intersection.getMaterial()->getRelativePermeabilityUri()<<std::endl;
 	    std::cout<< "            electrical resistivity =  "<<  intersection.getMaterial()->getElectricalResistivity()<<std::endl;
 	    std::cout<< "       *Ultrasound Related Properties----"<<std::endl;
 	    std::cout<< "            acoustic impedance =  "<<  intersection.getMaterial()->getAcousticImpedance()<<std::endl;
@@ -150,10 +150,10 @@ void Renderer::trace(Sensor& rSensor, Ray& incidentRay)
 	    std::cout<< "    material classification =  "<<  intersection.getMaterial()->getMaterialClassification()<<std::endl;
 	    std::cout<< "    surface displacement uri =  "<<  intersection.getMaterial()->getSurfaceDisplacementUri()<<std::endl;
 	    std::vector<st_CoatingMaterial> v = intersection.getMaterial()->getCoatingMaterials(); 
-	    std::cout<< "    coating material.material_ref =  "<<  v[0].sMaterilaRef<<std::endl;
+	    std::cout<< "    coating material.material_ref =  "<<  v[0].sMaterialRef<<std::endl;
 	    std::cout<< "    coating material.fLayerThickness =  "<<  v[0].fLayerThickness<<std::endl;
 	    std::vector<st_Ingredient> I = intersection.getMaterial()->getIngredients();
-	    std::cout<< "    ingredient.material_ref =  "<<  I[0].sMaterilaRef<<std::endl;
+	    std::cout<< "    ingredient.material_ref =  "<<  I[0].sMaterialRef<<std::endl;
 	    std::cout<< "    ingredient.order =  "<<  I[0].sDistributionPatternUri<<std::endl;	 
 	    std::cout<< "    subsurface_subsurface =  "<<  intersection.getMaterial()->getSubsurface().bSubsurface<<std::endl;
 	    std::cout<< "    subsurface_thickness =  "<<  intersection.getMaterial()->getSubsurface().fSubsurfaceThickness<<std::endl;

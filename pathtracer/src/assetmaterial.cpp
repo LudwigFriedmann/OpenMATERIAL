@@ -202,15 +202,15 @@ Float AssetMaterial::getEffectiveParticleArea() const
 }
 
 /// Get Relative Permittivity
-Float AssetMaterial::getRelativePermittivity() const
+std::string AssetMaterial::getRelativePermittivityUri() const
 {
-    return m_fRelativePermittivity;
+    return m_sRelativePermittivityUri;
 }
 
 /// Get Relative Permittivity
-Float AssetMaterial::getRelativePermeability() const
+std::string AssetMaterial::getRelativePermeabilityUri() const
 {
-    return m_fRelativePermeability;
+    return m_sRelativePermeabilityUri;
 }
 
 /// Get Electrical Resistivity
@@ -290,7 +290,7 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     m_sSurfaceDisplacementUri = jUserPreferences.at("surface_displacement_uri").get<string>();
     
     const json jSurfaceRoughness = jUserPreferences.at("surface_roughness");
-    m_stSurfaceRoughness.fSurfaceHeight = jSurfaceRoughness.at("surface_height").get<double>();
+    m_stSurfaceRoughness.fSurfaceHeight = jSurfaceRoughness.at("surface_height_rms").get<double>();
     m_stSurfaceRoughness.fSurfaceCorrelationLength = jSurfaceRoughness.at("surface_correlation_length").get<double>();
     if(m_stSurfaceRoughness.fSurfaceHeight < 0)
         throw GltfError(getUuid() + ": surface_height must be non-negative");
@@ -302,7 +302,7 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     for(const json& jC : jCoating)
     {
         st_CoatingMaterial mC;
-        mC.sMaterilaRef = jC.at("material_ref").get<std::string>();
+        mC.sMaterialRef = jC.at("material_ref").get<std::string>();
 	mC.fLayerThickness = jC.at("layer_thickness").get<double>();
 	m_stCoatingMaterial.push_back(mC);
     }
@@ -311,7 +311,7 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     for(const json& jC : jIngredient)
     {
         st_Ingredient mC;
-        mC.sMaterilaRef = jC.at("material_ref").get<std::string>();
+        mC.sMaterialRef = jC.at("material_ref").get<std::string>();
 	mC.sDistributionPatternUri = jC.at("order").get<std::string>();
 	m_stIngredient.push_back(mC);
     }
@@ -371,8 +371,8 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
 
     //Radar
     m_fEffectiveParticleArea = jPhysicalProperties.at("effective_particle_area").get<Float>();
-    m_fRelativePermittivity = jPhysicalProperties.at("relative_permittivity").get<Float>();
-    m_fRelativePermeability = jPhysicalProperties.at("relative_permeability").get<Float>();
+    m_sRelativePermittivityUri = jPhysicalProperties.at("relative_permittivity_uri").get<string>();
+    m_sRelativePermeabilityUri = jPhysicalProperties.at("relative_permeability_uri").get<string>();
     m_fElectricalResistivity = jPhysicalProperties.at("electrical_resistivity").get<Float>();
 
     //Ultrasound
