@@ -55,7 +55,7 @@
                     "required": [
                         "isotropic",
                         "homogeneous",
-                        "non-magnetic"
+                        "magnetic"
                     ]
                 },
                 "temperature": {
@@ -115,7 +115,7 @@
                         "properties": {
                             "material_ref": {
                                 "description": "Reference to an external material",
-                                "$ref": "#OpenMaterial_reference_link"
+                                "type": "string"
                             },
                             "layer_thickness": {
                                 "description": "Thickness of the coating layer in micrometer.",
@@ -137,7 +137,7 @@
                         "properties": {
                             "material_ref": {
                                 "description": "Reference to external material",
-                                "$ref": "#OpenMaterial_reference_link"
+                                "type": "string"
                             },
                             "distribution_pattern_uri": {
                                 "description": "Link to external map of material distribution. Describes how material and the ingredients are distributed over the geometry.",
@@ -234,7 +234,7 @@
                                     "camera",
                                     "lidar",
                                     "radar",
-                                    "ultrasonic"
+                                    "ultrasound"
                                 ]
                             }
                         },
