@@ -28,7 +28,7 @@ jobs:
       run: cd pathtracer && bin/pathtracer -t
 
   windows:
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
     - uses: actions/checkout@v2
     - name: add msbuild to path
