@@ -94,14 +94,14 @@ Material properties that could change when material is applied to geometry.
   - **`coating_materials`** [array]
   Coating refers to a layer of transparent or semi-transparent material on top of another material, e.g. a layer of oil or
   water on top of asphalt. Each array element has the following properties:
-    - **`material_ref`** [OpenMaterial\_reference\_link][**required**]
+    - **`material_ref`** [string][**required**]
 	Reference to an external material.
     - **`layer_thickness`** [number][**required**]
 	Thickness of the coating layer in micrometer.
   - **`ingredients`** [array]
   Ingredients are considered as impurities on top of the main material, e.g. oxidization is consiedered an ingredient of
   metal. Each array element has the following properties:
-    - **`material_ref`** [OpenMaterial\_reference\_link][**required**]
+    - **`material_ref`** [string][**required**]
 	Reference to an external material.
     - **`distribution_pattern_uri`** [string]
 	Reference to an external map of material distribution which describes the distribution of material ingredients
