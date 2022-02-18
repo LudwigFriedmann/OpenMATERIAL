@@ -38,6 +38,6 @@ jobs:
     - name: configure
       run: cd pathtracer && mkdir bin && cd bin && cmake .. -G "Visual Studio 14 2015 Win64"
     - name: build
-      run: msbuild pathtracer\bin\PathTracer.sln -property:Configuration=Release
+      run: msbuild pathtracer\bin\PathTracer.sln /p:Configuration=Release /p:Platform=x64
     - name: test
       run: cd pathtracer && bin\Release\pathtracer -t
