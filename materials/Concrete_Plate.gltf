@@ -92,7 +92,7 @@
                         "effective_particle_area": -1.0,
                         "relative_permittivity_uri": "data/Concrete_Plate_permittivity.gltf",
                         "relative_permeability_uri" : "",
-                        "electrical_resistivity": -1.0,
+                        "conductivity_uri": "",
                         "acoustic_impedance":-1.0,
                         "shear_velocity": -1.0 
                     }

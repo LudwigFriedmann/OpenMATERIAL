@@ -207,16 +207,16 @@ std::string AssetMaterial::getRelativePermittivityUri() const
     return m_sRelativePermittivityUri;
 }
 
-/// Get Relative Permittivity
+/// Get Relative Permeability
 std::string AssetMaterial::getRelativePermeabilityUri() const
 {
     return m_sRelativePermeabilityUri;
 }
 
-/// Get Electrical Resistivity
-Float AssetMaterial::getElectricalResistivity() const
+/// Get Conductivity
+std::string AssetMaterial::getConductivityUri() const
 {
-    return m_fElectricalResistivity;
+    return m_sConductivityUri;
 }
 
 ////Ultrasound Parameters
@@ -373,7 +373,7 @@ void AssetMaterial::loadPropertiesFromJson(const nlohmann::json& j)
     m_fEffectiveParticleArea = jPhysicalProperties.at("effective_particle_area").get<Float>();
     m_sRelativePermittivityUri = jPhysicalProperties.at("relative_permittivity_uri").get<string>();
     m_sRelativePermeabilityUri = jPhysicalProperties.at("relative_permeability_uri").get<string>();
-    m_fElectricalResistivity = jPhysicalProperties.at("electrical_resistivity").get<Float>();
+    m_sConductivityUri = jPhysicalProperties.at("conductivity_uri").get<string>();
 
     //Ultrasound
     m_fAcousticImpedance = jPhysicalProperties.at("acoustic_impedance").get<Float>();

@@ -199,9 +199,9 @@
                     "description": "It's the ratio of the permeability of a specific medium to the permeability of free space mu0. The data of the relative permeability is provided as a table in the external glTF file given by the URI",
                     "type": "string"
                 },
-                "electrical_resistivity": {
-                    "description": "Ohm-meter (Ω⋅m)",
-                    "type": "number"
+                "conductivity_uri": {
+                    "description": "Electrical conductivity [S/m]",
+                    "type": "string"
                 },
                 "acoustic_impedance": {
                     "description": "Resistance an ultrasound beam encounters as it passes through a tissue",
@@ -250,7 +250,6 @@
                 "mean_free_path",
                 "particle_density",
                 "particle_cross_section",
-                "emissive_coefficient_uri",
                 "applicable_sensors"
             ]
         },

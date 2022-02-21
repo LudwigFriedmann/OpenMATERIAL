@@ -142,9 +142,10 @@ Intrinsic physical material properties that do not change when material is appli
    per ampere squared (N⋅A−2). This value is required for radar simulation. This strings represents the URI of an
    external file with tabular relative permeability data. The data is structured by incident angle, temperature and
    wavelength.   
-   - **`electrical_resistivity`** [number][**required**]
-   This value quantifies how the material resists or conducts electric current. The SI unit of electrical resistivity is 
-   ohm-meter (Ω⋅m). This value is required for radar simulation.
+   - **`conductivity_uri`** [string][**required**]
+   Conductivity quantifies how a material conducts electric current. The SI unit of electrical conductivity is 
+   Siemens per meter (S/m). This value is required for radar simulation. This strings represents the URI of an
+   external file with tabular conductivity data.
    - **`acoustic_impedance`** [number][**required**]
    Acoustic impedance describes how much resistance an ultrasound beam encounters as it passes through a tissue
    (in kg/(m^2s)). This value is required for ultrasound simulation.
@@ -307,7 +308,7 @@ compute reflection of rays at the geometry (see above sections "Properties" and 
                         "effective_particle_area": 0.0,
 						"relative_permittivity_uri": "",
 						"relative_permeability_uri" : "",
-						"electrical_resistivity": 0.0,
+						"conductivity_uri": "",
                         "acoustic_impedance": 0.0,
                         "shear_velocity": 0.0
 						],

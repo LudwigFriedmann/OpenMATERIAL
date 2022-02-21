@@ -137,7 +137,7 @@ void Renderer::trace(Sensor& rSensor, Ray& incidentRay)
 	    std::cout<< "            effective particle area =  "<<  intersection.getMaterial()->getEffectiveParticleArea()<<std::endl;
 	    std::cout<< "            relative permittivity uri =  "<<  intersection.getMaterial()->getRelativePermittivityUri()<<std::endl;
 	    std::cout<< "            relative permeability uri =  "<<  intersection.getMaterial()->getRelativePermeabilityUri()<<std::endl;
-	    std::cout<< "            electrical resistivity =  "<<  intersection.getMaterial()->getElectricalResistivity()<<std::endl;
+	    std::cout<< "            conductivity uri =  "<<  intersection.getMaterial()->getConductivityUri()<<std::endl;
 	    std::cout<< "       *Ultrasound Related Properties----"<<std::endl;
 	    std::cout<< "            acoustic impedance =  "<<  intersection.getMaterial()->getAcousticImpedance()<<std::endl;
 	    std::cout<< "            shear velocity =  "<<  intersection.getMaterial()->getShearVelocity()<<std::endl;

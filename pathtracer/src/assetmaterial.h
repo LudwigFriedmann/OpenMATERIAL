@@ -153,7 +153,7 @@ public:
     Float getEffectiveParticleArea() const;
     std::string getRelativePermittivityUri() const;
     std::string getRelativePermeabilityUri() const;
-    Float getElectricalResistivity() const;
+    std::string getConductivityUri() const;
 
     //Ultrasound
     Float getAcousticImpedance() const;
@@ -241,8 +241,8 @@ private:
     std::string m_sRelativePermittivityUri;
     /// Ratio of the permeability of a specific medium to the permeability of free space. URI to an external file with permeability data.
     std::string m_sRelativePermeabilityUri;
-    /// It quantifies how strongly the material resists or conducts electric current.
-    Float m_fElectricalResistivity = 0;
+    /// It quantifies how the material conducts electric current.
+    std::string m_sConductivityUri;
 
     //Ultrasound Part
     /// It is a physical property of tissue. It describes how much resistance an ultrasound beam encounters as it passes through a tissue (in kg/(m2s))
