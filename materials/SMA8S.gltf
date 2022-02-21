@@ -74,8 +74,8 @@
                                 "typical_sensor": "radar"
                             },
                             {
-                                "min": 200E-09,
-                                "max": 1700E-09,
+                                "min": 6.8E-04,
+                                "max": 1.7E-02,
                                 "typical_sensor": "lidar"
                             },
                             {

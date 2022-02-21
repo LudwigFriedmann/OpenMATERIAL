@@ -220,11 +220,11 @@
                         "type": "object",
                         "properties": {
                             "min": {
-                                "description": "Minimum wavelength value, in nanometer [nm]",
+                                "description": "Minimum wavelength value, in meter [m]",
                                 "type": "number"
                             },
                             "max": {
-                                "description": "Maximum wavelength value, in nanometer [nm]",
+                                "description": "Maximum wavelength value, in meter [m]",
                                 "type": "number"
                             },
                             "typical_sensor": {

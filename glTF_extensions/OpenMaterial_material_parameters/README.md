@@ -124,9 +124,9 @@ Intrinsic physical material properties that do not change when material is appli
   - **`detection_wavelength_ranges`** [array][**required**]
   Array of wavelength ranges in which the material can be detected by sensors. Each array element has the following properties:
     - `min` [number][**required**]
-	Minimum wavelength in nanometers [nm].
+	Minimum wavelength in meters [m].
     - `max` [number][**required**]
-	Maximum wavelength value in nanometers [nm]
+	Maximum wavelength value in meters [m].
     - `typical_sensor` [string][**required**]
 	Sensor type corresponding to the wavelength range. Valid options are: `camera`, `lidar`, `radar` and `ultrasound`.
    - **`effective_particle_area`** [number][**required**]
