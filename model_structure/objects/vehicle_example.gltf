@@ -4478,5 +4478,8 @@
             "byteLength" : 1215900,
             "uri" : "vehicle_example.bin"
         }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info"
     ]
 }

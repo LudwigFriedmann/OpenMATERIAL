@@ -7229,5 +7229,8 @@
             "byteLength" : 1824324,
             "uri" : "truck_example.bin"
         }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info"
     ]
 }
