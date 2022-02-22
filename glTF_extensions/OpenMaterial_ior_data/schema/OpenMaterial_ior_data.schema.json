@@ -12,7 +12,7 @@
                 "description": "Arrays of real(n)/imaginary(k) IOR parts at given wavelength and specific temperature.",
                 "properties": {
                     "temperature": {
-                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "description": "Temperature [K] (T(°C) = T(K) - 273.15).",
                         "type": "number"
                     },
                     "n": {
@@ -27,7 +27,7 @@
                                 },
                                 {
                                     "type": "number",
-                                    "description": "Real part of IOR."
+                                    "description": "Real part of IOR. [-]"
                                 }
                             ]
                         }
@@ -44,7 +44,7 @@
                                 },
                                 {
                                     "type": "number",
-                                    "description": "Imaginary part of IOR."
+                                    "description": "Imaginary part of IOR. [-]"
                                 }
                             ]
                         }

@@ -27,17 +27,17 @@ Within the following enlistment of properties specified by the proposed extensio
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
 * **`temperature`** [string][**required**]
-Temperature (numeric value) in [K] at which an conductivity value was measured.
+Temperature [K] at which an permeability value was measured.
 * **`incident_angle`** [string][**required**]
-Incident angle (numeric value) of the measurement relative to the local normal vector at the material surface in [rad].
+Incident angle of the measurement relative to the local normal vector at the material surface in [rad].
 * **`permeability`** [string][**required**]
-Relative permeability, key to an array of tuples of corresponding wavelengths and permeability values.
+Relative permeability, key to an array of tuples of corresponding wavelengths [m] and permeability values [H/m].
 
 Example
 -------
 
 Within the section `physical_properties` of its **OpenMaterial_material_parameters** section, a material file
-(e.g. `tarmac.gltf`) provides an URI to a conductivity data file:
+(e.g. `tarmac.gltf`) provides an URI to a permeability data file:
 
 ```
 "materials": [

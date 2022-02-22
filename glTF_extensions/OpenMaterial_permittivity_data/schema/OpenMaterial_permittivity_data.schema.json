@@ -12,11 +12,11 @@
                 "description": "Array of permittivity at given wavelength, specific temperature and incident angle.",
                 "properties": {
                     "temperature": {
-                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "description": "Temperature [K] (T(°C) = T(K) - 273.15).",
                         "type": "number"
                     },
                     "incident_angle": {
-                        "description": "Incident angle (numeric value) of the measurement relative to the local normal vector at the material surface in [rad].",
+                        "description": "Incident angle of the measurement relative to the local normal vector at the material surface in [rad].",
                         "type": "number"
                     },
                     "permittivity": {

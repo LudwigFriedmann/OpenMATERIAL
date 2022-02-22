@@ -12,7 +12,7 @@
                 "description": "Array of conductivity at given wavelength and specific temperature.",
                 "properties": {
                     "temperature": {
-                        "description": "Temperature in Kelvin(K); T(°C) = T(K) - 273.15.",
+                        "description": "Temperature [K] (T(°C) = T(K) - 273.15).",
                         "type": "number"
                     },
                     "conductivity": {

@@ -26,7 +26,7 @@ Within the following enlistment of properties specified by the proposed extensio
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
 * **`temperature`** [string][**required**]
-Temperature (numeric value) in [K] at which an emissivity coefficient value was measured.
+Temperature [K] at which an emissivity coefficient value was measured.
 * **`emissivity`** [string][**required**]
 Emissivity coefficient [-].
 

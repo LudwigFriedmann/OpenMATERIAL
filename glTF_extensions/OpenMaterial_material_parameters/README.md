@@ -43,115 +43,115 @@ mandatory and must be present. Properties without **required** label are optiona
 Material properties that could change when material is applied to geometry.
   - **`geometrical_optics`** [boolean][**required**]
   If true, geometrical optics will be used. This is valid assumption when the size of the geometry structure of the
-  object is much larger than the incident wavelength.
+  object is much larger than the incident wavelength. [-]
   - **`include_diffraction`** [boolean][**required**]
   If true, diffraction models will be included in the interaction calculations. Examples of methods are Unified Theory
-  of Diffraction (UTD) - Geometrical Theory of Diffraction (GTD).
+  of Diffraction (UTD) - Geometrical Theory of Diffraction (GTD). [-]
   - **`include_numerical_simulation`** [boolean][**required**]
   If true, numerical methods will be used to compute the electromagnetic field. Examples of methods are BEM
   (Boundary Elements Method), FEM (Finite Element Method), FDTD (Finite Difference Time Domain), and
-  FMM (Fast Multiple Method).
+  FMM (Fast Multiple Method). [-]
   - **`material_scheme`** [string][**required**]
-  Valid options are `surface`, `subsurface` and `volume`.
+  Valid options are `surface`, `subsurface` and `volume`. [-]
   - **`material_classification`** [string][**required**]
   Property specifying the hierarchical classification of the material. The first hierarchy level is either `solid`, `liquid`
   or `gas`. Lower hierarchy levels are user-defined. Hierarchy levels are separated by the `–` sign, e.g.
-  `solid-metal-aluminium`.
+  `solid-metal-aluminium`. [-]
   - **`material_type`** [**required**]
     - **`isotropic`** [boolean][**required**]
 	If true, it will be assumed that the material's physical properties are independent of the incident direction.
 	This is true for most metals and glasses. If the property is set to false, anisotropic material behavior (including
 	orthotropic) will be considered. Then the input parameters should be provided as a function of the incident
-	direction.
+	direction. [-]
     - **`homogeneous`** [boolean][**required**]
 	If false, non-homogeneous material (a variation of physical properties varies inside the material will be
-	considered. Physical properties have to be provided accordingly.
+	considered. Physical properties have to be provided accordingly. [-]
     - **`magnetic`** [boolean][**required**]
 	If true, it is assumed that the material has magnetic properties. If false, the material is assumed to be
-	non-magnetic.
+	non-magnetic. [-]
   - **`temperature`** [number]
-  Material base-temperature in Kelvin(K); T(°C) = T(K) - 273.15; Some assets have varying temperatures e.g.
+  Material base-temperature [K] (T(°C) = T(K) - 273.15). Some assets have varying temperatures e.g.
   pedestrians, vehicle parts, ice, snow, rain.
   - **`lambert_emission`** [number][**required**]
   A Lambertian emitter has the same brightness (i.e. current per area per solid angle) when observed from all angles.
   Lambertian emission follows the Lambert's cosine law. Value "0" means that the property is not used, while "1"
-  enables it.
+  enables it. [-]
   - **`subsurface`** [**required**]
     - **`subsurface`** [boolean][**required**]
-	If true, subsurface interactions will be considered on top of surface interactions.
+	If true, subsurface interactions will be considered on top of surface interactions. [-]
     - **`subsurface_thickness`** [number][**required**]
-	Thickness of the volume to be considered as subsurface. The default value is the penetration depth in
-	micrometers calculated by material model.
+	Thickness of the volume to be considered as subsurface. The default value is the penetration depth
+	calculated by the material model. [μm]
   - **`surface_displacement_uri`** [string]
   URI of external file with displacement data. Surface displacement is the macro-surface pattern. Assets with
-  multiple displacements should be linked to their appropriate "displacement group".
+  multiple displacements should be linked to their appropriate "displacement group". [-]
   - **`surface_roughness`** [**required**]
   Surface roughness is defined by the surface root-mean-square and the correlation length.
     - **`surface_height_rms`** [number][**required**]
-	Surface height root-mean-square in micrometers.
+	Surface height root-mean-square. [μm]
     - **`surface_correlation_length`** [number][**required**]
-	Surface correlation length in micrometers.
+	Surface correlation length. [μm]
   - **`coating_materials`** [array]
   Coating refers to a layer of transparent or semi-transparent material on top of another material, e.g. a layer of oil or
   water on top of asphalt. Each array element has the following properties:
     - **`material_ref`** [string][**required**]
-	Reference to an external material.
+	Reference to an external material. [-]
     - **`layer_thickness`** [number][**required**]
-	Thickness of the coating layer in micrometer.
+	Thickness of the coating layer. [μm]
   - **`ingredients`** [array]
   Ingredients are considered as impurities on top of the main material, e.g. oxidization is consiedered an ingredient of
   metal. Each array element has the following properties:
     - **`material_ref`** [string][**required**]
-	Reference to an external material.
+	Reference to an external material. [-]
     - **`distribution_pattern_uri`** [string]
 	Reference to an external map of material distribution which describes the distribution of material ingredients
-	over geometry.
+	over geometry. [-]
 
 * **`physical_properties`** [**required**]
 Intrinsic physical material properties that do not change when material is applied to geometry.
   - **`refractive_index_uri`** [string][**required**]
   URI of an external file with tabular refractive index data. The refractive index is a complex function N (n + ik) that
-  depends on the temperature and the wavelength.
+  depends on the temperature and the wavelength. [-]
   - **`mean_free_path`** [number][**required**]
-  Mean free path for volumetric materials in micrometers. The mean free path is the average distance travelled by
+  Mean free path for volumetric materials [μm]. The mean free path is the average distance travelled by
   light until it scatters at a scatterer. Value 0 indicates the property is not used.
   - **`particle_density`** [number][**required**]
-  Density of scatterers in a volume (in micrometer^3 ). Value 0 indicates the property is not used.
+  Density of scatterers in a volume [μm^3]. Value 0 indicates the property is not used.
   - **`particle_cross_section`** [number][**required**]
-  Effective cross section of scatterers in a volume (in micrometer^2). Value 0 indicates the property is not used.
+  Effective cross section of scatterers in a volume [μm^2]. Value 0 indicates the property is not used.
   - **`emissive_coefficient_uri`** [number][**required**]
-  URI of an external file with emissivity coefficient values. An ideal black body has the emissivity coefficient of 1.0.
+  URI of an external file with emissivity coefficient values [-]. An ideal black body has the emissivity coefficient of 1.0.
   - **`detection_wavelength_ranges`** [array][**required**]
   Array of wavelength ranges in which the material can be detected by sensors. Each array element has the following properties:
     - `min` [number][**required**]
-	Minimum wavelength in meters [m].
+	Minimum wavelength [m].
     - `max` [number][**required**]
-	Maximum wavelength value in meters [m].
+	Maximum wavelength [m].
     - `typical_sensor` [string][**required**]
-	Sensor type corresponding to the wavelength range. Valid options are: `camera`, `lidar`, `radar` and `ultrasound`.
+	Sensor type corresponding to the wavelength range. Valid options are: `camera`, `lidar`, `radar` and `ultrasound`. [-]
    - **`effective_particle_area`** [number][**required**]
-   Effective particle area of a material. This value is required for radar simulation.
+   Effective particle area of a material. This value is required for radar simulation. [μm]
    - **`relative_permittivity_uri`** [string][**required**]
    Ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has
    vacuum as its dielectric. Relative permittivity is also commonly known as the dielectric constant and is required for
    radar simulation. This strings represents the URI of an external file with tabular relative permeability data. The
-   data is structured by incident angle, temperature and wavelength.
+   data is structured by incident angle, temperature and wavelength. [-]
    - **`relative_permeability_uri`** [string][**required**]
    Denoted by the symbol μ_r, relative permeability is the ratio of the permeability of a specific medium to the
    permeability of free space μ0. In SI units, μ_r is measured in henries per meter (H/m), or equivalently in newtons
    per ampere squared (N⋅A−2). This value is required for radar simulation. This strings represents the URI of an
    external file with tabular relative permeability data. The data is structured by incident angle, temperature and
-   wavelength.   
+   wavelength. [-]   
    - **`conductivity_uri`** [string][**required**]
    Conductivity quantifies how a material conducts electric current. The SI unit of electrical conductivity is 
    Siemens per meter (S/m). This value is required for radar simulation. This strings represents the URI of an
-   external file with tabular conductivity data.
+   external file with tabular conductivity data. [-]
    - **`acoustic_impedance`** [number][**required**]
    Acoustic impedance describes how much resistance an ultrasound beam encounters as it passes through a tissue
-   (in kg/(m^2s)). This value is required for ultrasound simulation.
+   [kg/(m^2s)]. This value is required for ultrasound simulation.
    - **`shear_velocity`** [number][**required**]
    Shear velocity is used to describe shear-related motion in moving fluids. This value is required for ultrasound
-   simulation.
+   simulation. [m/s]
    
 Wave-matter interaction
 -----------------------

@@ -27,9 +27,9 @@ Within the following enlistment of properties specified by the proposed extensio
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
 * **`temperature`** [string][**required**]
-Temperature (numeric value) in [K] at which an conductivity value was measured.
+Temperature [K] at which an conductivity value was measured.
 * **`conductivity`** [string][**required**]
-Conductivity, key to an array of tuples of corresponding wavelengths and conductivity values.
+Conductivity, key to an array of tuples of corresponding wavelengths [m] and conductivity [S/m] values.
 
 Example
 -------
