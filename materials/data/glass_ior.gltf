@@ -1,0 +1,44 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_ior",
+                "id": "af0d1c68-9829-4428-85b0-2c76e73731a5",
+                "title": "IOR glass",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "IOR of glass",
+                "creation_date": "2021.09.27. 16:08:00",
+                "sources": [
+                    "Stanislav Stefanov Zhekov, Ondrej Franek, and Gert Frølund Pedersen;
+					Dielectric Properties of Common Building Materials for Ultrawideband
+					Propagation Studies; Digital Object Identifier 10.1109/MAP.2019.2955680"
+                ],
+                "comment": "index of refraction of glass"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_ior_data": {
+            "data": [
+                {
+                    "temperature": 300.0,
+                    "n": [
+                        [3.89341e-03, 2.51]
+                    ],
+                    "k": [
+                        [3.89341e-03, 0.085]
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_ior_data"
+    ]
+}

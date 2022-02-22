@@ -1,0 +1,39 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_conductivity",
+                "id": "646aa274-209f-4ace-aea6-eeaa6962e43e",
+                "title": "Conductivity polypropylene",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "Conductivity of polypropylene",
+                "creation_date": "2021.09.27. 15:48:00",
+                "sources": [
+                    ""
+                ],
+                "comment": "conductivity of polypropylene"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_conductivity_data": {
+            "data": [
+                {
+                    "temperature": 300.0,
+                    "conductivity": [
+                        [3.89341e-03, 0.0]
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_conductivity_data"
+    ]
+}

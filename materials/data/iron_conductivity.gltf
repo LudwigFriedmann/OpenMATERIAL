@@ -1,0 +1,39 @@
+{
+    "asset": {
+        "copyright": "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_conductivity",
+                "id": "6eb64573-943f-481b-b97d-a3b4481bec57",
+                "title": "Conductivity iron",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+                "description": "Conductivity of iron",
+                "creation_date": "2021.09.27. 14:58:00",
+                "sources": [
+                    ""
+                ],
+                "comment": "conductivity of iron"
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_conductivity_data": {
+            "data": [
+                {
+                    "temperature": 300.0,
+                    "conductivity": [
+                        [3.89341e-03, 1.0e-07]
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_conductivity_data"
+    ]
+}

@@ -1762,253 +1762,133 @@
     ],
     "materials" : [
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Paint_Grey",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.1434183418750763,
-                    0.1434183418750763,
-                    0.1434183418750763,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.20000000298023224
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Chrome",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.425957590341568,
-                    0.425957590341568,
-                    0.425957590341568,
-                    1
-                ],
-                "metallicFactor" : 1,
-                "roughnessFactor" : 0.20000000298023224
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Glass",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "088c77f6-9466-40b7-ab47-0823e79484a5",
+                    "title": "glass",
+                    "uri": "../../materials/glass.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_Orange",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    0.10000000149011612,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_Clear",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.04968142881989479,
-                    0.04968142881989479,
-                    0.04968142881989479,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_White",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    1,
-                    1,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_Red",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    0.007847419939935207,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Number_Plate",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0,
-                    "texCoord" : 0
-                },
-                "metallicFactor" : 0.20000000298023224,
-                "roughnessFactor" : 0.5
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Paint_Blue",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0.03707938268780708,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.20000000298023224
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Rubber_Black",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "b6a4136d-77cb-4b8b-baf0-640181002574",
+                    "title": "rubber",
+                    "uri": "../../materials/rubber.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_Black",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "1824f23b-3dc2-430e-9d56-56db6f37c030",
+                    "title": "polypropylene",
+                    "uri": "../../materials/polypropylene.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Tissue_Grey",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.05714555084705353,
-                    0.05714555084705353,
-                    0.05714555084705353,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "1824f23b-3dc2-430e-9d56-56db6f37c030",
+                    "title": "polypropylene",
+                    "uri": "../../materials/polypropylene.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Tissue_Blue",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0.03700000047683716,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "1824f23b-3dc2-430e-9d56-56db6f37c030",
+                    "title": "polypropylene",
+                    "uri": "../../materials/polypropylene.gltf"
+                }
             }
         }
     ],
@@ -7229,5 +7109,9 @@
             "byteLength" : 1824324,
             "uri" : "truck_example.bin"
         }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_reference_link"
     ]
 }

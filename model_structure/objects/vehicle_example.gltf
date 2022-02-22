@@ -1272,214 +1272,113 @@
     ],
     "materials" : [
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Tissue_Black",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "1824f23b-3dc2-430e-9d56-56db6f37c030",
+                    "title": "polypropylene",
+                    "uri": "../../materials/polypropylene.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Glass",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "088c77f6-9466-40b7-ab47-0823e79484a5",
+                    "title": "glass",
+                    "uri": "../../materials/glass.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Paint_Red",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.16462922096252441,
-                    0.0017444498371332884,
-                    0,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.13636332750320435
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                1,
-                0.10000000149011612,
-                0
-            ],
             "name" : "Plastic_Orange",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    0.10000000149011612,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Chrome",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    1,
-                    1,
-                    1
-                ],
-                "metallicFactor" : 1,
-                "roughnessFactor" : 0.20000000298023224
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                1,
-                0,
-                0
-            ],
             "name" : "Plastic_Red",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    1,
-                    0.00800000037997961,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "alphaMode" : "BLEND",
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Plastic_Clear",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    0.4000000059604645
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.699999988079071
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "21da52ea-73a6-4417-a418-18a47a666136",
+                    "title": "plexiglass",
+                    "uri": "../../materials/plexiglass.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Number_Plate",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0,
-                    "texCoord" : 0
-                },
-                "metallicFactor" : 0.20000000298023224,
-                "roughnessFactor" : 0.5
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
+                    "title": "iron",
+                    "uri": "../../materials/iron.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Rubber_Black",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "b6a4136d-77cb-4b8b-baf0-640181002574",
+                    "title": "rubber",
+                    "uri": "../../materials/rubber.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Tissue_Sand",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.13084962964057922,
-                    0.09755708277225494,
-                    0.04744274914264679,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "1824f23b-3dc2-430e-9d56-56db6f37c030",
+                    "title": "polypropylene",
+                    "uri": "../../materials/polypropylene.gltf"
+                }
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
             "name" : "Wood_Dark",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.01770806312561035,
-                    0.00018726567213889211,
-                    0.0024490871001034975,
-                    1
-                ],
-                "metallicFactor" : 0,
-                "roughnessFactor" : 1
+            "extensions": {
+                "OpenMaterial_reference_link": {
+                    "id": "614fdd1e-24a3-4f28-bded-57734bfa7771",
+                    "title": "vegetation",
+                    "uri": "../../materials/vegetation.gltf"
+                }
             }
         }
     ],
@@ -4478,5 +4377,9 @@
             "byteLength" : 1215900,
             "uri" : "vehicle_example.bin"
         }
+    ],
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_reference_link"
     ]
 }

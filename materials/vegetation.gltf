@@ -1,24 +1,24 @@
 {
     "asset": {
-        "copyright" : "(C) 2019, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
+        "copyright" : "(C) 2021, Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
         "generator": "Khronos Blender glTF 2.0 I/O",
         "version": "2.0",
         "extensions": {
             "OpenMaterial_asset_info": {
                 "asset_type": "material",
-                "id": "3e421be02cfc487aa7bf1f0fa422b5d7",
-                "title": "iron",
+                "id": "614fdd1e-24a3-4f28-bded-57734bfa7771",
+                "title": "material_vegetation",
                 "asset_version": "1",
                 "asset_variation": "1",
                 "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG)",
-                "description": "iron material",
-                "creation_date": "2019.08.29. 10:46:00"
+                "description": "vegetation material",
+                "creation_date": "2021.09.28. 18:29:00"
             }
         }
     },
     "materials": [
         {
-            "name": "iron",
+            "name": "vegetation",
             "extensions": {
                 "OpenMaterial_material_parameters": {
                     "user_preferences": {
@@ -26,7 +26,7 @@
                         "include_diffraction": false,
                         "include_numerical_simulation": false,
                         "material_scheme": "surface",
-                        "material_classification": "solid-metal",
+                        "material_classification": "solid-vegetation",
                         "material_type": {
                             "isotropic": true,
                             "homogeneous": true,
@@ -45,23 +45,23 @@
                         },
                         "ingredients": [
                             {
-                            "material_ref": "ingredients.gltf",
-                            "order": "order.glft"
+                            "material_ref": "",
+                            "order": ""
                             }
                         ],
-                        "coating_materials": [
+						"coating_materials": [
                             {
                             "layer_thickness": 0.0,
-                            "material_ref": "coating.gltf"
+                            "material_ref": ""
                             }
                         ] 
                     },
                     "physical_properties": {
-                        "refractive_index_uri": "data/iron_ior.gltf",
-                        "mean_free_path": 1E-06,
-                        "particle_density": 7.874,
-                        "particle_cross_section": 1.00E+0,
-                        "emissive_coefficient_uri": "data/iron_emissivity.gltf",
+                        "refractive_index_uri": "data/vegetation_ior.gltf",
+                        "mean_free_path": 0.0,
+                        "particle_density": 0.0,
+                        "particle_cross_section": 0.0,
+                        "emissive_coefficient_uri": "",
                         "detection_wavelength_ranges": [
                         {
                                 "min": 300E-09,
@@ -89,12 +89,12 @@
                             "radar",
                             "lidar"
                         ],
-                        "effective_particle_area": 1.0,
+                        "effective_particle_area": 0.0,
                         "relative_permittivity_uri": "",
                         "relative_permeability_uri" : "",
-                        "conductivity_uri": "data/iron_conductivity.gltf",
-                        "acoustic_impedance":45.43E+05,
-                        "shear_velocity": 0.323 
+                        "conductivity_uri": "data/vegetation_conductivity.gltf",
+                        "acoustic_impedance":0.0,
+                        "shear_velocity": 0.0 
                     }
                 }
             }
