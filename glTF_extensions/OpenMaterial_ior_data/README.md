@@ -29,11 +29,11 @@ tuples [wavelength, IOR data].
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`temperature`** [string][**required**]
+* **`temperature`** [number][**required**]
 Temperature [K] at which the IOR values were measured.
-* **`n`** [string][**required**]
+* **`n`** [array][**required**]
 Real part of the IOR, key to an array of tuples of corresponding wavelengths [m] and IOR values [-].
-* **`k`** [string][**required**]
+* **`k`** [array][**required**]
 Imaginary part of the IOR, key to an array of tuples of corresponding wavelengths [m] and IOR values [-].
 
 Example

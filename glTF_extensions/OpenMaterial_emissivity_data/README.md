@@ -25,9 +25,9 @@ This extension provides emissivity coefficient data measured at a certain temper
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`temperature`** [string][**required**]
+* **`temperature`** [number][**required**]
 Temperature [K] at which an emissivity coefficient value was measured.
-* **`emissivity`** [string][**required**]
+* **`emissivity`** [number][**required**]
 Emissivity coefficient [-].
 
 Example

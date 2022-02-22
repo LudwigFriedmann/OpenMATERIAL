@@ -26,9 +26,9 @@ This extension provides conductivity data measured at a certain temperature for 
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`temperature`** [string][**required**]
+* **`temperature`** [number][**required**]
 Temperature [K] at which an conductivity value was measured.
-* **`conductivity`** [string][**required**]
+* **`conductivity`** [number][**required**]
 Conductivity, key to an array of tuples of corresponding wavelengths [m] and conductivity [S/m] values.
 
 Example

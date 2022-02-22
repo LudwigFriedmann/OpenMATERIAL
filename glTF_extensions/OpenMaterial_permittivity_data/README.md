@@ -26,11 +26,11 @@ This extension provides relative permittivity data measured at a certain inciden
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
-* **`temperature`** [string][**required**]
+* **`temperature`** [number][**required**]
 Temperature [K] at which an permittivity value was measured.
-* **`incident_angle`** [string][**required**]
+* **`incident_angle`** [number][**required**]
 Incident angle of the measurement relative to the local normal vector at the material surface in [rad].
-* **`permittivity`** [string][**required**]
+* **`permittivity`** [number][**required**]
 Relative permittivity, key to an array of tuples of corresponding wavelengths [m] and permittivity [F/m] values.
 
 Example
