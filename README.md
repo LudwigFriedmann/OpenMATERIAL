@@ -5,9 +5,9 @@ OpenMaterial
 
 In virtual development, test and validation of automated and autonomous driving systems, 3D models are used for the geometric representation of the environment of simulated vehicles as well as for the vehicles themselves. For a long time, physical correctness in the visual representation of those geometries was not fundamental. Due to limited computing capacities, implementations were designed for lowest possible memory and computing time requirements while providing a visually plausible appearance. 
 
-For physical sensor simulation, which is becoming increasingly important in the context mentioned above, this approach is suitable to a limited extent. Instead of visual plausibility, physically correct modelling of material properties is fundamental in order to achieve valid results. Besides sensor simulation, modern rendering solutions also require physical material properties in 3D models in order to be able to reproduce physically correct lighting, reflections and shadowing.
+For physical sensor simulation, which is becoming increasingly important in the context mentioned above, this approach is suitable to a limited extent. Instead of visual plausibility, physically correct modelling of material properties is fundamental in order to achieve valid results [[1]](#[1]). Besides sensor simulation, modern rendering solutions also require physical material properties in 3D models in order to be able to reproduce physically correct lighting, reflections and shadowing.
 
-The specific architecture of a simulation framework used in the above-mentioned context poses further demand for action. Within the framework, which may be set up distributed over several compute nodes, subsystems such as an environment simulation, rendering and sensor models are implemented as individual software components. Internally, these components use non-standardized 3D models to represent the environment and road users, each for its specific purpose. This circumstance may lead to inconsistencies in the representation of the virtual world and complicates both the maintenance and scalability of the approach:
+The specific architecture of a simulation framework used in the above-mentioned context poses further demand for action. Within the framework, which may be set up distributed over several compute nodes, subsystems such as an environment simulation, rendering and sensor models are implemented as individual software components [[2]](#[2]). Internally, these components use non-standardized 3D models to represent the environment and road users, each for its specific purpose. This circumstance may lead to inconsistencies in the representation of the virtual world and complicates both the maintenance and scalability of the approach:
 
 <p align="center"><img src="Simulation_Architecture.svg" alt="Simulation_Architecture"><br></p>
 
@@ -24,3 +24,9 @@ The above-mentioned circumstances led to the establishment of the project **Open
 | [`model_structure`](model_structure/) | Proposal on 3D model structure (quality criteria, node hierarchy, transforms,...) |
 | [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions |
 | [`pathtracer`](pathtracer/)           | Implementation of a raycaster / pathtracer using the proposed glTF extensions |
+
+References
+----------
+<a name="[1]"></a>[1] V. Kurz, L. Friedmann, C. van Driesten and E. Biebl, "Physically based radar simulation parameter of road surfaces in OpenMATERIAL," 2022 3rd URSI Atlantic and Asia Pacific Radio Science Meeting (AT-AP-RASC), Gran Canaria, Spain, 2022, pp. 1-2, doi: 10.23919/AT-AP-RASC54737.2022.9814181.
+
+<a name="[2]"></a>[2] L. Friedmann, S. Reiter and C. Linnhoff, "SUC 3 - Open-Loop Sensor Simulation for Component Test: Radar-based Tracking," presented at SET Level Final Event, Munich, Germany, 2022.
