@@ -2,7 +2,7 @@ Physical pathtracer / raycaster
 =================================
 
 This project implements a pathtracer to demonstrate the capabilities of the proposed `OpenMaterial_material_parameters`
-extension for the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format.
+and the `OpenMaterial_ior_data` extensions for the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format.
 
 The pathtracer loads an object (a 3D geometry) from a glTF file. Examples for geometry glTF files can be found in the folder
 [`../objects/`](../objects/). In their `material` section, those files contain a link to other glTF files that provide the physical parameters
