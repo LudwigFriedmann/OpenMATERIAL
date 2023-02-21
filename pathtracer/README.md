@@ -1,18 +1,19 @@
 Physical pathtracer / raycaster
 =================================
 
-This project implements a pathtracer to demonstrate the capabilities of the proposed `OpenMaterial_material_parameters`
-and the `OpenMaterial_ior_data` extensions for the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format.
+This project implements a pathtracer to demonstrate the capabilities of the proposed `OpenMaterial_reference_link`,
+`OpenMaterial_material_parameters` and `OpenMaterial_ior_data` extensions for the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format.
 
-The pathtracer loads an object (a 3D geometry) from a glTF file. Examples for geometry glTF files can be found in the folder
-[`../objects/`](../objects/). In their `material` section, those files contain a link to other glTF files that provide the physical parameters
-and the description of materials. This way, materials can be used by different geometries and vice versa.
+The pathtracer loads an object (a 3D geometry) from a glTF file. Using the proposed `OpenMaterial_reference_link` extension, the `material`
+section of glTF files is extended by references to files providing physical material parameters (specified by `OpenMaterial_material_parameters`).
+These files can in turn contain references to look-up tables with measurement data (e.g. `OpenMaterial_ior_data`). This way, material
+parameters and measurement data can be used by different geometries and vice versa.
 
-The pathtracer renders a single picture. The physical parameters provided in the glTF material files in the folder
-[`../materials/`](../materials/) (e.g., `aluminium.gltf`,`iron.gltf` or `gold.gltf`) are used to compute the reflection of rays at the
-geometry. Corresponding light sources for this reflection are provided by a HDR (high definition range) background image.
-The implemented camera model is a thin lens camera. The rendered output image is saved as a PPM (Portable Pixmap
-format) file.
+The pathtracer renders a single picture from a glTF file and referenced material data. Examples for geometry glTF files can be found in the
+folder [`../objects/`](../objects/). The physical parameters provided in the material files in [`../materials/`](../materials/) are used to compute the reflection of
+rays at the
+geometry. Corresponding light sources for this reflection are provided by a HDR (high definition range) background image. The implemented
+camera model is a thin lens camera. The rendered output image is saved as a PPM (Portable Pixmap format) file.
 
 Besides its major use case as a pathtracer, the implementation provides the functionality of a raycaster. In this case,
 reflections and secondary rays are neglected. Instead, material coefficients from the first ray-object intersection are
