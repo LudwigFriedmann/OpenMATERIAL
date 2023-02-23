@@ -63,7 +63,7 @@ The permittivity data file (in this case `tarmac_permittivity.gltf`) provides th
 
 ````
 "extensions": {
-    "OpenMaterial_ior_data": {
+    "OpenMaterial_permittivity_data": {
         "data": [
             {
                 "temperature": 300.0,
