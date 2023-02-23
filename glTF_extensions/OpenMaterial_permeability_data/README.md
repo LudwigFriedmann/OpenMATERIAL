@@ -63,7 +63,7 @@ The permeability data file (in this case `tarmac_permeability.gltf`) provides th
 
 ````
 "extensions": {
-    "OpenMaterial_ior_data": {
+    "OpenMaterial_permeability_data": {
         "data": [
             {
                 "temperature": 300.0,
