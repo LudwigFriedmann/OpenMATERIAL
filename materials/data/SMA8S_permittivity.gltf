@@ -7,16 +7,16 @@
             "OpenMaterial_asset_info": {
                 "asset_type": "material_permittivity",
                 "id": "e648bb58-7d81-4a79-9f95-f66955560d53",
-                "title": "relative permittivity SMA8S",
+                "title": "Relative permittivity SMA8S",
                 "asset_version": "1",
                 "asset_variation": "1",
                 "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
-                "description": "relative permittivity of split mastix asphalt with a maximum grain size of 8mm (SMA8S)",
+                "description": "Relative permittivity of split mastix asphalt with a maximum grain size of 8mm (SMA8S)",
                 "creation_date": "2022.01.10. 12:00:00",
                 "sources": [
                     "https://ars.copernicus.org/articles/19/165/2021/"
                 ],
-                "comment": "relative permittivity of split mastix asphalt with a maximum grain size of 8mm (SMA8S); data obtained in a radar measurement using a frequency range of 76-81GHz" 
+                "comment": "Relative permittivity of split mastix asphalt with a maximum grain size of 8mm (SMA8S); data obtained in a radar measurement using a frequency range of 76-81GHz" 
             }
         }
     },
@@ -25,9 +25,10 @@
             "data": [
                 {
                     "temperature": 280.0,
+                    "humidity": -1.0,
                     "incident_angle": 0.78,									
                     "permittivity": [
-                        [10.4, -1.0]					
+                        [3.89341e-03, 10.4]					
                     ]
                 }
             ]

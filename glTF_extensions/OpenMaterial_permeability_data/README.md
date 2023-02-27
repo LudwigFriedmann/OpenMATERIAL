@@ -2,7 +2,7 @@ OpenMaterial_permeability_data
 ==============================
 
 This is a proposal for an extension to the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) specification. The goal of this extension is to
-provide a physically accurate description of the relative permeability at a given temperature, incident angle
+provide a physically accurate description of the relative permeability at a given temperature, humidity, incident angle
 and wavelength range in a look-up table. Values within the range which aren't explicitly listed can be
 obtained using linear interpolation.
 
@@ -21,13 +21,15 @@ file:
 Properties
 ----------
 
-This extension provides relative permeability data measured at a certain incident angle and temperature for a certain wavelenght range.
+This extension provides relative permeability data measured at a certain incident angle, temperature and humidity for a certain wavelenght range.
 
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
 
 * **`temperature`** [number][**required**]
-Temperature [K] at which an permeability value was measured.
+Temperature [K] at which permeability was measured.
+* **`relative_humidity`** [number][**required**]
+Relative humidity [%] at which permeability was measured.
 * **`incident_angle`** [number][**required**]
 Incident angle of the measurement relative to the local normal vector at the material surface in [rad].
 * **`permeability`** [number][**required**]
@@ -67,6 +69,7 @@ The permeability data file (in this case `tarmac_permeability.gltf`) provides th
         "data": [
             {
                 "temperature": 300.0,
+                "humidity": 80.0,
                 "incident_angle": 0.785398,				
                 "permeability": [
                     [3.89341e-03, xxx]

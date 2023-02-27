@@ -7,16 +7,16 @@
             "OpenMaterial_asset_info": {
                 "asset_type": "material_permittivity",
                 "id": "11a9cf2e-b89c-4571-831b-135ac43d9c11",
-                "title": "relative permittivity AC11DS",
+                "title": "Relative permittivity AC11DS",
                 "asset_version": "1",
                 "asset_variation": "1",
                 "creator": "Bayerische Motoren Werke Aktiengesellschaft (BMW AG), Technische Universitaet Muenchen - Professur fuer Hoechstfrequenztechnik",
-                "description": "relative permittivity of asphalt concrete with a maximum grain size of 11mm (AC11DS)",
+                "description": "Relative permittivity of asphalt concrete with a maximum grain size of 11mm (AC11DS)",
                 "creation_date": "2022.01.10. 12:00:00",
                 "sources": [
                     "https://ars.copernicus.org/articles/19/165/2021/"
                 ],
-                "comment": "relative permittivity of asphalt concrete with a maximum grain size of 11mm (AC11DS); data obtained in a radar measurement using a frequency range of 76-81GHz"
+                "comment": "Relative permittivity of asphalt concrete with a maximum grain size of 11mm (AC11DS); data obtained in a radar measurement using a frequency range of 76-81GHz"
             }
         }
     },
@@ -25,9 +25,10 @@
             "data": [
                 {
                     "temperature": 280.0,
+                    "humidity": -1.0,
                     "incident_angle": 0.78,		
                     "permittivity": [
-                        [8.6, -1.0]					
+                        [3.89341e-03, 8.6]					
                     ]
                 }
             ]

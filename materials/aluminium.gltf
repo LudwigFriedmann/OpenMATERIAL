@@ -45,14 +45,14 @@
                         },
                         "ingredients": [
                             {
-                            "material_ref": "ingredients.gltf",
-                            "order": "order.glft"
+                            "material_ref": "",
+                            "order": ""
                             }
                         ],
 						"coating_materials": [
                             {
                             "layer_thickness": 0.0,
-                            "material_ref": "coating.gltf"
+                            "material_ref": ""
                             }
                         ] 
                     },

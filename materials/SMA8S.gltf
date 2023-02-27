@@ -41,26 +41,26 @@
                         "lambert_emission": 0.0,
                         "subsurface": {
                             "subsurface": false,
-                            "subsurface_thickness": -1.0
+                            "subsurface_thickness": 0.0
                         },
                         "ingredients": [
                             {
-                            "material_ref": "ingredients.gltf",
-                            "order": "order.glft"
+                            "material_ref": "",
+                            "order": ""
                             }
                         ],
 						"coating_materials": [
                             {
                             "layer_thickness": 0.0,
-                            "material_ref": "coating.gltf"
+                            "material_ref": ""
                             }
                         ] 
                     },
                     "physical_properties": {
                         "refractive_index_uri": "",
-                        "mean_free_path": 1E-06,
-                        "particle_density": 2.7,
-                        "particle_cross_section": 1.00E+0,
+                        "mean_free_path": -1.0,
+                        "particle_density": -1.0,
+                        "particle_cross_section": -1.0,
                         "emissive_coefficient_uri": "",
                         "detection_wavelength_ranges": [
                         {
