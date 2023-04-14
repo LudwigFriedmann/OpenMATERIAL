@@ -7,6 +7,7 @@ This directory contains the following 3D models:
 |:----------|:--------------------------|:-------------------------------|:-------------------------------------------------------------------|:------------------------------------------------------|
 | Cone      | `cone_*.gltf`             | Blender Cone                   | Exported using [Blender 2.8](https://www.blender.org/)             | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Cube      | `cube_*.gltf`             | Cube                           | Created and exported using [Blender 2.8](https://www.blender.org/) | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Cube      | `cube_pbr_*.gltf`         | Cube for PBR and OpenMATERIAL  | Created and exported using [Blender 2.8](https://www.blender.org/) | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Cube+     | `cubeEnriched_*.gltf`     | Cube for mesh displacement     | Created and exported using [Blender 2.8](https://www.blender.org/) | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Cylinder+ | `cylinderEnriched_*.gltf` | Cylinder for mesh displacement | Created and exported using [Blender 2.8](https://www.blender.org/) | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Monkey    | `monkey_*.gltf`           | Blender Monkey Suzanne         | Exported using [Blender 2.8](https://www.blender.org/)             | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
