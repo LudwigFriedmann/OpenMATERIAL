@@ -111,7 +111,9 @@ Material properties that could change when material is applied to geometry.
 Intrinsic physical material properties that do not change when material is applied to geometry.
   - **`refractive_index_uri`** [string][**required**]
   URI of an external file with tabular refractive index data. The refractive index is a complex function N (n + ik) that
-  depends on the temperature and the wavelength. [-]
+  depends on the temperature and the wavelength. [-] There is a functional relationship between refractive index, relative
+  permeability and relative permittivity. Depending on the area of application, either the refractive index or the relative
+  permeability and relative permittivity should be used.
   - **`mean_free_path`** [number][**required**]
   Mean free path for volumetric materials [μm]. The mean free path is the average distance travelled by
   light until it scatters at a scatterer. Value 0 indicates the property is not used.
@@ -135,13 +137,17 @@ Intrinsic physical material properties that do not change when material is appli
    Ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has
    vacuum as its dielectric. Relative permittivity is also commonly known as the dielectric constant and is required for
    radar simulation. This strings represents the URI of an external file with tabular relative permeability data. The
-   data is structured by incident angle, temperature and wavelength. [-]
+   data is structured by incident angle, temperature and wavelength. [-] There is a functional relationship between
+   refractive index, relative permeability and relative permittivity. Depending on the area of application, either the
+   refractive index or the other two values should be used.
    - **`relative_permeability_uri`** [string][**required**]
    Denoted by the symbol μ_r, relative permeability is the ratio of the permeability of a specific medium to the
    permeability of free space μ0. In SI units, μ_r is measured in henries per meter (H/m), or equivalently in newtons
    per ampere squared (N⋅A−2). This value is required for radar simulation. This strings represents the URI of an
    external file with tabular relative permeability data. The data is structured by incident angle, temperature and
-   wavelength. [-]   
+   wavelength. [-] There is a functional relationship between refractive index, relative permeability and relative
+   permittivity. Depending on the area of application, either the refractive index or the the other two values should be
+   used.   
    - **`conductivity_uri`** [string][**required**]
    Conductivity quantifies how a material conducts electric current. The SI unit of electrical conductivity is 
    Siemens per meter (S/m). This value is required for radar simulation. This strings represents the URI of an

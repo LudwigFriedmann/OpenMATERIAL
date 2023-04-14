@@ -9,15 +9,15 @@
             "type": "object",
             "properties": {
                 "geometrical_optics": {
-                    "description": "If it is true, geometrical optics will be used which is valid when the size of the geometry structure of the object is much larger than the incident wavelength. [-]",
+                    "description": "If true, geometrical optics will be used which is valid when the size of the geometry structure of the object is much larger than the incident wavelength. [-]",
                     "type": "boolean"
                 },
                 "include_diffraction": {
-                    "description": "If it is true, diffraction models will be included in the interactions. Examples of methods are Unified Theory of Diffraction (UTD) - Geometrical Theory of Diffraction (GTD). [-]",
+                    "description": "If true, diffraction models will be included in the interactions. Examples of methods are Unified Theory of Diffraction (UTD) - Geometrical Theory of Diffraction (GTD). [-]",
                     "type": "boolean"
                 },
                 "include_numerical_simulation": {
-                    "description": "If it is true, numerical methods will compute the electromagnetic field. Examples of methods are BEM (Boundary Elements Method), FEM (Finite Element Method), FDTD (Finite Difference Time Domain), and FMM (Fast Multiple Method). [-]",
+                    "description": "If true, numerical methods will compute the electromagnetic field. Examples of methods are BEM (Boundary Elements Method), FEM (Finite Element Method), FDTD (Finite Difference Time Domain), and FMM (Fast Multiple Method). [-]",
                     "type": "boolean"
                 },
                 "material_scheme": {
@@ -30,24 +30,24 @@
                     ]
                 },
                 "material_classification": {
-                    "description": "It provides information about the hierarchical classification of the material. The first hierarchy level is either solid, liquid or gas. The lower hierarchy levels can be chosen by the user. The hierarchy levels are separated by ‘–‘ sign. The classification can be used for searching and filtering similar to tags. As an example, a classification of aluminium can be “solid-metal-aluminium”. [-]",
+                    "description": "Hierarchical classification of the material. The first hierarchy level is either solid, liquid or gas. The lower hierarchy levels can be chosen by the user. The hierarchy levels are separated by ‘–‘ sign. The classification can be used for searching and filtering similar to tags. As an example, a classification of aluminium can be “solid-metal-aluminium”. [-]",
                     "type": "string"
                 },
                 "material_type": {
                     "type": "object",
                     "properties": {
                         "isotropic": {
-                            "description": "If isotropic is true, it will be assumed that the material's physical properties are independent of the incident direction. This is for example true for most metals and glasses. If isotropic is set to false, then anisotropic materials (including orthotropic) will be considered. Then the input parameters should be provided as a function of the incident direction. [-]",
+                            "description": "If true, it will be assumed that the material's physical properties are independent of the incident direction. This is for example true for most metals and glasses. If isotropic is set to false, then anisotropic materials (including orthotropic) will be considered. Then the input parameters should be provided as a function of the incident direction. [-]",
                             "type": "boolean",
                             "default": true
                         },
                         "homogeneous": {
-                            "description": "If it is set to false, non-homogeneous material needs to be considered in which physical properties varies inside the material. Physical properties should be provided accordingly if material is homogeneous or not. [-]",
+                            "description": "If false, non-homogeneous material needs to be considered in which physical properties varies inside the material. Physical properties should be provided accordingly if material is homogeneous or not. [-]",
                             "type": "boolean",
                             "default": true
                         },
                         "magnetic": {
-                            "description": "If this flag is true, it is assumed that the material has magnetic properties. If this flag is false, the material is assumed non-magnetic. [-]",
+                            "description": "If true, it is assumed that the material has magnetic properties. If this flag is false, the material is assumed non-magnetic. [-]",
                             "type": "boolean",
                             "default": false
                         }
@@ -71,7 +71,7 @@
                     "type": "object",
                     "properties": {
                         "subsurface": {
-                            "description": "If it is true, subsurface interactions will be considered on top of surface interactions. [-]",
+                            "description": "If true, subsurface interactions will be considered on top of surface interactions. [-]",
                             "type": "boolean"
                         },
                         "subsurface_thickness": {
@@ -168,7 +168,7 @@
             "type": "object",
             "properties": {
                 "refractive_index_uri": {
-                    "description": "The refractive index is a complex function N (n + ik) that depends on the temperature and the wavelength. The data of the refractive index is provided as a table in the external glTF file given by the URI. [-]",
+                    "description": "The refractive index is a complex function N (n + ik) that depends on the temperature and the wavelength. The data of the refractive index is provided as a table in the external glTF file given by the URI. [-] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
                     "type": "string"
                 },
                 "mean_free_path": {
@@ -176,7 +176,7 @@
                     "type": "number"
                 },
                 "particle_density": {
-                    "description": "It is the density of scatterers in the volume  [μm^3]. Value 0 means that property is not used.",
+                    "description": "Density of scatterers in the volume  [μm^3]. Value 0 means that property is not used.",
                     "type": "number"
                 },
                 "particle_cross_section": {
@@ -192,11 +192,11 @@
                     "type": "number"
                 },
                 "relative_permittivity_uri": {
-                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric. The data of the relative permittivity is provided as a table in the external glTF file given by the URI. [-]",
+                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric. The data of the relative permittivity is provided as a table in the external glTF file given by the URI. [-] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
                     "type": "string"
                 },
                 "relative_permeability_uri": {
-                    "description": "It's the ratio of the permeability of a specific medium to the permeability of free space mu0. The data of the relative permeability is provided as a table in the external glTF file given by the URI. [-]",
+                    "description": "Ratio of the permeability of a specific medium to the permeability of free space mu0. The data of the relative permeability is provided as a table in the external glTF file given by the URI. [-] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
                     "type": "string"
                 },
                 "conductivity_uri": {
