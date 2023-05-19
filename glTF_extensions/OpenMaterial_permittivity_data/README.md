@@ -2,7 +2,7 @@ OpenMaterial_permittivity_data
 ==============================
 
 This is a proposal for an extension to the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) specification. The goal of this extension is to
-provide a physically accurate description of the relative permittivity at a given temperature, humidity, incident angle
+provide a physically accurate description of the complex relative permittivity at a given temperature, humidity, incident angle
 and wavelength range in a look-up table. Values within the range which aren't explicitly listed can be
 obtained using linear interpolation.
 
@@ -21,7 +21,7 @@ file:
 Properties
 ----------
 
-This extension provides relative permittivity data measured at a certain incident angle, temperature and humidity for a certain wavelenght range.
+This extension provides complex relative permittivity data measured at a certain incident angle, temperature and humidity for a certain wavelenght range.
 
 Within the following enlistment of properties specified by the proposed extension, items labeled as **required** are
 mandatory and must be present. Properties without **required** label are optional and may be omitted:
@@ -32,8 +32,10 @@ Temperature [K] at which permittivity was measured.
 Relative humidity [%] at which permeability was measured.
 * **`incident_angle`** [number][**required**]
 Incident angle of the measurement relative to the local normal vector at the material surface in [rad].
-* **`permittivity`** [number][**required**]
-Relative permittivity, key to an array of tuples of corresponding wavelengths [m] and permittivity [F/m] values.
+* **`real`** [array][**required**]
+Real part of the relative permittivity, key to an array of tuples of corresponding wavelengths [m] and permittivity values [F/m].
+* **`imag`** [array][**required**]
+Imaginary part of the relative permittivity, key to an array of tuples of corresponding wavelengths [m] and permittivity values [F/m].
 
 Example
 -------
@@ -61,7 +63,7 @@ Within the section `physical_properties` of its **OpenMaterial_material_paramete
 ],
 ````
 
-The permittivity data file (in this case `tarmac_permittivity.gltf`) provides the data to compute permittivity at the geometry: 
+The complex permittivity data file (in this case `tarmac_permittivity.gltf`) provides the data to compute permittivity at the geometry: 
 
 ````
 "extensions": {
@@ -71,8 +73,13 @@ The permittivity data file (in this case `tarmac_permittivity.gltf`) provides th
                 "temperature": 300.0,
                 "humidity": 80.0,
                 "incident_angle": 0.785398,				
-                "permittivity": [
-                    [3.89341e-03, xxx]
+				"real": [
+					[3.89341e-03, xxx],
+					...
+				],
+				"imag": [
+					[3.89341e-03, xxx],
+					 ...
 				]
             }
         ]

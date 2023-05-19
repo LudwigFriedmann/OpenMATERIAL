@@ -1,15 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Proposed OpenMaterial_permittivity_data glTF extension",
-    "description": "Measured relative permittivity at given temperature, humidity and incident angle.",
+    "description": "Measured complex relative permittivity at given temperature, humidity and incident angle.",
     "type": "object",
     "patternProperties": {
         "data": {
             "type": "array",
-            "description": "Measured relative permittivity at specific temperature, humidity and incident angle.",
+            "description": "Measured complex relative permittivity at specific temperature, humidity and incident angle.",
             "items": {
                 "type": "object",
-                "description": "Array of permittivity at given wavelength, specific temperature, humidity and incident angle.",
+                "description": "Array of real/imaginary parts of permittivity at given wavelength, specific temperature, humidity and incident angle.",
                 "properties": {
                     "temperature": {
                         "description": "Temperature [K] (T(°C) = T(K) - 273.15).",
@@ -23,11 +23,11 @@
                         "description": "Incident angle of the measurement relative to the local normal vector at the material surface in [rad].",
                         "type": "number"
                     },
-                    "permittivity": {
+                    "real": {
                         "type": "array",
                         "items": {
                             "type": "array",
-                            "description": "Pairs of wavelength and permittivity.",
+                            "description": "Pairs of wavelength and relative permittivity real part.",
                             "items": [
                                 {
                                     "type": "number",
@@ -35,7 +35,24 @@
                                 },
                                 {
                                     "type": "number",
-                                    "description": "Relative permittivity [F/m]."
+                                    "description": "Real part of relative permittivity. [F/m]"
+                                }
+                            ]
+                        }
+                    },
+                    "imag": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "description": "Pairs of wavelength and relative permittivity imaginary part.",
+                            "items": [
+                                {
+                                    "type": "number",
+                                    "description": "Wavelength [m]."
+                                },
+                                {
+                                    "type": "number",
+                                    "description": "Imaginary part of relative permittivity. [F/m]"
                                 }
                             ]
                         }
@@ -45,7 +62,8 @@
                     "temperature",
                     "humidity",
                     "incident_angle",
-                    "permittivity"
+                    "real",
+                    "imag"
                 ]
             }
         },
