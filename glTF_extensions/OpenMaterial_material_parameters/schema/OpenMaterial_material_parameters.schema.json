@@ -192,11 +192,11 @@
                     "type": "number"
                 },
                 "relative_permittivity_uri": {
-                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric. The data of the relative permittivity is provided as a table in the external glTF file given by the URI. [-] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
+                    "description": "Ratio of the capacitance of a capacitor using that material as a dielectric. The complex data of the relative permittivity is provided as a table in the external glTF file given by the URI. [F/m] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
                     "type": "string"
                 },
                 "relative_permeability_uri": {
-                    "description": "Ratio of the permeability of a specific medium to the permeability of free space mu0. The data of the relative permeability is provided as a table in the external glTF file given by the URI. [-] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
+                    "description": "Ratio of the permeability of a specific medium to the permeability of free space mu0. The complex data of the relative permeability is provided as a table in the external glTF file given by the URI. [H/m] There is a functional relationship between refractive index, relative permeability and relative permittivity. Depending on the area of application, either the refractive index or the other two values should be used.",
                     "type": "string"
                 },
                 "conductivity_uri": {

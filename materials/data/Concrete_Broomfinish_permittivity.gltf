@@ -16,7 +16,7 @@
                 "sources": [
                     "https://ars.copernicus.org/articles/19/165/2021/"
                 ],
-                "comment": "Relative permittivity of conrete roads built in using broomfinish technique (Concrete_BF);data obtained in a radar measurement using a frequency range of 76-81GHz"
+                "comment": "Relative permittivity of conrete roads built in using broomfinish technique (Concrete_BF); data obtained in a radar measurement using a frequency range of 76-81GHz"
             }
         }
     },
@@ -27,9 +27,13 @@
                     "temperature": 280.0,
                     "humidity": -1.0,
                     "incident_angle": 0.78,				
-                    "permittivity": [
+                    "real": [
                         [3.70114e-03, 4.34],
                         [3.89341e-03, 4.34]						
+                    ],
+                    "imag": [
+                        [3.70114e-03, -1.0],
+                        [3.89341e-03, -1.0]						
                     ]
                 }
             ]
