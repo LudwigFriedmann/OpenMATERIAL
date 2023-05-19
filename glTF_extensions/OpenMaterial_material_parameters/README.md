@@ -136,7 +136,7 @@ Intrinsic physical material properties that do not change when material is appli
    - **`relative_permittivity_uri`** [string][**required**]
    Ratio of the capacitance of a capacitor using that material as a dielectric, compared with a similar capacitor that has
    vacuum as its dielectric. Relative permittivity is also commonly known as the dielectric constant and is required for
-   radar simulation. This strings represents the URI of an external file with tabular complex relative permeability data. The
+   radar simulation. This strings represents the URI of an external file with tabular complex relative permittivity data. The
    data is structured by incident angle, temperature and wavelength. [F/m] There is a functional relationship between
    refractive index, relative permeability and relative permittivity. Depending on the area of application, either the
    refractive index or the other two values should be used.
