@@ -9,7 +9,7 @@
             "description": "Measured complex relative permittivity at specific temperature, humidity and incident angle.",
             "items": {
                 "type": "object",
-                "description": "Array of real/imaginary parts of permittivity at given wavelength, specific temperature, humidity and incident angle.",
+                "description": "Array of real/imaginary parts of relative permittivity at given wavelength, specific temperature, humidity and incident angle.",
                 "properties": {
                     "temperature": {
                         "description": "Temperature [K] (T(°C) = T(K) - 273.15).",
