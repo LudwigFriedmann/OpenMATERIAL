@@ -73,14 +73,14 @@ The complex permittivity data file (in this case `tarmac_permittivity.gltf`) pro
                 "temperature": 300.0,
                 "humidity": 80.0,
                 "incident_angle": 0.785398,				
-				"real": [
-					[3.89341e-03, xxx],
-					...
-				],
-				"imag": [
-					[3.89341e-03, xxx],
-					 ...
-				]
+                "real": [
+                    [3.89341e-03, xxx],
+                    ...
+                ],
+                "imag": [
+                    [3.89341e-03, xxx],
+                    ...
+                ]
             }
         ]
     }
