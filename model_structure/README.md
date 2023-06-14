@@ -58,7 +58,7 @@ The following quality requirements were designed to meet the requirements of rea
       <tr><th>Requirement</th><th>Recommendation</th></tr>
       <tr><td><b>File Format 3D Model</b></td><td>glTF 2.0</td></tr>
       <tr><td><b>File Size 3D Model</b></td><td>< 100 Mb (including textures)</td></tr>
-      <tr><td><b>Polygon Count</b></td><td>< 500.000k</td></tr>
+      <tr><td><b>Polygon Count</b></td><td>< 100-150k</td></tr>
       <tr><td><b>PBR Support</b></td><td>Metallic-Roughness</td></tr>
       <tr><td><b>File Format Textures</b></td><td>PNG, JPG</td></tr>
       <tr><td><b>Texture Resolution</b></td><td>2048 x 2048 px</td></tr>
