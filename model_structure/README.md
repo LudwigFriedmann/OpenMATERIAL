@@ -8,7 +8,7 @@ Within this project, specifications for the following model categories are draft
 * [`Roads and Traffic Infrastructure`](Road_Structure.md)
 * [`Vehicles`](Vehicle_Structure.md)
 
-Proposals concerning further model categories (e.g. other traffic participants, buildings, road infrastructure, environment) will be added in the future. 
+Proposals concerning further model categories (e.g. other traffic participants, buildings, environment) will be added in the future. 
 
 # Examples
 
