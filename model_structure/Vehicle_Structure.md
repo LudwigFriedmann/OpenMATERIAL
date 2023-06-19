@@ -36,7 +36,7 @@ Model node structure shall comply with the structure presented in [chapter 3.2](
 
 ### 3.1	Quality Requirements
 
-The following quality requirements were designed to meet the requirements of real-time simulation. This implies traffic simulation (of up to 100 vehicles) at interactive frame rates (60Hz) on COTS (commercial off-the-shelf) hardware. In a balance of power, the quality of the scene shall be granted in a way that, from a camera distance of half a meter, no visual artifacts shall be observable at the model surfaces for a FullHD (1920 x 1080 px) rendering. In addition, the following recommendations concerning model quality requirements exist:
+The following quality requirements were designed to meet the requirements of real-time simulation. This implies traffic simulation (of up to 100 vehicles) at interactive frame rates (60Hz) on COTS (commercial off-the-shelf) hardware. In a balance of power, the quality of the scene shall be granted in a way that, from a camera distance of half a meter, no visual artifacts shall be observable at the model surfaces for FullHD (1920 x 1080 px) renderings. In addition, the following recommendations concerning model quality requirements exist:
 
 <div align="center">
    <i>Table 1: Quality requirements</i>
@@ -86,7 +86,7 @@ Uniform nomenclature:
 Based on the given requirements, the following model structure shall be used (transforms are indicated by *T*):
  
  ```
- $Type_$Release (T)					
+$Type_$Release (T)					
 |-------Floor								
 |-------Grp_Exterior			
 | 	|-------Grp_Exterior_Static		
