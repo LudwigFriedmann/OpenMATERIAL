@@ -40,7 +40,7 @@ Model node structure shall comply with the structure presented in [chapter 3.2](
 Implementation of the full set of the above-mentioned bones is not mandatory for the model creation process. While the bone hierarchy may end early, it should not feature gaps. Missing bones are considered static. Further means of animation (e.g., IK bones, pole targets, weights, animations etc.) as well as corresponding states may be present in pedestrian models but are out of scope for standardization.
 
 <div align="center">
-  <img src="https://github.com/LudwigFriedmann/OpenMATERIAL/blob/master/model_structure/Pedestrian_Structure_Skeleton.svg" width="33%"  height="33%" alt="Reference coordinate frame"><br>
+  <img src="Pedestrian_Structure_Skeleton.svg" width="33%"  height="33%" alt="Reference coordinate frame"><br>
   <i>Figure 1: Skeleton</i>
 </div><br>
 
@@ -134,6 +134,6 @@ All transforms are defined in the (global) reference coordinate frame of the mod
       <tr><td><b>y-axis (<i>y<sub>Ref</sub></i>)</b></td><td>Completes the right-handed coordinate system</td></tr>
       <tr><td><b>z-axis (<i>z<sub>Ref</sub></i>)</b></td><td>Perpendicular to the x-axis, pointing upwards</td></tr>
   </table><br>
-  <img src="https://github.com/LudwigFriedmann/OpenMATERIAL/blob/master/model_structure/Pedestrian_Structure_Reference_Coord_Frame.svg" width="33%"  height="33%" alt="Reference coordinate frame"><br>
+  <img src="Pedestrian_Structure_Reference_Coord_Frame.svg" width="33%"  height="33%" alt="Reference coordinate frame"><br>
   <i>Figure 2: Reference coordinate frame</i>
 </div><br>
