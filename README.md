@@ -30,6 +30,8 @@ Repository Structure
 | [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions |
 | [`pathtracer`](pathtracer/)           | Implementation of a raycaster / pathtracer using the proposed glTF extensions |
 
+Further examples of measured materials can be found in the [VIVALDI Materials](https://github.com/SevdaKIT1234/VIVALDI_Materials) repository.  
+
 References
 ----------
 <a name="[1]"></a>[1] V. Kurz, L. Friedmann, C. van Driesten and E. Biebl, "Physically based radar simulation parameter of road surfaces in OpenMATERIAL," 2022 3rd URSI Atlantic and Asia Pacific Radio Science Meeting (AT-AP-RASC), Gran Canaria, Spain, 2022, pp. 1-2, doi: 10.23919/AT-AP-RASC54737.2022.9814181.
