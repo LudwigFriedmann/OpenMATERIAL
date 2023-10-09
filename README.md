@@ -1,5 +1,3 @@
-![Pathtracer Build](https://github.com/LudwigFriedmann/OpenMaterial/workflows/Pathtracer%20Build/badge.svg)
-
 <img src="Logo.svg" alt="OpenMATERIAL_Logo" width="10%" height="10%"> OpenMATERIAL
 ============
 
