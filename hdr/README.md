@@ -1,8 +1,4 @@
 HDR
 =========
 
-This directory contains the following HDR (High Dynamic Range) images:
-
-| Filename                  | Description                                                                   | Origin                                  | License                                                               |
-|:--------------------------|:------------------------------------------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------|
-| `green_point_park_4k.hdr` | 360° picture of the Green Point Park in Cape Town, equirectangular projection | [HDRI HAVEN](https://hdrihaven.com/)    | [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) |
+Examples for HDR (High Dynamic Range) images were updated and moved to the repository [OpenMATERIAL-Validation](https://github.com/LudwigFriedmann/OpenMATERIAL-Validation).

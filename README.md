@@ -20,15 +20,17 @@ The above-mentioned circumstances led to the establishment of the project **Open
 Repository Structure
 --------------------
 
-| Filepath                              | Description
+| Filepath                              | Description                                                                                                                               |
 |:--------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
-| [`external`](external/)               | Third-party dependencies |
+| [`external`](external/)               | Third-party dependencies                                                                                                                  |
 | [`glTF_extensions`](glTF_extensions/) | Proposed glTF extensions defining asset properties, providing physically correct material descriptions and enabling glTF file referencing |
-| [`hdr`](hdr/)                         | Examples of HDR (high dynamic range) images |
-| [`materials`](materials/)             | Examples of glTF materials using the proposed glTF extensions |
-| [`model_structure`](model_structure/) | Proposal on 3D model structure (quality criteria, node hierarchy, transforms,...) |
-| [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions |
-| [`pathtracer`](pathtracer/)           | Implementation of a raycaster / pathtracer using the proposed glTF extensions |
+| [`hdr`](hdr/)                         | Examples of HDR (high dynamic range) images                                                                                               |
+| [`materials`](materials/)             | Examples of glTF materials using the proposed glTF extensions                                                                             |
+| [`model_structure`](model_structure/) | Proposal on 3D model structure (quality criteria, node hierarchy, transforms,...)                                                         |
+| [`objects`](objects/)                 | Examples of glTF 3D objects using the proposed glTF extensions                                                                            |
+| [`pathtracer`](pathtracer/)           | Implementation of a raycaster / pathtracer using the proposed glTF extensions                                                             |
+
+> **_NOTE (2023-10-09):_** External depencies, examples of HDR images, materials and 3D models were updated and moved to the repository [OpenMATERIAL-Validation](https://github.com/LudwigFriedmann/OpenMATERIAL-Validation).
 
 Further examples of measured materials can be found in the [VIVALDI Materials](https://github.com/SevdaKIT1234/VIVALDI_Materials) repository.  
 
