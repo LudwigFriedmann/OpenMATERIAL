@@ -1,6 +1,8 @@
 <img src="Logo.svg" alt="OpenMATERIAL_Logo" width="10%" height="10%"> OpenMATERIAL
 ============
 
+> **_NOTE (2023-11-10):_** The development of the OpenMATERIAL specifications will be continued within the international standardization project [ASAM OpenMATERIAL](https://www.asam.net/project-detail/asam-openmaterial/) at [ASAM e.V.](https://www.asam.net/). The project will kick off with the [ASAM OpenMATERIAL Proposal Workshop](https://www.asam.net/conferences-events/detail/asam-openmaterial-proposal-workshop/) on November 20, 2023. As soon as the project work begins, the content of this repository will be transferred to an ASAM e.V. repository and further developed there.
+
 In virtual development, test and validation of automated and autonomous driving systems, 3D models are used for the geometric representation of the environment of simulated vehicles as well as for the vehicles themselves. For a long time, physical correctness in the visual representation of those geometries was not fundamental. Due to limited computing capacities, implementations were designed for lowest possible memory and computing time requirements while providing a visually plausible appearance. 
 
 For physical sensor simulation, which is becoming increasingly important in the context mentioned above, this approach is suitable to a limited extent. Instead of visual plausibility, physically correct modelling of material properties is fundamental in order to achieve valid results [[1]](#[1])[[2]](#[2]). Besides sensor simulation, modern rendering solutions also require physical material properties in 3D models in order to be able to reproduce physically correct lighting, reflections and shadowing.
