@@ -1,15 +1,6 @@
-3D Model Structure
-==================
+<img src="../Logo.svg" alt="OpenMATERIAL_Logo" width="10%" height="10%"> OpenMATERIAL
+============
 
-Usage of 3D models in simulation-based development and testing of automated driving requires compliance with certain quality criteria. Scalable integration of the models within the heterogeneous applications of distributed simulation frameworks further requires usage of a common exchange format and standardization of node structures, transforms and coordinate frames. Standardization thus allows the harmonization of 3D model usage in simulation, animation and rendering, but also enables the shared use of the same models (e.g. residing in central repositories) across different applications.
+The development of the OpenMATERIAL specifications for 3D models and materials is continued in the international standardization project **[ASAM OpenMATERIAL](https://www.asam.net/project-detail/asam-openmaterial/)** and its [project repository](https://github.com/asam-ev/OpenMATERIAL).
 
-Within this project, specifications for the following model categories are drafted:
-* [`Pedestrians`](Pedestrian_Structure.md)
-* [`Roads and Traffic Infrastructure`](Road_Structure.md)
-* [`Vehicles`](Vehicle_Structure.md)
-
-Proposals concerning further model categories (e.g. other traffic participants, buildings, environment) will be added in the future. 
-
-# Examples
-
-Examples are provided in the [objects](objects/) subdirectory.
+The path tracer rendering software and examples of 3D models and materials were moved to the repository [OpenMATERIAL-Validation](https://github.com/LudwigFriedmann/OpenMATERIAL-Validation).
